@@ -1,0 +1,13 @@
+.main-header {
+  border: 3px dashed grey;
+  height: 75px;
+  background-color: aliceblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav {
+  border: 2px solid red;
+  margin: 5px;
+}

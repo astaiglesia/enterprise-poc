@@ -1,0 +1,21 @@
+.ordercard {
+  border: thin solid orange;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  min-height: 50px;
+}
+
+.ordercard:hover {
+  background-color: blue;
+}
+.ordercard:hover .card-field{
+  color: white;
+}
+
+.card-field {
+  width: 8%;
+  /* border: thin solid black; */
+}

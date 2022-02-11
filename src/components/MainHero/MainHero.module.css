@@ -1,0 +1,14 @@
+.main-hero {
+  border: thin solid orange;
+  color: grey;
+  text-align: center;
+  padding: 25px 0;
+
+}
+
+h1 {
+  border: thin solid green;
+  color: blue;
+  margin: 0;
+  text-align: center;
+}

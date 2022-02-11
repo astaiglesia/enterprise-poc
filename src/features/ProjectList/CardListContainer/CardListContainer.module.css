@@ -1,0 +1,19 @@
+.list-container {
+  border: thin solid red;
+  /* margin: 20px 5%; */
+  /* min-height: 400px; */
+}
+
+.list-headings {
+  display:flex;
+  justify-content: space-between;
+  background-color: lightgray;
+  font-weight: 600;
+  
+}
+
+.list-headings h3 {
+
+  width: 8%;
+  /* border: thin solid black; */
+}
