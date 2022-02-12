@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-import styles from './CardList.module.css';
+import styles from './ProjectList.module.css';
 // import mockOrderProfiles from '../../../assets/mockOrderData';
 
 import OrderCard from '../OrderCard/OrderCard';

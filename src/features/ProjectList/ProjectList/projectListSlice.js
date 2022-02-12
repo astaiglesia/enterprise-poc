@@ -13,9 +13,20 @@ const initialState = [
 export const projectListSlice = createSlice({
   name: 'projectList',
   initialState,
-  reducers: {},
+  reducers: {
+    createProject: (state, action) => {
+      console.log(action.payload)
+
+      const newProject = {
+        id: new Date(),
+        ...action.payload
+      }
+      state.push(newProject)
+    },
+  },
 });
 
 // export const { createProject, editProject, deleteProject } = projectListSlice.actions;
+export const { createProject } = projectListSlice.actions;
 
 export default projectListSlice.reducer;
