@@ -11,10 +11,10 @@ export const projectFormSlice = createSlice({
     nickname: 'initial name',
     location: '',
     client: '',
-    // company: '',
-    // deliveryDate: '',
-    // rentalTerm: '',
-    // tag: '',
+    company: '',
+    deliveryDate: '',
+    rentalTerm: '',
+    tag: '',
   },
   // -- under the hood: createSlice =>  
   // creates actionTypes by mapping the slice name with reducer keys

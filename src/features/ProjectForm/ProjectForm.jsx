@@ -18,10 +18,10 @@ const ProjectForm = () => {
     nickname: '',
     location: '',
     client: '',
-    // company: '',
-    // deliveryDate: '',
-    // rentalTerm: '',
-    // tag: '',
+    company: '',
+    deliveryDate: '',
+    rentalTerm: '',
+    tag: '',
   });
 
   const nicknameHandler = (e) => {
@@ -51,15 +51,57 @@ const ProjectForm = () => {
     })
   };
 
+  const companyHandler = (e) => {
+    setFormData(currentState => {
+      return {
+        ...currentState,
+        company: e.target.value,
+      }
+    })
+  };
 
-  // ---- Handle Form Submission To Update Redux Store ... and Post to DB
-  const dispatch = useDispatch();
+  const deliveryDateHandler = (e) => {
+    setFormData(currentState => {
+      return {
+        ...currentState,
+        deliveryDate: e.target.value,
+      }
+    })
+  };
+
+  const termHandler = (e) => {
+    setFormData(currentState => {
+      return {
+        ...currentState,
+        rentalTerm: e.target.value,
+      }
+    })
+  };
+
+  const tagHandler = (e) => {
+    setFormData(currentState => {
+      return {
+        ...currentState,
+        tag: e.target.value,
+      }
+    })
+  };
+
+
+  // ---- Handle Form Submission 
+  // ### implent async reducer to Post to DB
   
+  // Dispatches Form State to Redux Store
+  const dispatch = useDispatch();
   const formSubmissionHandler = e => {
     e.preventDefault();
-    // dispatch form data to store
-    console.log(formData)
-    dispatch(createProject(formData));
+    // console.log(formData)
+    const newProject = {
+      ...formData,
+      date: new Date(formData.date).toLocaleString()
+    }
+
+    dispatch(createProject(newProject));
   }
   
 
@@ -90,12 +132,48 @@ const ProjectForm = () => {
       <input type="text" 
               name="client" 
               id="client" 
-              value={formData.client}
               required={true} 
+              value={formData.client}
               onChange={clientHandler} >
       </input>
-      
-      <button type="submit" >Create Draft Project</button>
+
+      <label htmlFor="company" >Company</label>
+      <input type="text" 
+              name="company" 
+              id="company" 
+              value={formData.company}
+              onChange={companyHandler} >
+      </input>
+
+      <label htmlFor="deliveryDate" >Delivery Date</label>
+      <input type="date" 
+              name="deliveryDate" 
+              id="deliveryDate" 
+              value={formData.deliveryDate}
+              onChange={deliveryDateHandler}>
+      </input>
+
+      <label htmlFor="rentalTerm" >Rental Term</label>
+      <select type="text" 
+              name="rentalTerm"   
+              id="rentalTerm" 
+              value={formData.rentalTerm}
+              onChange={termHandler} >
+        <option value="1">1 Month</option>
+        <option value="3">3 Months</option>
+        <option value="6">6 Months</option>
+        <option value="12" defaultValue>12 Months</option>
+      </select>
+
+      <label htmlFor="tag" >Tag</label>
+      <input type="text" 
+              name="tag" 
+              id="tag" 
+              value={formData.tag}
+              onChange={tagHandler}>
+      </input>
+
+      <button type="submit" aria-label="Submit form" >Create Draft Project</button>
     </form>
   )
 };
@@ -110,23 +188,3 @@ export default ProjectForm;
 
 
 
-
-{/* <label htmlFor="proj-zip" >Zip</label>
-<input type="number" name="proj-zip" id="proj-zip" ></input> */}
-      // <label htmlFor="company" >Company</label>
-      // <input type="text" name="company" id="company" ></input>
-      
-
-      // <label htmlFor="deliveryDate" >Delivery Date</label>
-      // <input type="date" name="deliveryDate" id="deliveryDate" ></input>
-
-      // <label htmlFor="rentalTerm" >Rental Term</label>
-      // <select type="text" name="rentalTerm" id="rentalTerm" >
-      //   <option value="1">1 Month</option>
-      //   <option value="3">3 Months</option>
-      //   <option value="6">6 Months</option>
-      //   <option value="12" selected>12 Months</option>
-      // </select>
-
-      // <label htmlFor="tag" >Tag</label>
-      // <input type="text" name="tag" id="tag" ></input>

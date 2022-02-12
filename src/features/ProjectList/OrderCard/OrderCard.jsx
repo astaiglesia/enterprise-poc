@@ -18,10 +18,11 @@ const OrderCard = props => {
       <div className={styles['card-field']}> {orderData.nickname} </div>
       <div className={styles['card-field']}> {orderData.location} </div>
       <div className={styles['card-field']}> {orderData.client} </div>
-      {/* <div className={styles['card-field']}> {orderData.company} </div>
-      <div className={styles['card-field']}> {orderData.deliveryDate.toLocaleString()} </div>
+      <div className={styles['card-field']}> {orderData.company} </div>
+      {/* ### fix date formatting */}
+      <div className={styles['card-field']}> {orderData.deliveryDate} </div>  
       <div className={styles['card-field']}> {orderData.rentalTerm} </div>
-      <div className={styles['card-field']}> {orderData.tag} </div> */}
+      <div className={styles['card-field']}> {orderData.tag} </div>
     </div>
   )
 };

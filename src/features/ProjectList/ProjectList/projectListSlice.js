@@ -16,11 +16,14 @@ export const projectListSlice = createSlice({
   reducers: {
     createProject: (state, action) => {
       console.log(action.payload)
-
+      
+      // ##convert id to uuid
       const newProject = {
         id: new Date(),
         ...action.payload
       }
+      console.log(newProject);
+
       state.push(newProject)
     },
   },
