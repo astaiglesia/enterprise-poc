@@ -1,5 +1,5 @@
 /*
-- add mobile responsive / media queries
+- add mobile responsiveness / media queries
 */ 
 
 import React from "react";
@@ -16,7 +16,6 @@ const Content = () => {
     <div className={styles.container}>
       <ProjectForm />
       <CardListContainer />
-
     </div>
   )
 };

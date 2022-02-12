@@ -2,8 +2,9 @@
   border: 3px dashed grey;
   height: 75px;
   background-color: aliceblue;
+
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 
