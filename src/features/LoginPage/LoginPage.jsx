@@ -1,26 +1,28 @@
-// create local state to gather form data
-// dispatch to redux-thunk for async authentication
-// on validation redirect to dashboard page
-
 import React, { useState} from 'react';
 
 import styles from './LoginPage.module.css';
 
+import LoginModal from './LoginModal/LoginModal';
+
+
 const LoginPage = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  console.log(isModalOpen);
 
   const loginHandler = (e) => {
     console.log('open login overlay');
     // login should open login modal
-    // login modal should provide sign-in fields and create account link
-    // -- on user authentication redirect to dashboard
-    e.target.blur();
+    setIsModalOpen(currentState => !currentState);
+    
+    // removes focus after clicking ... should we maintain focus after opening modal?
+    // e.target.blur();
   }
   
   const ssoHandler = (e) => {
     console.log('send to google');
-    e.target.blur();
+    // e.target.blur();
   }
-
+  
   return (
     <div className={styles['login-page']} >
       
@@ -32,7 +34,10 @@ const LoginPage = () => {
         </div>
       </header>
 
-      <main>add zz logo</main>
+      <main>
+        {/* <LoginModal /> */}
+        {(isModalOpen) ? <LoginModal /> : <div>zzlogo</div>}
+      </main>
       
       <footer className={styles['login-footer']}>
         <p>sunset-sessions</p>
