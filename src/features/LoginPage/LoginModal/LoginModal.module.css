@@ -5,37 +5,50 @@
   width: 100%;
   height: 100vh;
   z-index: 10;
-  background: rgba(0, 0, 0, 0.75);
+  background: rgba(251, 251, 251, 0.75);
 }
 
-.modalContainer {
+.modal {
+  /* border: thin solid orange; */
+  position: fixed;
+  top: 6vh;
+
+  width: 100%;
+  z-index: 100;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.login-form {
   /* border: thin solid red; */
-  float: right;
-  margin-right: 50px;
+
+  margin-right: 45px;
   width: 20%;
 
   display: flex;
   flex-direction: column;
 }
 
-.modalContainer input {
+.login-form input {
   border: none;
   border-bottom: thin solid lightslategray;
   margin-bottom: 5px;
 }
-.modalContainer label {
+.login-form label {
   text-align: right;
   font-size: .75rem;
 }
-.modalContainer button {
+.login-form button {
   text-align: right;
   font-size: .75rem;
 
   border: 1px solid lightslategray;
   background-color: transparent;
+  margin-bottom: 5px;
 }
 
-.modalContainer button:hover, button:focus {
+.login-form button:hover, button:focus {
   /* font-size: 1rem; */
   color: red;
 }

@@ -23,3 +23,6 @@ modal elements should be direct children of the body, and siblings to the root d
   - in the return Fragment call createPortal to "portal" the rendering of a virtual DOM element onto another element(<reactNodeToRenderinJSX onEvent={onEventHandler}/>, document.getElementById(IdOfRealDOMContainer) )
     - hang the modalBackdrop on backdrop-root
     - hang the modalOverlay on overlay-root
+
+
+### Need to figure out accessibility of modal

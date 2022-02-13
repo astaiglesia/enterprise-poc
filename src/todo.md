@@ -1,5 +1,16 @@
+## DONE
+create login modal overlay and backdrop
+
+## TODO
 - convert id to UUID
 - fix date formatting of order card
+- login form 
+  - add auth to database
+  - debug form actions / fail
+
+
+
+
 
 ## React Router for 
 - edit order view
