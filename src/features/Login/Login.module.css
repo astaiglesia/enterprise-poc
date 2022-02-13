@@ -11,29 +11,47 @@
   display: flex;
   justify-content: space-between;
   margin: 10px;
+  /* border: thin solid green; */
 }
 
 .login-header h2 {
-  color: black
+  color: black;
+  /* border: thin solid grey; */
+  margin: 0;
+}
+
+.login-choices {
+  /* border: thin solid purple; */
+  display: flex;
+  align-items: center;
 }
 
 .login-header button {
   background-color: transparent;
-  width: 100px;
-  height: 25px;
+  padding: 0px 10px;
   font-size: 12px;
+  border: none;
 }
 
 .login-header button:hover, button:focus {
-  background-color: blue;
-  color: white
+  font-size: 14px;
+  color: red;
 }
+
 
 .login-page main {
   flex:3;
-  border: thin solid red;
+  text-align: center;
+  /* border: thin solid red; */
 }
 
-.login-page footer{
-  border: thin solid blue;
+.login-footer{
+  /* border: thin solid blue; */
+  display: flex;
+  justify-content: flex-end;
+}
+
+.login-footer p {
+  /* border: thin solid orange; */
+  margin: 10px;
 }

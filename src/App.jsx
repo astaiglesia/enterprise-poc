@@ -18,7 +18,6 @@ import MainFooter from './components/MainFooter/MainFooter';
 import Content from './components/Content/Content'
 import Login from './features/Login/Login';
 
-
 const App = () => {
   
   return (

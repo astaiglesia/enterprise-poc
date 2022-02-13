@@ -8,20 +8,35 @@ import styles from './Login.module.css';
 
 const LoginPage = () => {
 
+  const loginHandler = (e) => {
+    console.log('open login overlay');
+    // login should open login modal
+    // login modal should provide sign-in fields and create account link
+    // -- on user authentication redirect to dashboard
+    e.target.blur();
+  }
+  
+  const ssoHandler = (e) => {
+    console.log('send to google');
+    e.target.blur();
+  }
+
   return (
     <div className={styles['login-page']} >
       
       <header className={styles['login-header']}>
         <h2>ZZ Driggs Enterprise Application</h2>
         <div className={styles['login-choices']}>
-          <button type="button">login</button>
-          <button type="button">G</button>
+          <button type="button" onClick={loginHandler}>login</button>
+          <button type="button" onClick={ssoHandler}>G</button>
         </div>
       </header>
 
-      <main>add a logo here</main>
+      <main>add zz logo</main>
       
-      <footer>sunset-sessions</footer>
+      <footer className={styles['login-footer']}>
+        <p>sunset-sessions</p>
+      </footer>
     </div>
   )
 }
