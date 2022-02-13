@@ -5,7 +5,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 
-
+import { attemptLogin } from "./loginModalSlice";
 import styles from './LoginModal.module.css';
 
 const LoginModal = () => {
@@ -44,7 +44,7 @@ const LoginModal = () => {
   const loginAttemptHandler = e => {
     e.preventDefault();
 
-    console.log(formData);
+    dispatch(attemptLogin(formData));
   }
 
   return (

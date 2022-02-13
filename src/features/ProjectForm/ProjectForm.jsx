@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { 
-  changeNickname, 
-  changeLocation, 
-  changeClient, 
-  selectNickname,
-} from './projectFormSlice';
+import { useDispatch } from 'react-redux';
+
 import { createProject } from '../ProjectList/ProjectList/projectListSlice';
 
 import styles from './ProjectForm.module.css';
@@ -13,8 +8,7 @@ import styles from './ProjectForm.module.css';
 const ProjectForm = () => {
   // Use Hooks to Handle Local State for Form Data
   const [formData, setFormData] = useState({
-    // -- orderState property may be edited in future feature
-    orderState: 'Draft',
+    orderState: 'Draft',                       // -- orderState property may be edited in future feature
     nickname: '',
     location: '',
     client: '',
