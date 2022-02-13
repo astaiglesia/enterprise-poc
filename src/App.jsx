@@ -16,7 +16,7 @@ import MainHeader from './components/MainHeader/MainHeader';
 import MainHero from './components/MainHero/MainHero';
 import MainFooter from './components/MainFooter/MainFooter';
 import Content from './components/Content/Content'
-import Login from './features/Login/Login';
+import Login from './features/LoginPage/LoginPage';
 
 const App = () => {
   
