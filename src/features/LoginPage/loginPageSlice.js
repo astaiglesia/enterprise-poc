@@ -8,7 +8,7 @@ export const loginPageSlice = createSlice({
   name: 'login',
   initialState,
   reducers: {
-    toggleLoginModal: currentState => !currentState,
+    toggleLoginModal: (state, action) => {state.isModalOpen = action.payload},
   },
 });
 

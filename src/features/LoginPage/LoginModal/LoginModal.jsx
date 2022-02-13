@@ -3,18 +3,28 @@
 
 import React, { useState } from "react";
 import ReactDOM from 'react-dom';
+import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 
+import { toggleLoginModal } from '../loginPageSlice';
 import { attemptLogin } from "./loginModalSlice";
 import styles from './LoginModal.module.css';
 
 const ModalBackdrop = () => {
-  const closeModalHandler = e => {
+  const isModalOpen = useSelector(state => {
+    return state.login.isModalOpen;
+  });
 
+  const dispatch = useDispatch();
+
+  const closeModalHandler = () => {
+    console.log('close login overlay');
+    // toggles modal
+    dispatch(toggleLoginModal(!isModalOpen));
   }
 
   return (
-    <div className={styles.backdrop} onClick="closeModalHandler" />
+    <div className={styles.backdrop} onClick={closeModalHandler} />
   );
 };
 

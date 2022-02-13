@@ -1,29 +1,30 @@
 import React, { useState} from 'react';
 import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import styles from './LoginPage.module.css';
 import zzLogo from '../../assets/images/android-chrome-192x192.png'
 
 import LoginModal from './LoginModal/LoginModal';
+import { toggleLoginModal } from './loginPageSlice';
 
 
 
 const LoginPage = () => {
   const isModalOpen = useSelector(state => {
-    console.log(state);
     return state.login.isModalOpen;
   });
-  console.log(isModalOpen);
-
-  const loginHandler = (e) => {
+  
+  const dispatch = useDispatch();
+  
+  const loginHandler = () => {
     console.log('open login overlay');
-    // login should open login modal
-    // setIsModalOpen(currentState => !currentState);
+    dispatch(toggleLoginModal(!isModalOpen));
     
     // removes focus after clicking ... should we maintain focus after opening modal?
     // e.target.blur();
   }
-  
+
   const ssoHandler = (e) => {
     console.log('send to google');
     // e.target.blur();
