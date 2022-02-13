@@ -1,0 +1,44 @@
+.modal {
+  /* border: thin solid orange; */
+  position: fixed;
+  top: 6vh;
+
+  width: 100%;
+  z-index: 100;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.login-form {
+  /* border: thin solid red; */
+
+  margin-right: 45px;
+  width: 20%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form input {
+  border: none;
+  border-bottom: thin solid lightslategray;
+  margin-bottom: 5px;
+}
+.login-form label {
+  text-align: right;
+  font-size: .75rem;
+}
+.login-form button {
+  text-align: right;
+  font-size: .75rem;
+
+  border: 1px solid lightslategray;
+  background-color: transparent;
+  margin-bottom: 5px;
+}
+
+.login-form button:hover, button:focus {
+  /* font-size: 1rem; */
+  color: red;
+}
