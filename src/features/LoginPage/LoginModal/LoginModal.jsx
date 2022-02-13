@@ -1,6 +1,5 @@
-// create local state to gather form data
-// dispatch to redux-thunk for async authentication
-// on validation redirect to dashboard page
+// need to hide password
+// need to reset the form fields on submit
 
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
@@ -8,13 +7,15 @@ import { useDispatch } from "react-redux";
 import { attemptLogin } from "./loginModalSlice";
 import styles from './LoginModal.module.css';
 
+
+
 const LoginModal = () => {
   // set up local state to collect form data
   const initialState = {
     user: '',
     password: '',
-  };
-
+  }
+  
   const [formData, setFormData] = useState(initialState);
 
   const userHandler = e => {
@@ -39,13 +40,28 @@ const LoginModal = () => {
   // -- if validated, redirect to dashboard page
   // -- on fail, render fail
   const dispatch = useDispatch();
-
+  const [isValidUser, setIsValidUser] = useState(false);
+  const [didAuthFail, setDidAuthFail] = useState(false);
 
   const loginAttemptHandler = e => {
     e.preventDefault();
+    e.target.blur();
 
     dispatch(attemptLogin(formData));
+    // create asyncAttemptLogin
+    
+    // -- handle promise onFulfillment
+    // (isValidUser) ? <redirect to dashboard> : set
+    setIsValidUser(currentState => !currentState); // mocks a valid return
+
+    // handle authentication failure
+    setDidAuthFail(currentState => {
+      setFormData(initialState);
+      return !currentState
+    }); // mocks an auth fail
   }
+
+
 
   return (
     <React.Fragment>
@@ -71,6 +87,7 @@ const LoginModal = () => {
         </input>
 
         <button type="submit" aria-label="Submit login credentials" >login</button>
+        {(didAuthFail) && <div className={styles.loginFail}>login failed</div>}
       </form>
     </React.Fragment>
   )

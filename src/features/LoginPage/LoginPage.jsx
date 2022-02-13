@@ -15,12 +15,12 @@ const LoginPage = () => {
     setIsModalOpen(currentState => !currentState);
     
     // removes focus after clicking ... should we maintain focus after opening modal?
-    // e.target.blur();
+    e.target.blur();
   }
   
   const ssoHandler = (e) => {
     console.log('send to google');
-    // e.target.blur();
+    e.target.blur();
   }
   
   return (
@@ -35,7 +35,7 @@ const LoginPage = () => {
       </header>
 
       <main>
-        {/* <LoginModal /> */}
+        {/* (isModalOpen) && <LoginModal /> */}
         {(isModalOpen) ? <LoginModal /> : <div>zzlogo</div>}
       </main>
       
