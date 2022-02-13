@@ -11,17 +11,25 @@
  */
 
 import React from 'react';
+import { Routes, Route, Link } from "react-router-dom";
 
-import MainHeader from './components/MainHeader/MainHeader';
-import MainHero from './components/MainHero/MainHero';
-import MainFooter from './components/MainFooter/MainFooter';
-import Content from './components/Content/Content'
 import Login from './features/LoginPage/LoginPage';
+import Dashboard from './features/DashboardPage/Dashboard';
+import Projects from './features/ProjectsViewPage/ProjectsViewPage';
+import EditProject from './features/EditProjectPage/EditProjectPage';
+import Error404 from './features/Error404Page/Error404Page';
+
 
 const App = () => {
   
-  return (
-    <Login />
+  return (  
+    <Routes>
+      <Route path="/" element={<Login />} />
+      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/projects" element={<Projects />} />
+      <Route path="/edit" element={<EditProject />} />
+      <Route path="*" element={<Error404 />} />
+    </Routes>
   )
 }
 
@@ -29,9 +37,3 @@ export default App;
 
 // import BrowserRouter, Routes, Route, Link for React Router
 
-    // <React.Fragment>
-    //   <MainHeader />
-    //   <MainHero />
-    //   <Content />
-    //   <MainFooter />
-    // </React.Fragment>
