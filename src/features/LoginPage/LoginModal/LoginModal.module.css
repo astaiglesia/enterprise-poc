@@ -1,9 +1,31 @@
 .modalContainer {
-  border: thin solid red;
+  /* border: thin solid red; */
   float: right;
-  margin-right: 10px;
-  width: 35%;
+  margin-right: 50px;
+  width: 20%;
 
   display: flex;
   flex-direction: column;
+}
+
+.modalContainer input {
+  border: none;
+  border-bottom: thin solid lightslategray;
+  margin-bottom: 5px;
+}
+.modalContainer label {
+  text-align: right;
+  font-size: .75rem;
+}
+.modalContainer button {
+  text-align: right;
+  font-size: .75rem;
+
+  border: 1px solid lightslategray;
+  background-color: transparent;
+}
+
+.modalContainer button:hover, button:focus {
+  /* font-size: 1rem; */
+  color: red;
 }

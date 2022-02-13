@@ -66,8 +66,7 @@ const LoginModal = () => {
   return (
     <React.Fragment>
       <form className={styles.modalContainer} onSubmit={loginAttemptHandler} >
-        <h3>sign in to your account</h3>
-        
+                
         <label htmlFor="user" >username</label>
         <input type="text" 
                 name="user" 
