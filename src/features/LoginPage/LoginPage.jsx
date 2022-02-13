@@ -1,32 +1,38 @@
 import React, { useState} from 'react';
+import { useSelector } from 'react-redux';
 
 import styles from './LoginPage.module.css';
+import zzLogo from '../../assets/images/android-chrome-192x192.png'
 
 import LoginModal from './LoginModal/LoginModal';
 
-import zzLogo from '../../assets/images/android-chrome-192x192.png'
 
 
 const LoginPage = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const isModalOpen = useSelector(state => {
+    console.log(state);
+    return state.login.isModalOpen;
+  });
   console.log(isModalOpen);
 
   const loginHandler = (e) => {
     console.log('open login overlay');
     // login should open login modal
-    setIsModalOpen(currentState => !currentState);
+    // setIsModalOpen(currentState => !currentState);
     
     // removes focus after clicking ... should we maintain focus after opening modal?
-    e.target.blur();
+    // e.target.blur();
   }
   
   const ssoHandler = (e) => {
     console.log('send to google');
-    e.target.blur();
+    // e.target.blur();
   }
   
   return (
     <div className={styles['login-page']} >
+      
+      {(isModalOpen) && <LoginModal />}
       
       <header className={styles['login-header']}>
         <h3>
@@ -40,8 +46,8 @@ const LoginPage = () => {
 
       <main className={styles.loginMain}>
         <img src={zzLogo} alt="zz brand logo"></img> 
-        {/* (isModalOpen) && <LoginModal /> */}
-        {(isModalOpen) && <LoginModal />}
+   
+    
       </main>
       
       <footer className={styles['login-footer']}>

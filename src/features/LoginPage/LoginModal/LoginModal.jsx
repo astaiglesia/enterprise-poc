@@ -2,14 +2,27 @@
 // need to reset the form fields on submit
 
 import React, { useState } from "react";
+import ReactDOM from 'react-dom';
 import { useDispatch } from "react-redux";
 
 import { attemptLogin } from "./loginModalSlice";
 import styles from './LoginModal.module.css';
 
+const ModalBackdrop = () => {
+  const closeModalHandler = e => {
+
+  }
+
+  return (
+    <div className={styles.backdrop} onClick="closeModalHandler" />
+  );
+};
 
 
-const LoginModal = () => {
+
+
+
+const LoginOverlay = () => {
   // set up local state to collect form data
   const initialState = {
     user: '',
@@ -61,33 +74,40 @@ const LoginModal = () => {
     }); // mocks an auth fail
   }
 
+  return (
+    <form className={styles.modalContainer} onSubmit={loginAttemptHandler} >
+                
+    <label htmlFor="user" >username</label>
+    <input type="text" 
+            name="user" 
+            id="user" 
+            value={formData.user}
+            required={true} 
+            onChange={userHandler} >
+    </input>
+    
+    <label htmlFor="password" >password</label>
+    <input type="text" 
+            name="password" 
+            id="password" 
+            value={formData.password}
+            required={true} 
+            onChange={passwordHandler} >
+    </input>
 
+    <button type="submit" aria-label="Submit login credentials" >login</button>
+    {(didAuthFail) && <div className={styles.loginFail}>login failed</div>}
+  </form>
+  );
+};
+
+
+const LoginModal = () => {
 
   return (
     <React.Fragment>
-      <form className={styles.modalContainer} onSubmit={loginAttemptHandler} >
-                
-        <label htmlFor="user" >username</label>
-        <input type="text" 
-                name="user" 
-                id="user" 
-                value={formData.user}
-                required={true} 
-                onChange={userHandler} >
-        </input>
-        
-        <label htmlFor="password" >password</label>
-        <input type="text" 
-                name="password" 
-                id="password" 
-                value={formData.password}
-                required={true} 
-                onChange={passwordHandler} >
-        </input>
+      {ReactDOM.createPortal(<ModalBackdrop />, document.getElementById('backdrop-root'))}
 
-        <button type="submit" aria-label="Submit login credentials" >login</button>
-        {(didAuthFail) && <div className={styles.loginFail}>login failed</div>}
-      </form>
     </React.Fragment>
   )
 };
