@@ -1,0 +1,39 @@
+.login-page {
+  background-color: white;
+  height: 100%;
+  
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+}
+
+.login-header {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.login-header h2 {
+  color: black
+}
+
+.login-header button {
+  background-color: transparent;
+  width: 100px;
+  height: 25px;
+  font-size: 12px;
+}
+
+.login-header button:hover, button:focus {
+  background-color: blue;
+  color: white
+}
+
+.login-page main {
+  flex:3;
+  border: thin solid red;
+}
+
+.login-page footer{
+  border: thin solid blue;
+}

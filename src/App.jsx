@@ -10,27 +10,29 @@
  * ********************************************************
  */
 
-import React, { Component } from 'react';
+import React from 'react';
 
 import MainHeader from './components/MainHeader/MainHeader';
 import MainHero from './components/MainHero/MainHero';
 import MainFooter from './components/MainFooter/MainFooter';
 import Content from './components/Content/Content'
-import Wrapper from './helpers/Wrapper';
+import Login from './features/Login/Login';
 
-// function component syntax
+
 const App = () => {
   
   return (
-    <Wrapper>
-      <MainHeader />
-      <MainHero />
-      <Content />
-      <MainFooter />
-    </Wrapper>
+    <Login />
   )
 }
 
 export default App;
 
 // import BrowserRouter, Routes, Route, Link for React Router
+
+    // <React.Fragment>
+    //   <MainHeader />
+    //   <MainHero />
+    //   <Content />
+    //   <MainFooter />
+    // </React.Fragment>
