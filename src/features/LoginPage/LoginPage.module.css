@@ -39,11 +39,17 @@
 }
 
 
-.login-page main {
+.loginMain {
   flex:3;
   text-align: center;
   /* border: thin solid red; */
+  display: flex;
 }
+
+.loginMain img {
+  /* border: thin solid blue; */
+  margin: auto;
+} 
 
 .login-footer{
   /* border: thin solid blue; */

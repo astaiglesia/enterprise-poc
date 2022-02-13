@@ -4,6 +4,8 @@ import styles from './LoginPage.module.css';
 
 import LoginModal from './LoginModal/LoginModal';
 
+import zzLogo from '../../assets/images/android-chrome-192x192.png'
+
 
 const LoginPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -27,16 +29,19 @@ const LoginPage = () => {
     <div className={styles['login-page']} >
       
       <header className={styles['login-header']}>
-        <h2>ZZ Driggs Enterprise Application</h2>
+        <h3>
+          Enterprise
+        </h3>
         <div className={styles['login-choices']}>
           <button type="button" onClick={loginHandler}>login</button>
           <button type="button" onClick={ssoHandler}>G</button>
         </div>
       </header>
 
-      <main>
+      <main className={styles.loginMain}>
+        <img src={zzLogo} alt="zz brand logo"></img> 
         {/* (isModalOpen) && <LoginModal /> */}
-        {(isModalOpen) ? <LoginModal /> : <div>zzlogo</div>}
+        {(isModalOpen) && <LoginModal />}
       </main>
       
       <footer className={styles['login-footer']}>
