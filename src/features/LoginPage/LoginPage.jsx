@@ -30,7 +30,7 @@ const LoginPage = () => {
       
       <header className={styles['login-header']}>
         <h3>
-          Enterprise
+          Enterprise Tracker
         </h3>
         <div className={styles['login-choices']}>
           <button type="button" onClick={loginHandler}>login</button>
@@ -45,7 +45,7 @@ const LoginPage = () => {
       </main>
       
       <footer className={styles['login-footer']}>
-        <p>sunset-sessions</p>
+        <p><i>design&development: </i> <em>sunset-sessions</em></p>
       </footer>
     </div>
   )

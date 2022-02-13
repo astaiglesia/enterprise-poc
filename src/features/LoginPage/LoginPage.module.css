@@ -58,6 +58,9 @@
 }
 
 .login-footer p {
-  /* border: thin solid orange; */
+  font-size: 8px;
   margin: 10px;
+}
+.login-footer em {
+  font-size: 12px;
 }

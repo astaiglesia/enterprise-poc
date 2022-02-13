@@ -15,7 +15,7 @@ import { render } from 'react-dom';
 import { Provider } from 'react-redux'
 
 // ---assets
-import './assets/styles.css';
+import './assets/stylesheets/styles.css';
 import store from './app/store';
 
 // ---components
