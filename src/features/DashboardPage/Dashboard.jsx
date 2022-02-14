@@ -22,8 +22,10 @@ const DashboardPage = () => {
     <React.Fragment>
       <MainHeader />
       <div>ZZ Dashboard</div>
-      <div>Add Stuff</div>
-      <div>Add More Stuff</div>
+      <div>Add Summaries</div>
+      <div>Add Quick Links</div>
+      <div>Add Notes</div>
+      <div>Add Events / Calendar</div>
     </React.Fragment>
   )
 };

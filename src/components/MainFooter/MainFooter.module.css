@@ -1,7 +1,13 @@
-.footer {
-  border: thin solid orange;
-  height: 100px;
+.main-footer{
+  /* border: thin solid blue; */
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-end;
+}
+
+.main-footer p {
+  font-size: 8px;
+  margin: 10px;
+}
+.main-footer em {
+  font-size: 12px;
 }

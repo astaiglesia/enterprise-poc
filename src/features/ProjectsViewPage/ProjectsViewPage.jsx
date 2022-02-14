@@ -11,6 +11,8 @@
 
 import React from 'react';
 
+import styles from "./ProjectsViewPage.module.css"
+
 import MainHeader from '../../components/MainHeader/MainHeader';
 import MainHero from '../../components/MainHero/MainHero';
 import MainFooter from '../../components/MainFooter/MainFooter';
@@ -19,12 +21,15 @@ import Content from '../../components/Content/Content';
 const ProjectViewPage = () => {
 
   return (
-    <React.Fragment>
+    <div className={styles.pages}>
       <MainHeader />
-      <MainHero />
+      <MainHero 
+        heading="Projects Overview" 
+        message="Draft a quick project or search through your database here"
+      />
       <Content />
       <MainFooter />
-    </React.Fragment>
+    </div>
   )
 };
 

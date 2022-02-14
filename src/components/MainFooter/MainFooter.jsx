@@ -5,9 +5,9 @@ import styles from './MainFooter.module.css';
 const MainFooter = () => {
 
   return (
-    <div className={styles.footer}>
-      some footer content here
-    </div>
+    <footer className={styles['main-footer']}>
+      <p><i>design&development: </i> <em>sunset-sessions</em></p>
+    </footer>
   )
 };
 

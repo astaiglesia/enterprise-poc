@@ -1,6 +1,7 @@
 .container {
   background-color: azure;
 
+  height: 80%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

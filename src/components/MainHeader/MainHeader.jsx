@@ -17,8 +17,8 @@ const MainHeader = () => {
             height="100" >
         </img> 
         <nav>
-          <Link className={styles.navlink} to="/dashboard" >Dashboard</Link>
-          <NavLink className={styles.navlink} to="/projects" >Projects</NavLink>
+          <Link className={styles.navlink} to="/dashboard" >Dashboard |</Link>
+          <Link className={styles.navlink} to="/projects" >Projects |</Link>
           <Link className={styles.navlink} to="/manage" >Manage</Link>
         </nav>
       </div>
@@ -27,8 +27,8 @@ const MainHeader = () => {
 
       
       <nav>
-        <Link className={styles.navlink} to="/projects">Quick Draft</Link>
-        <Link className={styles.navlink} to="/">Logout</Link>
+        <Link className={styles.navlink} to="/projects">quick draft |</Link>
+        <Link className={styles.navlink} to="/">logout</Link>
       </nav>
         {/* <div>
             codesplit to a nav component and add your nav items, <a href="https://a11y-style-guide.com/style-guide/section-navigation.html">remember to make it accessible!</a>
