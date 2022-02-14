@@ -4,7 +4,7 @@
   "description": "GraphQL server build on Node with the Express Library",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev:server": "nodemon server.js"
   },
   "author": "sunset-sessions > astaiglesia",
   "license": "ISC",
