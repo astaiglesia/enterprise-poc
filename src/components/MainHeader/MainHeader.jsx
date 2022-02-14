@@ -26,7 +26,7 @@ const MainHeader = () => {
 
 
       
-      <nav>
+      <nav className={styles.quicklinks} >
         <Link className={styles.navlink} to="/projects">quick draft |</Link>
         <Link className={styles.navlink} to="/">logout</Link>
       </nav>

@@ -4,13 +4,16 @@
   /* background-color: aliceblue; */
   
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 }
 
+/* ------ main nav styling ----------- */
 .main-nav {
   display: flex;
-  /* border: thin solid green; */
+  flex-wrap: wrap;
+  border: thin solid green;
 }
 
 .logo-header {
@@ -19,14 +22,15 @@
 }
 
 nav {
-  /* border: thin solid blue; */
+  border: thin solid blue;
   margin: 5px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
 .navlink {
-  /* border: thin solid orange; */
+  border: thin solid orange;
   margin: 2px;
   text-decoration: none;
 
@@ -42,3 +46,8 @@ nav {
   color: blue;
 }
 
+/* ---------- quicklink styling -------- */
+.quicklinks {
+  display: flex;
+  flex-wrap: wrap-reverse;
+}

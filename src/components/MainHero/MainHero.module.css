@@ -1,6 +1,10 @@
 .main-hero {
   border: thin solid orange;
   color: grey;
+
+  display: flex;
+  flex-direction: column;
+  
   text-align: center;
   padding: 25px 0;
 
