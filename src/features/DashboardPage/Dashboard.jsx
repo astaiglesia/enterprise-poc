@@ -15,19 +15,31 @@ import React from 'react';
 import styles from './Dashboard.module.css';
 
 import MainHeader from '../../components/MainHeader/MainHeader';
+import MainHero from '../../components/MainHero/MainHero';
+import MainFooter from '../../components/MainFooter/MainFooter';
+import Content from '../../components/Content/Content';
  
 const DashboardPage = () => {
 
   return (
-    <React.Fragment>
-      <MainHeader />
-      <div>ZZ Dashboard</div>
-      <div>Add Summaries</div>
-      <div>Add Quick Links</div>
-      <div>Add Notes</div>
-      <div>Add Events / Calendar</div>
-    </React.Fragment>
+    <div className={styles.pages}>
+    <MainHeader />
+    <MainHero 
+      heading="Your Dashboard" 
+      message="Global overview of your enterprise business"
+    />
+    {/* <Content /> */}
+    <div>Add Summaries</div>
+    <div>Add Quick Links</div>
+    <div>Add Notes</div>
+    <div>Add Events / Calendar</div>
+    <MainFooter />
+  </div>
   )
 };
 
 export default DashboardPage;
+    <React.Fragment>
+      <MainHeader />
+
+    </React.Fragment>

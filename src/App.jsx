@@ -16,7 +16,7 @@ import { Routes, Route, Link } from "react-router-dom";
 import Login from './features/LoginPage/LoginPage';
 import Dashboard from './features/DashboardPage/Dashboard';
 import Projects from './features/ProjectsViewPage/ProjectsViewPage';
-import ManageProject from './features/EditProjectPage/EditProjectPage';
+import ManageProject from './features/ManageProjectPage/ManageProjectPage';
 import Error404 from './features/Error404Page/Error404Page';
 
 
