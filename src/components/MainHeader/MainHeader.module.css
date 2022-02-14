@@ -13,7 +13,7 @@
 .main-nav {
   display: flex;
   flex-wrap: wrap;
-  border: thin solid green;
+  /* border: thin solid green; */
 }
 
 .logo-header {
@@ -22,7 +22,7 @@
 }
 
 nav {
-  border: thin solid blue;
+  /* border: thin solid blue; */
   margin: 5px;
   display: flex;
   flex-wrap: wrap;
@@ -30,7 +30,7 @@ nav {
 }
 
 .navlink {
-  border: thin solid orange;
+  /* border: thin solid orange; */
   margin: 2px;
   text-decoration: none;
 

@@ -7,9 +7,10 @@ create login modal overlay and backdrop
 - login form 
   - add auth to database
   - debug form actions / fail
+  
 - restructure codebase structure to use routes folder for page views as per [React Router docs recommendation](https://reactrouter.com/docs/en/v6/getting-started/tutorial)
 
-
+- add mobile responsive / media queries
 
 
 ## React Router for 
@@ -26,7 +27,7 @@ create login modal overlay and backdrop
 - create client database for auto fill
 - Shopify connection
 
-- add mobile responsive / media queries
+
 
 
 # Set Up a NodeJS + GraphQL server
