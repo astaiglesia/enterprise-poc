@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 
@@ -47,8 +47,6 @@ const LoginPage = () => {
 
       <main className={styles.loginMain}>
         <img src={zzLogo} alt="zz brand logo"></img> 
-   
-    
       </main>
       
       <footer className={styles['login-footer']}>

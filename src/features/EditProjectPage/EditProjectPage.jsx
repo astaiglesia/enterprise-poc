@@ -9,17 +9,21 @@
 * ********************************************************
 */
 
-import React from 'react';
+import React from "react";
 
-import styles from './EditProjectPage.module.css'
+import styles from "./EditProjectPage.module.css";
+
+import MainHeader from "../../components/MainHeader/MainHeader";
+
  
- const EditProjectPage = () => {
- 
-   return (
-     <React.Fragment>
+const EditProjectPage = () => {
+
+  return (
+    <React.Fragment>
+      <MainHeader />
       <div>Page to Edit Orders From</div>
-     </React.Fragment>
-   )
- };
- 
- export default EditProjectPage;
+    </React.Fragment>
+  )
+};
+
+export default EditProjectPage;

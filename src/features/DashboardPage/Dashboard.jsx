@@ -12,17 +12,20 @@
 
 import React from 'react';
 
-import styles from './Dashboard.module.css'
+import styles from './Dashboard.module.css';
+
+import MainHeader from '../../components/MainHeader/MainHeader';
  
- const DashboardPage = () => {
- 
-   return (
-     <React.Fragment>
+const DashboardPage = () => {
+
+  return (
+    <React.Fragment>
+      <MainHeader />
       <div>ZZ Dashboard</div>
       <div>Add Stuff</div>
       <div>Add More Stuff</div>
-     </React.Fragment>
-   )
- };
- 
- export default DashboardPage;
+    </React.Fragment>
+  )
+};
+
+export default DashboardPage;

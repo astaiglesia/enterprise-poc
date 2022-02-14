@@ -16,7 +16,7 @@ import { Routes, Route, Link } from "react-router-dom";
 import Login from './features/LoginPage/LoginPage';
 import Dashboard from './features/DashboardPage/Dashboard';
 import Projects from './features/ProjectsViewPage/ProjectsViewPage';
-import EditProject from './features/EditProjectPage/EditProjectPage';
+import ManageProject from './features/EditProjectPage/EditProjectPage';
 import Error404 from './features/Error404Page/Error404Page';
 
 
@@ -27,7 +27,7 @@ const App = () => {
       <Route path="/" element={<Login />} />
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/projects" element={<Projects />} />
-      <Route path="/edit" element={<EditProject />} />
+      <Route path="/manage" element={<ManageProject />} />
       <Route path="*" element={<Error404 />} />
     </Routes>
   )

@@ -1,14 +1,44 @@
 .main-header {
-  border: 3px dashed grey;
+  /* border: 3px dashed grey; */
   height: 75px;
-  background-color: aliceblue;
-
+  /* background-color: aliceblue; */
+  
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
 }
 
-nav {
-  border: 2px solid red;
-  margin: 5px;
+.main-nav {
+  display: flex;
+  /* border: thin solid green; */
 }
+
+.logo-header {
+  /* border: thin solid red; */
+  margin: 0;
+}
+
+nav {
+  /* border: thin solid blue; */
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+}
+
+.navlink {
+  /* border: thin solid orange; */
+  margin: 2px;
+  text-decoration: none;
+
+  display: flex;
+  align-items: center;
+}
+
+.navlink:hover, .navlink:focus {
+  color: orangered;
+}
+
+.navlink:active {
+  color: blue;
+}
+
