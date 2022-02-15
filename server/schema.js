@@ -1,3 +1,7 @@
+const express = require('express');
+const app = express();
+const axios = require('axios');
+
 const {
   GraphQLObjectType,
   GraphQLString,
@@ -6,8 +10,6 @@ const {
   GraphQLList,
   GraphQLNonNull,
 } = require('graphql');
-
-
 
 // ======== Object Types
 // ----- Project Type 
@@ -50,33 +52,105 @@ const RootQuery = new GraphQLObjectType({
   name: 'RootQueryType',
   // each field is a query definition
   fields: {
-    // queries all projects -> evaluates to a list
+    // ---- GET all projects
     projects: {
       type: new GraphQLList(ProjectType),
       resolve(parentvalue, args){
-        return mockProjects;
+        return axios.get(`http://localhost:3000/projects/`)
+        .then(res => res.data);
       }
     },
-    // queries a single project, by id
+    // ----- GET a single project, by id
     project: {
       type: ProjectType,
       args: {
         id: {type: GraphQLString},
       },
       resolve(parentvalue, args){
-        for (let i = 0; i < mockProjects.length; i++) {
-          if (mockProjects[i].id == args.id) return mockProjects[i];
+          return axios.get(`http://localhost:3000/projects/${args.id}`)
+                      .then(res => res.data);
+
+          // -- ## try to understand using express here / why it doesn't work as expected
+          // app.get(`http://localhost:3000/projects/`)
+          //     .then(res => res.json)
+          //     .then(data => console.log(data))       
         }
       }
+    }
+  }
+)
+
+
+
+
+
+// ====== MUTATIONS
+// provide create, update and delete functionality
+const mutation = new GraphQLObjectType({
+  name: "Mutation",
+  fields: {
+    // ----- POST a single project, api/db's typically add an id by default
+    addProject: {
+      type: ProjectType,
+      args: {
+        orderState: {type: GraphQLString},
+        nickname: {type: new GraphQLNonNull(GraphQLString)},
+        location: {type: new GraphQLNonNull(GraphQLString)},
+        client: {type: new GraphQLNonNull(GraphQLString)},
+        company: {type: GraphQLString},
+        deliveryDate: {type: GraphQLString},
+        rentalTerm: {type: GraphQLString},
+        tag: {type: GraphQLString},
+      },
+      resolve(parentvalue, args){
+        return axios.post('http://localhost:3000/projects/', {
+          orderState: args.orderState,
+          nickname: args.nickname,
+          location: args.location,
+          client: args.client,
+          company: args.company,
+          deliveryDate: args.deliveryDate,
+          rentalTerm: args.rentalTerm,
+          tag: args.tag,
+        })
+        .then(res => res.data)
+      }
     },
+    // // ----- UPDATE a single project, by id
+    // editProject: {
+    //   type: ProjectType,
+    //   args: {
+    //     id: {type: GraphQLString},
+    //   },
+    //   resolve(parentvalue, args){
+    //       return axios.get(`http://localhost:3000/projects/${args.id}`)
+    //                   .then(res => res.data);
+
+     
+    //     }
+    //   },
+    // // ----- DELETE a single project, by id
+    // deleteProject: {
+    //   type: ProjectType,
+    //   args: {
+    //     id: {type: GraphQLString},
+    //   },
+    //   resolve(parentvalue, args){
+    //       return axios.get(`http://localhost:3000/projects/${args.id}`)
+    //                   .then(res => res.data);
+ 
+    //     }
+    //   }
   }
 })
+
 
 
 
 // gql schema accepts a root query as an arg
 module.exports = new GraphQLSchema({
   query: RootQuery,
+  mutation
 })
 
 

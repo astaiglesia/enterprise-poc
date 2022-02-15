@@ -4,11 +4,13 @@
   "description": "GraphQL server build on Node with the Express Library",
   "main": "server.js",
   "scripts": {
-    "dev:server": "nodemon server.js"
+    "dev:server": "nodemon server.js",
+    "json:server": "json-server --watch assets/data.json"
   },
   "author": "sunset-sessions > astaiglesia",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.26.0",
     "express": "^4.17.2",
     "express-graphql": "^0.12.0",
     "graphql": "^15.8.0",

@@ -2,7 +2,7 @@ const express = require('express');
 const { graphqlHTTP } = require('express-graphql');
 const schema = require('./schema.js')
 
-const server =  express();
+const server = express();
 
 // client entry point for our graphQL server
 server.use('/graphql', graphqlHTTP({

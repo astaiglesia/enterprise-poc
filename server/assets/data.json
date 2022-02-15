@@ -1,0 +1,44 @@
+{
+  "projects": [
+    {
+      "id": "1",
+      "orderState": "Draft",
+      "nickname": "Google Tribeca",
+      "location": "New York City",
+      "client": "Alfie S",
+      "company": "Vaulted Oak",
+      "deliveryDate": "new Date(2022, 5, 15)",
+      "rentalTerm": "12 months",
+      "tag": "Breakout Spaces"
+    },
+    {
+      "id": "2",
+      "orderState": "Reserved",
+      "nickname": "Blackrock Hudson Yards",
+      "location": "New York City",
+      "client": "Alfie S",
+      "company": "Vaulted Oak",
+      "deliveryDate": "new Date(2022, 1, 15)",
+      "rentalTerm": "12 months",
+      "tag": "Guest Lounges"
+    },
+    {
+      "id": "3",
+      "orderState": "Draft",
+      "nickname": "Wework Vesey St",
+      "location": "New York City",
+      "client": "Fake Client",
+      "company": "WeWork",
+      "deliveryDate": "new Date(2022, 7, 15)",
+      "rentalTerm": "12 months",
+      "tag": "Common Areas"
+    },
+    {
+      "orderState": "Draft",
+      "nickname": "Google",
+      "location": "Meatpacking",
+      "client": "Alfie",
+      "id": "IXSWTAG"
+    }
+  ]
+}
