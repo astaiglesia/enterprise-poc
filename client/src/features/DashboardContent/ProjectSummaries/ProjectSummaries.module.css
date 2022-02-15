@@ -1,0 +1,11 @@
+.summaries {
+  border: thin solid green;
+  width: 50%;
+  
+  display: flex;
+  flex-direction: column;
+}
+
+.summary {
+  text-decoration: none;
+}
