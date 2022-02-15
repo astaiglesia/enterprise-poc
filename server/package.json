@@ -4,7 +4,8 @@
   "description": "GraphQL server build on Node with the Express Library",
   "main": "server.js",
   "scripts": {
-    "dev:server": "nodemon server.js",
+    "start": "node server.js",
+    "server": "nodemon server.js",
     "json:server": "json-server --watch assets/data.json"
   },
   "author": "sunset-sessions > astaiglesia",

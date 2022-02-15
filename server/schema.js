@@ -9,6 +9,7 @@ const {
   GraphQLSchema,
   GraphQLList,
   GraphQLNonNull,
+  Gr
 } = require('graphql');
 
 // ======== Object Types
@@ -26,22 +27,95 @@ const ProjectType = new GraphQLObjectType({
     deliveryDate: {type: GraphQLString},
     rentalTerm: {type: GraphQLString},
     tag: {type: GraphQLString},
+    projectProfile: {type: ProjectProfileType },
+    clientProfile: {type: ClientProfileType },
+    billingProfile: {type: BillingProfileType },
+    shopifyOrder: {type: OrderType},
   })
 })
 
 
 // ## Connect to Shopify API and determine the available data types for use in our app
-// ----- Product Type
-
-
-
-// ----- Order Type
+// ----- Product Mix
 // GQLList
+const OrderType = new GraphQLObjectType({
+  name: 'OrderType',
+  fields: () => ({
+    id: {type: GraphQLString},
+    orderNumber: {type: GraphQLString},
+    productMix: {type: GraphQLList}
+  })
+})
+
+// ----- Product Type
+const ProductType = new GraphQLObjectType({
+  name: 'ProductType',
+  fields: () => ({
+    id: {type: GraphQLString},
+    title: {type: GraphQLString},
+    option: {type: GraphQLString},
+    color: {type: GraphQLString},
+    sku: {type: GraphQLString},
+    supplyChain: {type: GraphQLString},
+    quantity: {type: GraphQLInt},
+    term: {type: GraphQLString},
+    cost: {type: GraphQLInt},
+    // image: {type: GraphQL}
+  })
+})
 
 
+// ----- Project Profile
+const ProjectProfileType = new GraphQLObjectType({
+  name: 'ProjectProfile',
+  fields: () => ({
+    id: {type: GraphQLString},
+    nickname: {type: GraphQLString},
+    address: {type: GraphQLString},
+    unit: {type: GraphQLString},
+    country: {type: GraphQLString},
+    state: {type: GraphQLString},
+    zip: {type: GraphQLString},
+    deliveryDate: {type: GraphQLString},
+    notes: {type: GraphQLString},
+    tag: {type: GraphQLString},
+  })
+})
 
-// ----- Client Details Type
+// ----- Client Profile
+const ClientProfileType = new GraphQLObjectType({
+  name: 'ClientProfile',
+  fields: () => ({
+    id: {type: GraphQLString},
+    firstName: {type: GraphQLString},
+    lastName: {type: GraphQLString},
+    company: {type: GraphQLString},
+    address: {type: GraphQLString},
+    unit: {type: GraphQLString},
+    country: {type: GraphQLString},
+    state: {type: GraphQLString},
+    zip: {type: GraphQLString},
+    email: {type: GraphQLString},
+    phone: {type: GraphQLString},
+  })
+})
 
+// ----- Billing Profile
+const BillingProfileType = new GraphQLObjectType({
+  name: 'BillingProfile',
+  fields: () => ({
+    id: {type: GraphQLString},
+    firstName: {type: GraphQLString},
+    lastName: {type: GraphQLString},
+    address: {type: GraphQLString},
+    unit: {type: GraphQLString},
+    country: {type: GraphQLString},
+    state: {type: GraphQLString},
+    zip: {type: GraphQLString},
+    email: {type: GraphQLString},
+    phone: {type: GraphQLString},
+  })
+})
 
 
 // ======== Queries
@@ -61,6 +135,7 @@ const RootQuery = new GraphQLObjectType({
         .then(res => res.data);
       }
     },
+    
     // ----- GET a single project, by id
     project: {
       type: ProjectType,
@@ -77,6 +152,9 @@ const RootQuery = new GraphQLObjectType({
           //     .then(data => console.log(data))       
         }
       }
+    
+    // ---- GET order
+
     }
   }
 )
