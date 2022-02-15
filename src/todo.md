@@ -1,5 +1,6 @@
 ## DONE
 create login modal overlay and backdrop
+setup client side routing to pageviews
 
 ## TODO
 - convert id to UUID
@@ -12,8 +13,19 @@ create login modal overlay and backdrop
 
 
 
-## React Router for 
+## React Router 
+- build Navbar component
+- sidebar to expand the project profile view
+- authorization
+
+## UI
+- build out the main header
+- scaffold and develop the page views
+  - edit order
+  - dashboard
+  - 404
 - edit order view
+  - create search components
   - create shopping cart and add to project state
   - drag and drop of list items
 
