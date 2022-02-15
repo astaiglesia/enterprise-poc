@@ -17,7 +17,7 @@ import styles from './Dashboard.module.css';
 import MainHeader from '../../components/MainHeader/MainHeader';
 import MainHero from '../../components/MainHero/MainHero';
 import MainFooter from '../../components/MainFooter/MainFooter';
-import Content from '../../components/Content/Content';
+import Content from '../../features/ProjectContent/ProjectContent';
  
 const DashboardPage = () => {
 

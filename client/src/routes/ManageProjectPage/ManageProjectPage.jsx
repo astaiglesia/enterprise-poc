@@ -15,7 +15,7 @@ import styles from "./ManageProjectPage.module.css";
 
 import MainHeader from "../../components/MainHeader/MainHeader";
 import MainHero from "../../components/MainHero/MainHero";
-import Content from "../../components/Content/Content";
+import Content from "../../features/ProjectContent/ProjectContent";
 import MainFooter from "../../components/MainFooter/MainFooter";
 
  
