@@ -3,12 +3,13 @@ import styles from './CardListContainer.module.css';
 
 import ProjectList from '../ProjectList/ProjectList';
 
-const CardListContainer = () => {
+const CardListContainer = props => {
   
   return (
 
     <section className={styles['list-container']}>
       <div className={styles['list-headings']}> 
+        <button type="button" onClick={props.toggleSidebar} > + </button>
         <h3>State</h3>
         <h3>Nickname</h3>
         <h3>Location</h3>

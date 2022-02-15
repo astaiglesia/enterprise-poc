@@ -1,4 +1,4 @@
-.ordercard {
+.snippet-card {
   border: thin solid orange;
 
   display: flex;
@@ -8,10 +8,10 @@
   min-height: 50px;
 }
 
-.ordercard:hover {
+.snippet-card:hover {
   background-color: blue;
 }
-.ordercard:hover .card-field{
+.snippet-card:hover .card-field{
   color: white;
 }
 

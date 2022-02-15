@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import styles from  "./MainHeader.module.css";
 import zzSmallLogo from "../../assets/images/mstile-150x150.png"
@@ -10,7 +10,7 @@ const MainHeader = () => {
     <header className={styles['main-header']}>
 
       <div className={styles['main-nav']}>
-        <img classname={styles['logo-header']}  
+        <img className={styles['logo-header']}  
             src={zzSmallLogo} 
             alt="zz logo" 
             width="100" 
