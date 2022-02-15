@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
 import projectFormReducer from '../features/ProjectForm/projectFormSlice';
 import projectListReducer from '../features/ProjectList/ProjectList/projectListSlice';
-import loginFormReducer from '../features/LoginPage/LoginModal/loginModalSlice';
-import loginPageReducer from '../features/LoginPage/loginPageSlice';
+import loginFormReducer from '../routes/LoginPage/LoginModal/loginModalSlice';
+import loginPageReducer from '../routes/LoginPage/loginPageSlice';
 
 // create the Redux Store
 export default configureStore({

@@ -11,13 +11,13 @@
  */
 
 import React from 'react';
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
-import Login from './features/LoginPage/LoginPage';
-import Dashboard from './features/DashboardPage/Dashboard';
-import Projects from './features/ProjectsViewPage/ProjectsViewPage';
-import ManageProject from './features/ManageProjectPage/ManageProjectPage';
-import Error404 from './features/Error404Page/Error404Page';
+import Login from './routes/LoginPage/LoginPage';
+import Dashboard from './routes/DashboardPage/Dashboard';
+import Projects from './routes/ProjectsViewPage/ProjectsViewPage';
+import ManageProject from './routes/ManageProjectPage/ManageProjectPage';
+import Error404 from './routes/Error404Page/Error404Page';
 
 
 const App = () => {
