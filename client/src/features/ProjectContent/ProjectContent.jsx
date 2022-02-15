@@ -6,18 +6,18 @@ import React from "react";
 
 import styles from './ProjectContent.module.css'
 
-import ProjectForm from "../ProjectForm/ProjectForm";
-import ProjectListContainer from "../ProjectList/CardListContainer/CardListContainer";
+import ProjectForm from "./ProjectForm/ProjectForm";
+import ProjectListContainer from "./ProjectList/CardListContainer/CardListContainer";
 
 
-const Content = () => {
+const ProjectContent = () => {
   
   return (
-    <div className={styles.container}>
+    <div className={styles['content-container']}>
       <ProjectForm />
       <ProjectListContainer />
     </div>
   )
 };
 
-export default Content;
+export default ProjectContent;
