@@ -11,7 +11,8 @@
  */
 
 import React from 'react';
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route } from 'react-router-dom';
+import { ApolloClient, ApolloProvider } from '@apollo/client';
 
 import Login from './routes/LoginPage/LoginPage';
 import Dashboard from './routes/DashboardPage/Dashboard';
@@ -19,6 +20,7 @@ import Projects from './routes/ProjectsViewPage/ProjectsViewPage';
 import ManageProject from './routes/ManageProjectPage/ManageProjectPage';
 import Error404 from './routes/Error404Page/Error404Page';
 
+// add proxy 
 
 const App = () => {
   
@@ -34,6 +36,3 @@ const App = () => {
 }
 
 export default App;
-
-// import BrowserRouter, Routes, Route, Link for React Router
-
