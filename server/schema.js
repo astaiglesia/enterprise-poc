@@ -36,10 +36,11 @@ const ProjectType = new GraphQLObjectType({
 
 
 // ----- Order Type
+// GQLList
 
 
 
-// ----- Client Type
+// ----- Client Details Type
 
 
 
@@ -81,9 +82,6 @@ const RootQuery = new GraphQLObjectType({
 )
 
 
-
-
-
 // ====== MUTATIONS
 // provide create, update and delete functionality
 const mutation = new GraphQLObjectType({
@@ -116,35 +114,47 @@ const mutation = new GraphQLObjectType({
         .then(res => res.data)
       }
     },
-    // // ----- UPDATE a single project, by id
-    // editProject: {
-    //   type: ProjectType,
-    //   args: {
-    //     id: {type: GraphQLString},
-    //   },
-    //   resolve(parentvalue, args){
-    //       return axios.get(`http://localhost:3000/projects/${args.id}`)
-    //                   .then(res => res.data);
-
-     
-    //     }
-    //   },
-    // // ----- DELETE a single project, by id
-    // deleteProject: {
-    //   type: ProjectType,
-    //   args: {
-    //     id: {type: GraphQLString},
-    //   },
-    //   resolve(parentvalue, args){
-    //       return axios.get(`http://localhost:3000/projects/${args.id}`)
-    //                   .then(res => res.data);
- 
-    //     }
-    //   }
+    // ----- UPDATE a single project, by id
+    editProject: {
+      type: ProjectType,
+      args: {
+        id: {type: new GraphQLNonNull(GraphQLString)},
+        orderState: {type: GraphQLString},
+        nickname: {type: GraphQLString},
+        location: {type: GraphQLString},
+        client: {type: GraphQLString},
+        company: {type: GraphQLString},
+        deliveryDate: {type: GraphQLString},
+        rentalTerm: {type: GraphQLString},
+        tag: {type: GraphQLString},
+      },
+      resolve(parentvalue, args){
+        return axios.patch(`http://localhost:3000/projects/${args.id}`, {
+          orderState: args.orderState,
+          nickname: args.nickname,
+          location: args.location,
+          client: args.client,
+          company: args.company,
+          deliveryDate: args.deliveryDate,
+          rentalTerm: args.rentalTerm,
+          tag: args.tag,
+        })
+        .then(res => res.data)
+      }
+    },
+    // ----- DELETE a single project, by id
+    deleteProject: {
+      type: ProjectType,
+      args: {
+        id: {type: new GraphQLNonNull(GraphQLString)},
+      },
+      resolve(parentvalue, args){
+        return axios.delete(`http://localhost:3000/projects/${args.id}`)
+        .then(res => res.data)
+      }
+    }
   }
 })
-
-
 
 
 // gql schema accepts a root query as an arg
