@@ -33,3 +33,15 @@ const App = () => {
 }
 
 ```
+
+## Create a Query Component
+> Projects.jsx
+
+
+```
+import { gql, useQuery } from '@react/apollo';
+
+```
+
+- define a query
+- 
