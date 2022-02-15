@@ -8,7 +8,9 @@ create login modal overlay and backdrop
   - add auth to database
   - debug form actions / fail
   
-- restructure codebase structure to use routes folder for page views as per [React Router docs recommendation](https://reactrouter.com/docs/en/v6/getting-started/tutorial)
+- restructure / refactor codebase:
+  - structure to use routes folder for page views as per [React Router docs recommendation](https://reactrouter.com/docs/en/v6/getting-started/tutorial)
+  - refactor cardlist into proper ul with li's
 
 - add mobile responsive / media queries
 
