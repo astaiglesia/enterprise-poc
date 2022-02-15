@@ -11,5 +11,5 @@ server.use('/graphql', graphqlHTTP({
 }));
 
 // spin up the server
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 5000;
 server.listen(PORT, () => console.log(`Express + GraphQL server is live and listening on port ${PORT}`))

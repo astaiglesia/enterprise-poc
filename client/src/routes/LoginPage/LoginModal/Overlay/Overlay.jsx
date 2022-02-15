@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
@@ -50,7 +50,7 @@ const LoginOverlay = () => {
   console.log(isValidUser, didAuthFail);
 
   // ---- handle site entry for auth'd users and guests with no login
-  const validEntryHandler = () => navigate('/dashboard');
+  const validEntryHandler = useCallback(() => navigate('/dashboard'), [navigate]);
 
   const loginAttemptHandler = e => {
     e.preventDefault();
