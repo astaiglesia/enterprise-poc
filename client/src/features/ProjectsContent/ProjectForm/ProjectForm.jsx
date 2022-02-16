@@ -18,6 +18,15 @@ const ProjectForm = () => {
     tag: '',
   });
 
+  const stateHandler = (e) => {
+    setFormData(currentState => {
+      return {
+        ...currentState,
+        orderState: e.target.value,
+      }
+    })
+  };
+  
   const nicknameHandler = (e) => {
     setFormData(currentState => {
       return {
@@ -103,6 +112,22 @@ const ProjectForm = () => {
     <form className={styles.form} onSubmit={formSubmissionHandler}>
       <h2>Project Profile</h2>
       
+      <label htmlFor="orderState" >Order State</label>
+      <select type="text" 
+              name="orderState"   
+              id="orderState" 
+              value={formData.orderState}
+              onChange={stateHandler} >
+        <option value="Draft" defaultValue>Draft</option>
+        <option value="Reserved">Reserved</option>
+        <option value="onDeposit">onDeposit</option>
+        <option value="Approved">Approved</option>
+        <option value="Subscribed">Subscribed</option>
+        <option value="Cancelled">Cancelled</option>
+        <option value="Closed">Closed</option>
+        <option value="Flagged">Flagged</option>
+      </select>
+
       <label htmlFor="nickname" >Project Nickname* </label>
       <input type="text" 
               name="nickname" 

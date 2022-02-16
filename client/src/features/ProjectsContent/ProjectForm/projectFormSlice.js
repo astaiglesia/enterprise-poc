@@ -2,13 +2,11 @@ import { createSlice } from "@reduxjs/toolkit";
 
 
 // create slice to handle the project form state
-// start simply with required fields only
 export const projectFormSlice = createSlice({
   name: 'projectForm',
   initialState: {
-    // -- orderState property may be edited in future feature
-    orderState: 'Draft',
-    nickname: 'initial name',
+    orderState: '',
+    nickname: '',
     location: '',
     client: '',
     company: '',
@@ -30,6 +28,5 @@ export const projectFormSlice = createSlice({
 export const { changeNickname, changeLocation, changeClient } = projectFormSlice.actions;
 
 export const selectNickname = state => state.projectForm.nickname;
-
 
 export default projectFormSlice.reducer;
