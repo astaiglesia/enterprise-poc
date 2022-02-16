@@ -15,8 +15,26 @@ export const GET_SNIPPETS = gql`
   }
 `;
 
+export const GET_DRAFTS = gql`
+  query GetDrafts {
+    sortedState(orderState: "Draft") {
+      id
+      orderState
+      nickname
+      location
+      client
+      company
+      deliveryDate
+      rentalTerm
+      tag
+    }
+  }
+`;
+
+
 const GQL = {
-  GET_SNIPPETS
+  GET_SNIPPETS, 
+  GET_DRAFTS
 };
 
 export default GQL;

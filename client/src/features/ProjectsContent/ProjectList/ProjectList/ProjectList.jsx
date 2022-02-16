@@ -2,9 +2,11 @@ import React from 'react';
 import { useQuery } from '@apollo/client';
 
 import styles from './ProjectList.module.css';
-import { GET_SNIPPETS } from '../../../../helpers/Queries'
+import { GET_SNIPPETS, GET_DRAFTS } from '../../../../helpers/Queries'
 
 import SnippetCard from '../SnippetCard/SnippetCard';
+
+// define logic (conditional state??) to redefine query and mapping based on filter button clicks
 
 
 const ProjectList = () => {
@@ -14,7 +16,8 @@ const ProjectList = () => {
 
   // GraphQL Query to Database
   // - returned data to be mapped to Order Cards
-  const { loading, error, data } = useQuery(GET_SNIPPETS);
+  // const { loading, error, data } = useQuery(GET_SNIPPETS);
+  const { loading, error, data } = useQuery(GET_DRAFTS);
 
   console.log(data)
 
@@ -22,13 +25,14 @@ const ProjectList = () => {
     : (error) ? <h3> `Error! ${error.message}` </h3>
     : (
         <div className={styles.cardlist}>
-          {data.projects.map( snippet => (
+          {/* {data.projects.map( snippet => ( */}
+          {data.sortedState.map( snippet => (
               <SnippetCard key={snippet.id} snippetData={snippet}/>
             ))}
         </div>
       )
 };
- 
+
 
 export default ProjectList;
 

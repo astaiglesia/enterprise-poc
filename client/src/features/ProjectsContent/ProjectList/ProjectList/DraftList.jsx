@@ -1,42 +1,58 @@
-import React from 'react';
-import { useQuery } from '@apollo/client';
+// import React, { useState } from 'react';
+// import { gql, useQuery } from '@apollo/client';
 
-import styles from './ProjectList.module.css';
-import { GET_SNIPPETS } from '../../../../helpers/Queries'
+// import styles from './ProjectList.module.css';
+// // import { GET_SNIPPETS } from '../../../../helpers/Queries';
 
-import SnippetCard from '../SnippetCard/SnippetCard';
+// import SnippetCard from '../SnippetCard/SnippetCard';
 
 
-const ProjectList = () => {
-  // mock data serving as initial state in prototype iteration... 
-  // -- assuming we can use the id here to query for heavier data loads per project to minimize traffic
-  // const mockProfiles = useSelector(state => state.projectList)
+// const ProjectList = () => {
+//   const ALL_SNIPPETS = gql`
+//     query AllSnippets {
+//       projects {
+//         id
+//         orderState
+//         nickname
+//         location
+//         client
+//         company
+//         rentalTerm
+//         tag
+//       }
+//     }
+//   `;
+  
 
-  // GraphQL Query to Database
-  // - returned data to be mapped to Order Cards
-  const { loading, error, data } = useQuery(GET_SNIPPETS);
+    
+//   const [queryArg, setQueryArg] = useState(ALL_SNIPPETS);
 
-  console.log(data)
 
-  return (loading) ? <h3> Loading... </h3>
-    : (error) ? <h3> `Error! ${error.message}` </h3>
-    : (
-        <div className={styles.cardlist}>
-          {data.projects.map( snippet => (
-              <SnippetCard key={snippet.id} snippetData={snippet}/>
-            ))}
-        </div>
-      )
-};
+//   // GraphQL Query to Database
+//   // - returned data to be mapped to Order Cards
+//   const { loading, error, data } = useQuery(queryArg);
+
+//   console.log(data)
+
+//   return (loading) ? <h3> Loading... </h3>
+//     : (error) ? <h3> `Error! ${error.message}` </h3>
+//     : (
+//         <div className={styles.cardlist}>
+//           {data.projects.map( snippet => (
+//               <SnippetCard key={snippet.id} snippetData={snippet}/>
+//             ))}
+//         </div>
+//       )
+// };
  
 
-export default ProjectList;
+// export default ProjectList;
 
 
 
-/* ##
-- fetch list from database
-- add search/filter 
-- sort by heading (on heading click)
-- add scroll / pagination
-*/ 
+// /* ##
+// - fetch list from database
+// - add search/filter 
+// - sort by heading (on heading click)
+// - add scroll / pagination
+// */ 

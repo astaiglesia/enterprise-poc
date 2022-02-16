@@ -12,7 +12,7 @@ const CardListContainer = props => {
         <button type="button" onClick={props.toggleSidebar} className={styles['create-button']}> + </button>
 
         <div className={styles.search}>
-          <label for="orderSearch">project filter</label>
+          <label htmlFor="orderSearch">project filter</label>
             <input type="search" id="site-search" name="q" aria-label="Search through site content"/>
           <button>></button>
         </div>

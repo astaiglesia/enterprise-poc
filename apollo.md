@@ -92,8 +92,7 @@ const Snippets = ({ onSnippetSelected }) => {
 > server/schema.js
 
 - in your Root Query (or other QueryType) define a new schema
-  - in the example below we will define a schema to retrieve all entries containing an orderState value of "Draft", "Reserved", etc ...
+  - in the example below we will define a schema to filter for entries containing an orderState value of "Draft", "Reserved", etc ...
   - use graphiql to test your query (open the host port your server is configured to listen with the path /graphql)
   e.g. ``` localhost:5000/graphql```
   - also, if you want to quickly create your own sandbox/mock REST api for local dev - look into JSONserver
-  
