@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './CardListContainer.module.css';
 
 import ProjectList from '../ProjectList/ProjectList';
+import { GET_SNIPPETS, GET_DRAFTS, GET_RESERVED } from '../../../../helpers/Queries'
 
 const CardListContainer = props => {
-  
+  const [ filter, setFilter ] = useState(GET_SNIPPETS);
+  // const [ isFilterOn, setIsFilterOn ] = useState(false);
+
+  const draftFilterHandler = () => {
+    // setIsFilterOn(true);
+    setFilter(GET_DRAFTS);
+  }
+
   return (
 
     <section className={styles['list-container']}>
@@ -18,7 +26,7 @@ const CardListContainer = props => {
         </div>
 
         <div className={styles.quicklinks}>
-          <button type="button" onClick={props.toggleSidebar} className={styles['quick-sort']}> drafts </button>
+          <button type="button" onClick={draftFilterHandler} className={styles['quick-sort']}> drafts </button>
           <button type="button" onClick={props.toggleSidebar} className={styles['quick-sort']}> reserved </button>
           <button type="button" onClick={props.toggleSidebar} className={styles['quick-sort']}> onDeposit </button>
           <button type="button" onClick={props.toggleSidebar} className={styles['quick-sort']}> approved </button>
@@ -29,7 +37,7 @@ const CardListContainer = props => {
       </div>
 
       <div >
-        <ProjectList />
+        <ProjectList filter={filter} />
       </div>
     </section>
 

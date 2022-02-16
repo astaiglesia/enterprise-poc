@@ -17,7 +17,23 @@ export const GET_SNIPPETS = gql`
 
 export const GET_DRAFTS = gql`
   query GetDrafts {
-    sortedState(orderState: "Draft") {
+    sortedState (orderState: "Draft") {
+      id
+      orderState
+      nickname
+      location
+      client
+      company
+      deliveryDate
+      rentalTerm
+      tag
+    }
+  }
+`;
+
+export const GET_RESERVED = gql`
+  query GetReserved {
+    sortedState (orderState: "Reserved") {
       id
       orderState
       nickname
@@ -34,7 +50,8 @@ export const GET_DRAFTS = gql`
 
 const GQL = {
   GET_SNIPPETS, 
-  GET_DRAFTS
+  GET_DRAFTS, 
+  GET_RESERVED
 };
 
 export default GQL;
