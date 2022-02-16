@@ -120,12 +120,11 @@ const BillingProfileType = new GraphQLObjectType({
 
 // ======== Queries
 // ----- Root Query 
-// -- each fields property defines an associated nested query
-// -- we can/will create more query types as needed
-// create project queries for each filter type
 const RootQuery = new GraphQLObjectType({
   name: 'RootQueryType',
-  // each field is a query definition
+
+  // each field defines a query schema 
+  // create project queries for each filter type
   fields: {
     // ---- GET all projects
     projects: {
@@ -143,17 +142,22 @@ const RootQuery = new GraphQLObjectType({
         id: {type: GraphQLString},
       },
       resolve(parentvalue, args){
-          return axios.get(`http://localhost:3000/projects/${args.id}`)
-                      .then(res => res.data);
-
-          // -- ## try to understand using express here / why it doesn't work as expected
-          // app.get(`http://localhost:3000/projects/`)
-          //     .then(res => res.json)
-          //     .then(data => console.log(data))       
-        }
+        return axios.get(`http://localhost:3000/projects/${args.id}`)
+                    .then(res => res.data);  
       }
-    
-    // ---- GET order 
+    },
+
+    // ---- GET all projects, by state
+    sortedState: {
+      type: new GraphQLList(ProjectType),
+      args: {
+        orderState: {type: GraphQLString},
+      },
+      resolve(parentvalue, args){
+        return axios.get(`http://localhost:3000/projects?orderState=${args.orderState}`)
+        .then(res => res.data);
+      }
+    },
 
     }
   }

@@ -43,7 +43,8 @@ import { gql, useQuery } from '@react/apollo';
 
 ```
 
-- define a query
+- (assuming a server side query schema exists) define a client-side query
+  - if no schema field for your query exists, see below
 - use graphiql sandbox to create the query (i.e. all code within the curly brackets)
 
 ```
@@ -86,3 +87,13 @@ const Snippets = ({ onSnippetSelected }) => {
   );
 };
 ```
+
+## Define a server-side query field
+> server/schema.js
+
+- in your Root Query (or other QueryType) define a new schema
+  - in the example below we will define a schema to retrieve all entries containing an orderState value of "Draft", "Reserved", etc ...
+  - use graphiql to test your query (open the host port your server is configured to listen with the path /graphql)
+  e.g. ``` localhost:5000/graphql```
+  - also, if you want to quickly create your own sandbox/mock REST api for local dev - look into JSONserver
+  
