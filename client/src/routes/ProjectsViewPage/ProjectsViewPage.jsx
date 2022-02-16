@@ -16,7 +16,7 @@ import styles from "./ProjectsViewPage.module.css"
 import MainHeader from '../../components/MainHeader/MainHeader';
 import MainHero from '../../components/MainHero/MainHero';
 import MainFooter from '../../components/MainFooter/MainFooter';
-import Content from '../../features/ProjectContent/ProjectContent';
+import Content from '../../features/ProjectsContent/ProjectContent';
 
 const ProjectViewPage = () => {
 

@@ -7,7 +7,7 @@ import { GET_SNIPPETS } from '../../../../helpers/Queries'
 import SnippetCard from '../SnippetCard/SnippetCard';
 
 
-const CardList = () => {
+const ProjectList = () => {
   // mock data serving as initial state in prototype iteration... 
   // -- assuming we can use the id here to query for heavier data loads per project to minimize traffic
   // const mockProfiles = useSelector(state => state.projectList)
@@ -30,7 +30,7 @@ const CardList = () => {
  };
  
 
-export default CardList;
+export default ProjectList;
 
 
 

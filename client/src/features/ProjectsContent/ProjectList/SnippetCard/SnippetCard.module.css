@@ -58,7 +58,7 @@
 .snippet-card:hover {
   background-color: blue;
 }
-.snippet-card:hover > div {
+.snippet-card:hover > div, .snippet-card:hover > h3{
   color: white;
 }
 
