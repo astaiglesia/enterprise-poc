@@ -2,7 +2,7 @@ import React from 'react';
 import { useQuery } from '@apollo/client';
 
 import styles from './ProjectList.module.css';
-import { GET_SNIPPETS } from '../../../../helpers/Queries';
+import { GET_SNIPPETS } from '../../../../helpers/Queries'
 
 import SnippetCard from '../SnippetCard/SnippetCard';
 

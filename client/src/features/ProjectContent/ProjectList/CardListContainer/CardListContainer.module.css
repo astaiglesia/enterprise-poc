@@ -1,20 +1,30 @@
 .list-container {
-  border: thin solid red;
-  /* margin: 20px 5%; */
-  /* min-height: 400px; */
+  /* border: 3px dashed red; */
+
   flex: 2.5;
 }
 
-.list-headings {
+.list-header {
   display:flex;
   justify-content: space-between;
-  background-color: lightgray;
+  border: 2px solid black;
   font-weight: 600;
+  padding: 0 .5rem;
   
 }
 
-.list-headings h3 {
+.create-button {
+  width: 2rem;
+  height: 2rem;
+  align-self: center;
+}
 
-  width: 12%;
-  border: thin solid black;
+.search {
+  align-self: center;
+}
+
+.quicklinks {
+  display: flex;
+  /* border: thin solid blue; */
+
 }

@@ -8,16 +8,24 @@ const CardListContainer = props => {
   return (
 
     <section className={styles['list-container']}>
-      <div className={styles['list-headings']}> 
-        <button type="button" onClick={props.toggleSidebar} > + </button>
-        <h3>State</h3>
-        <h3>Nickname</h3>
-        <h3>Location</h3>
-        <h3>Client</h3>
-        <h3>Company</h3>
-        <h3>Delivery</h3>
-        <h3>Term</h3>
-        <h3>Tag</h3>
+      <div className={styles['list-header']}> 
+        <button type="button" onClick={props.toggleSidebar} className={styles['create-button']}> + </button>
+
+        <div className={styles.search}>
+          <label for="orderSearch">project filter</label>
+            <input type="search" id="site-search" name="q" aria-label="Search through site content"/>
+          <button>></button>
+        </div>
+
+        <div className={styles.quicklinks}>
+          <button type="button" onClick={props.toggleSidebar} className={styles['quick-sort']}> drafts </button>
+          <button type="button" onClick={props.toggleSidebar} className={styles['quick-sort']}> reserved </button>
+          <button type="button" onClick={props.toggleSidebar} className={styles['quick-sort']}> onDeposit </button>
+          <button type="button" onClick={props.toggleSidebar} className={styles['quick-sort']}> approved </button>
+          <button type="button" onClick={props.toggleSidebar} className={styles['quick-sort']}> subscribed </button>
+          <button type="button" onClick={props.toggleSidebar} className={styles['quick-sort']}> all orders </button>
+        </div>
+ 
       </div>
 
       <div >
