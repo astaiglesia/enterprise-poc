@@ -39,6 +39,13 @@
       "location": "Meatpacking",
       "client": "Alfie",
       "id": "IXSWTAG"
+    },
+    {
+      "orderState": "Reserved",
+      "nickname": "Pottery Barn",
+      "location": "West Village",
+      "client": "George",
+      "id": "h-4v_z3"
     }
   ]
 }

@@ -96,3 +96,11 @@ const Snippets = ({ onSnippetSelected }) => {
   - use graphiql to test your query (open the host port your server is configured to listen with the path /graphql)
   e.g. ``` localhost:5000/graphql```
   - also, if you want to quickly create your own sandbox/mock REST api for local dev - look into JSONserver
+
+
+
+## Create Entries
+- define your server-side mutation schema and client side queries
+
+
+## Delete Entries

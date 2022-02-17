@@ -1,14 +1,32 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { gql, useMutation } from '@apollo/client';
 
 import { createProject } from '../ProjectList/ProjectList/projectListSlice';
 
 import styles from './ProjectForm.module.css';
 
+// define graphql post mutation
+const ADD_PROJECT = gql`
+  mutation AddProject($input: ProjectType!) {
+    addProject(input: $input){
+      id
+      orderState
+      nickname
+      location
+      client
+      company
+      deliveryDate
+      rentalTerm
+      tag
+    }
+  }
+`;
+
 const ProjectForm = () => {
   // Use Hooks to Handle Local State for Form Data
   const [formData, setFormData] = useState({
-    orderState: 'Draft',                       // -- orderState property may be edited in future feature
+    orderState: 'Draft',
     nickname: '',
     location: '',
     client: '',
@@ -91,25 +109,52 @@ const ProjectForm = () => {
   };
 
 
-  // ---- Handle Form Submission 
-  // ### implent async reducer to Post to DB
+  // let input;
   
-  // Dispatches Form State to Redux Store
-  const dispatch = useDispatch();
-  const formSubmissionHandler = e => {
-    e.preventDefault();
-    // console.log(formData)
-    const newProject = {
-      ...formData,
-      date: new Date(formData.date).toLocaleString()
-    }
+  // ---- Handle Form Submission 
+  // Apollo API Client -> ### not connected to redux-thunk
+  const [addProject, { data, loading, error }] = useMutation(ADD_PROJECT);
+  // console.log(data);
+  if (loading) return 'Submitting...';
+  if (error) return `Submission error! ${error.message}`;
 
-    dispatch(createProject(newProject));
+
+  // ### implent a thunk async reducer to Post to DB
+  // Dispatches Form State to Redux Store
+  // const dispatch = useDispatch();
+  const formSubmissionHandler = e => {
+    // console.log(formData)
+    // const newProject = {
+      //   ...formData,
+      //   date: new Date(formData.date).toLocaleString()
+      // };
+      
+    e.preventDefault();
+    addProject({
+      variables: {
+        orderState: formData.orderState,
+        nickname: formData.nickname,
+        location: formData.location,
+        client: formData.client,
+      }
+    })
+
+    // dispatch(createProject(newProject));
   }
   
 
   return (
-    <form className={styles.form} onSubmit={formSubmissionHandler}>
+    <form className={styles.form} onSubmit={e => {
+      e.preventDefault();
+      addProject({
+        variables: {
+          orderState: formData.orderState,
+          nickname: formData.nickname,
+          location: formData.location,
+          client: formData.client,
+        }
+      })
+    }}>
       <h2>Project Profile</h2>
       
       <label htmlFor="orderState" >Order State</label>

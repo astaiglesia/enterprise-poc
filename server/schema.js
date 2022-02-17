@@ -183,6 +183,7 @@ const mutation = new GraphQLObjectType({
         tag: {type: GraphQLString},
       },
       resolve(parentvalue, args){
+        console.log(args)
         return axios.post('http://localhost:3000/projects/', {
           orderState: args.orderState,
           nickname: args.nickname,
@@ -196,6 +197,7 @@ const mutation = new GraphQLObjectType({
         .then(res => res.data)
       }
     },
+    
     // ----- UPDATE a single project, by id
     editProject: {
       type: ProjectType,

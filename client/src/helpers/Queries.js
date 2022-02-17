@@ -32,6 +32,7 @@ export const GET_DRAFTS = gql`
 `;
 
 
+
 const GQL = {
   GET_SNIPPETS, 
   GET_DRAFTS
