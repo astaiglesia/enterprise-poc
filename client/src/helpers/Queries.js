@@ -31,7 +31,7 @@ export const GET_DRAFTS = gql`
   }
 `;
 
-export const GET_RESERVED = gql`
+export const GET_RESERVEDS = gql`
   query GetReserved {
     sortedState (orderState: "Reserved") {
       id
@@ -46,12 +46,60 @@ export const GET_RESERVED = gql`
     }
   }
 `;
+export const GET_DEPOSITS = gql`
+  query GetDeposits {
+      sortedState (orderState: "onDeposit") {
+      id
+      orderState
+      nickname
+      location
+      client
+      company
+      rentalTerm
+      tag
+    }
+  }
+`;
 
+export const GET_APPROVEDS = gql`
+  query GetApproveds {
+    sortedState (orderState: "Approved") {
+      id
+      orderState
+      nickname
+      location
+      client
+      company
+      deliveryDate
+      rentalTerm
+      tag
+    }
+  }
+`;
+
+export const GET_SUBSCRIBEDS = gql`
+  query GetSubscribeds {
+    sortedState (orderState: "Subscribed") {
+      id
+      orderState
+      nickname
+      location
+      client
+      company
+      deliveryDate
+      rentalTerm
+      tag
+    }
+  }
+`;
 
 const GQL = {
   GET_SNIPPETS, 
   GET_DRAFTS, 
-  GET_RESERVED
+  GET_RESERVEDS, 
+  GET_DEPOSITS, 
+  GET_APPROVEDS, 
+  GET_SUBSCRIBEDS
 };
 
 export default GQL;
