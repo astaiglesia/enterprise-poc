@@ -1,0 +1,14 @@
+.content-container {
+  /* background-color: azure; */
+  border: 2px solid black;
+  flex: 9;
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.gallery {
+  border: thin solid blue;
+  flex: 3.5;
+}
