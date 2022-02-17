@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { useQuery } from '@apollo/client';
 
 import styles from './CardListContainer.module.css';
+import { GET_SNIPPETS, GET_DRAFTS, GET_RESERVEDS, GET_DEPOSITS, GET_APPROVEDS, GET_SUBSCRIBEDS } from '../../../../helpers/Queries';
 
 import ProjectList from '../ProjectList/ProjectList';
-import { GET_SNIPPETS, GET_DRAFTS, GET_RESERVEDS, GET_DEPOSITS, GET_APPROVEDS, GET_SUBSCRIBEDS } from '../../../../helpers/Queries';
 
 const CardListContainer = props => {
   const [ filter, setFilter ] = useState(GET_SNIPPETS);
@@ -36,16 +36,14 @@ const CardListContainer = props => {
           <button type="button" onClick={() => setFilter(GET_SUBSCRIBEDS)} className={styles['quick-sort']}> subscribed </button>
           <button type="button" onClick={() => setFilter(GET_SNIPPETS)} className={styles['quick-sort']}> all orders </button>
         </div>
- 
       </div>
 
-      <div >
+      <React.Fragment>
         { (loading) ? <h3> Loading... </h3>
           : (error) ? <h3> `Error! ${error.message}` </h3>   
           : <ProjectList isFilterOn={isFilterOn} data={data} />}
-      </div>
+      </React.Fragment>
     </section>
-
   )
 };
 
