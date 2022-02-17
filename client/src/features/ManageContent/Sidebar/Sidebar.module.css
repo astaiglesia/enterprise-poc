@@ -1,5 +1,20 @@
-
 .sidebar {
   border: thin solid red;
   flex: 1;
+
+  display: flex;
+
+}
+.sidebar-header {
+  border: thin solid black;
+  height: 10%;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+/* change font */
+.sidebar-title {
+  margin: 0;
 }

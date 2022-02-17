@@ -22,6 +22,7 @@ const LoginPage = () => {
     dispatch(toggleLoginModal(!isModalOpen));
     
     // removes focus after clicking ... should we maintain focus after opening modal?
+    // focus should transfer to input field
     // e.target.blur();
   }
 

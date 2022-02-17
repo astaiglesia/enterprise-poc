@@ -4,7 +4,7 @@
 * @module  App
 * @author  astaiglesia
 * @date    2022
-* @description Order Editing Page -> rendered components dependant on order state
+* @description Order Editing Page -> rendered content based on project selection
 *
 * ********************************************************
 */
@@ -15,7 +15,7 @@ import styles from "./ManageProjectPage.module.css";
 
 import MainHeader from "../../components/MainHeader/MainHeader";
 import MainHero from "../../components/MainHero/MainHero";
-import ManageContent from "../../features/ManageContent/ManageContent";
+import ManageContent from '../../features/ManageContent/ManageContent'
 import MainFooter from "../../components/MainFooter/MainFooter";
 
  
