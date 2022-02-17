@@ -6,7 +6,10 @@ const Sidebar = () => {
 
   return (
     <div className={styles.sidebar}>
-      Product Selection Sidebar - Flexbox
+      <div className={styles['sidebar-header']}>
+        <h3 className={styles['sidebar-title']}>Product Selection</h3>
+        <button className={styles.button}>Term</button>
+      </div>
     </div>
   )
 }

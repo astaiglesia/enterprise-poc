@@ -13,8 +13,8 @@ const MainHeader = () => {
         <img className={styles['logo-header']}  
             src={zzSmallLogo} 
             alt="zz logo" 
-            width="100" 
-            height="100" >
+            width="50" 
+            height="50" >
         </img> 
         <nav>
           <Link className={styles.navlink} to="/dashboard" >Dashboard |</Link>
@@ -31,7 +31,7 @@ const MainHeader = () => {
         <Link className={styles.navlink} to="/">logout</Link>
       </nav>
         {/* <div>
-            codesplit to a nav component and add your nav items, <a href="https://a11y-style-guide.com/style-guide/section-navigation.html">remember to make it accessible!</a>
+          <a href="https://a11y-style-guide.com/style-guide/section-navigation.html">remember to make it accessible!</a>
         </div> */}
     </header>
   )

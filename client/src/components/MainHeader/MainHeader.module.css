@@ -1,8 +1,10 @@
 .main-header {
-  /* border: 3px dashed grey; */
-  height: 75px;
-  /* background-color: aliceblue; */
-  
+  border: 2px solid black;
+  background-color: black;
+
+  height: 50px;
+  margin: 0;
+  flex: .75;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -32,7 +34,10 @@ nav {
 .navlink {
   /* border: thin solid orange; */
   margin: 2px;
+  
   text-decoration: none;
+  color: white;
+  font-size: 1rem;
 
   display: flex;
   align-items: center;
