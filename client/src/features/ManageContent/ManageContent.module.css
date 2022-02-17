@@ -1,10 +1,13 @@
 .content-container {
   /* background-color: azure; */
-  border: 3px solid purple;
+  border: 2px solid black;
+  flex: 9;
 
-  height: 80%;
   display: flex;
-  flex-direction: column;
   flex-wrap: wrap;
-  justify-content: center;
+}
+
+.gallery {
+  border: thin solid blue;
+  flex: 3.5;
 }
