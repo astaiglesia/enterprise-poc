@@ -15,7 +15,7 @@ import styles from "./ManageProjectPage.module.css";
 
 import MainHeader from "../../components/MainHeader/MainHeader";
 import MainHero from "../../components/MainHero/MainHero";
-// import Content from "../../features/ProjectContent/ProjectContent";
+import ManageContent from "../../features/ManageContent/ManageContent";
 import MainFooter from "../../components/MainFooter/MainFooter";
 
  
@@ -28,7 +28,7 @@ const ManageProjectPage = () => {
         heading="Manage Your Project" 
         message="View, develop and refine your project's product mix, state and order details"
       />
-      {/* <Content /> */}
+      <ManageContent />
       <MainFooter />
     </div>
   )
