@@ -1,5 +1,7 @@
 .pdp-card {
   border: 1px solid black;
+  border-radius: 3%;
+  box-shadow: 0px 0px 10px 5px lightgray;
   align-self: center;
     
   min-height: 350px;
@@ -21,7 +23,7 @@
 }
 
 .grid-config {
-  border: thin solid blue;
+  /* border: thin solid blue; */
   flex: 1;
   
   display: grid;
@@ -31,6 +33,7 @@
 }
 
 .gridbox {
-  border: thin solid orange;
-  justify-self: stretch;
+  /* border: thin solid orange; */
+  align-self: center;
+  justify-self: center;
 }
