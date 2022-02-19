@@ -1,0 +1,36 @@
+.pdp-card {
+  border: 1px solid black;
+  align-self: center;
+    
+  min-height: 350px;
+  min-width: 250px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.pdp-title {
+  border: 1px solid black;
+  align-self: center;
+
+  margin: 0;
+}
+
+.image {
+
+}
+
+.grid-config {
+  border: thin solid blue;
+  flex: 1;
+  
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  align-items: stretch;
+}
+
+.gridbox {
+  border: thin solid orange;
+  justify-self: stretch;
+}
