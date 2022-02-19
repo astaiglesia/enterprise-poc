@@ -1,5 +1,4 @@
 .content-container {
-  /* background-color: azure; */
   border: 2px solid black;
   flex: 9;
 
@@ -7,6 +6,9 @@
   flex-wrap: wrap;
 }
 
+.sidebar {
+  
+}
 .gallery {
   border: thin solid blue;
   flex: 3.5;
