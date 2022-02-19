@@ -9,7 +9,7 @@ import ProductCard from './ProductCard/ProductCard';
 const productDetail = {
   title: "Dream Sofa",
   alt: "Dream Sofa Image",
-  option: "74inch",
+  option: "74 inch",
   color: "green"
 }
 
