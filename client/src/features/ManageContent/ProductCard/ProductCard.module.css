@@ -4,8 +4,8 @@
   /* box-shadow: 0px 0px 10px 5px lightgray; */
   align-self: center;
     
-  min-height: 500px;
-  min-width: 350px;
+  height: 600px;
+  width: 400px;
 
   display: flex;
   flex-direction: column;  
@@ -17,8 +17,8 @@
   box-shadow: 0px 0px 10px 5px lightgray;
   align-self: center;
     
-  min-height: 350px;
-  min-width: 250px;
+  height: 350px;
+  width: 250px;
 
   display: flex;
   flex-direction: column;
@@ -32,6 +32,7 @@
 }
 
 .image {
+  width: 100%;
 
 }
 

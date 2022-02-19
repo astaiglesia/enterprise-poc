@@ -7,9 +7,13 @@
 }
 
 .sidebar {
-  
+  flex: 1;
+  min-width: 30%;
 }
+
 .gallery {
   border: thin solid blue;
-  flex: 3.5;
+  flex: 3;
+
+  min-width: 50%;
 }
