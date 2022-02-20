@@ -3,8 +3,15 @@ const axios = require('axios');
 module.exports = {
   Query: {
     projects(parentvalue, args){
-      return axios.get(`http://localhost:3000/projects/`)
-      .then(res => res.data);
+      console.log(args.input)
+      if (args.input === undefined) {
+        return axios.get(`http://localhost:3000/projects/`)
+          .then(res => res.data);
+      };
+      if (args.input.orderState) {
+        return axios.get(`http://localhost:3000/projects?orderState=${args.input.orderState}`)
+          .then(res => res.data);
+      };
     },
     singleProject(){},
     productSelection(){},
