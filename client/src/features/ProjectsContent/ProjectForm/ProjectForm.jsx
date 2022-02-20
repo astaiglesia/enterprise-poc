@@ -149,16 +149,16 @@ const ProjectForm = () => {
     (formState.nicknameIsValid && formState.locationIsValid && formState.clientIsValid) && setFormIsValid(true);
   }, [formState.nicknameIsValid, formState.locationIsValid, formState.clientIsValid]);
 
-  // ### implent async reducer logic to Post to DB
+  // ### thunk / apollo / logic to Post to DB
+  // apollo approach -> useMutation to send async request
   
   // Dispatches Form State to Redux Store
   const dispatch = useDispatch();
   const formSubmissionHandler = e => {
     e.preventDefault();
-    // console.log(formData)
     const newProject = {
-      ...formData,
-      date: new Date(formData.date).toLocaleString()
+      ...formState,
+      date: new Date(formState.date).toLocaleString()
     }
 
     dispatch(createProject(newProject));
