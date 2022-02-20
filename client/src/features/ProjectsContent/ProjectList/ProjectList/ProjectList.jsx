@@ -6,7 +6,8 @@ import SnippetCard from '../SnippetCard/SnippetCard';
 
 const ProjectList = props => {
   // assigns the proper query data property
-  const projectList = (props.isFilterOn) ? props.data.sortedState : props.data.projects;
+  console.log(props.data.projects)
+  const projectList = props.data.projects;
 
   return (
     <div className={styles.cardlist}>

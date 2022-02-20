@@ -17,7 +17,7 @@ export const GET_SNIPPETS = gql`
 
 export const GET_DRAFTS = gql`
   query GetDrafts {
-    sortedState (orderState: "Draft") {
+    projects (input: {orderState: "Draft"}) {
       id
       orderState
       nickname
@@ -33,7 +33,7 @@ export const GET_DRAFTS = gql`
 
 export const GET_RESERVEDS = gql`
   query GetReserved {
-    sortedState (orderState: "Reserved") {
+    projects (input: {orderState: "Reserved"}) {
       id
       orderState
       nickname
@@ -48,7 +48,7 @@ export const GET_RESERVEDS = gql`
 `;
 export const GET_DEPOSITS = gql`
   query GetDeposits {
-      sortedState (orderState: "onDeposit") {
+      projects (input: {orderState: "onDeposit"}) {
       id
       orderState
       nickname
@@ -63,7 +63,7 @@ export const GET_DEPOSITS = gql`
 
 export const GET_APPROVEDS = gql`
   query GetApproveds {
-    sortedState (orderState: "Approved") {
+    projects (input: {orderState: "Approved"}) {
       id
       orderState
       nickname
@@ -79,7 +79,7 @@ export const GET_APPROVEDS = gql`
 
 export const GET_SUBSCRIBEDS = gql`
   query GetSubscribeds {
-    sortedState (orderState: "Subscribed") {
+    projects (input: {orderState: "Subscribed"}) {
       id
       orderState
       nickname
