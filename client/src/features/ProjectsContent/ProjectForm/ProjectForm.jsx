@@ -144,10 +144,10 @@ const ProjectForm = () => {
 
 
   // ---- Handles Form Submission 
-  const [formIsValid, dispatchForm] = useState(false);
+  const [formIsValid, setFormIsValid] = useState(false);
   useEffect(() => {
-    
-  })
+    (formState.nicknameIsValid && formState.locationIsValid && formState.clientIsValid) && setFormIsValid(true);
+  }, [formState.nicknameIsValid, formState.locationIsValid, formState.clientIsValid]);
 
   // ### implent async reducer logic to Post to DB
   
@@ -162,7 +162,7 @@ const ProjectForm = () => {
     }
 
     dispatch(createProject(newProject));
-  }
+  };
   
   return (
     <form className={styles.form} onSubmit={formSubmissionHandler}>
@@ -248,7 +248,7 @@ const ProjectForm = () => {
               onChange={tagHandler}>
       </input>
 
-      <button type="submit" aria-label="Submit form" >Create Draft Project</button>
+      <button type="submit" aria-label="Submit form" disabled={!formIsValid}>Create Draft Project</button>
     </form>
   )
 };
