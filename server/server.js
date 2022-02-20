@@ -1,20 +1,25 @@
+// https://www.apollographql.com/blog/backend/using-express-with-graphql-server-node-js/
+
 const express = require('express');
-const { graphqlHTTP } = require('express-graphql');
+const { ApolloServer } = require('apollo-server-express');
 const cors = require('cors');
-const schema = require('./schema.js')
 
-const server = express();
+const typeDefs = require('./newSchema');
+const resolvers = require('./resolvers');
 
-// allow cross-origin
-server.use(cors());
+const server = new ApolloServer({ typeDefs, resolvers });
+const app = express();
 
+// allow cross-origin access to localhost JSON server
+app.use(cors());
 
 // client entry point for our graphQL server
-server.use('/graphql', graphqlHTTP({
-  schema,
-  graphiql: true,
-}));
+
+server.applyMiddleware({ app });
 
 // spin up the server
-const PORT = process.env.PORT || 5000;
-server.listen(PORT, () => console.log(`Express + GraphQL server is live and listening on port ${PORT}`))
+// const PORT = process.env.PORT || 5000;
+
+app.listen({ port: 5000 }, () =>
+  console.log(`🚀 Express + GraphQL server is live and listening on port 5000 ${server.graphqlPath}`)
+);

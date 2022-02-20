@@ -9,7 +9,7 @@ const {
   GraphQLSchema,
   GraphQLList,
   GraphQLNonNull,
-  Gr
+  
 } = require('graphql');
 
 // ======== Object Types

@@ -25,7 +25,7 @@ const CardListContainer = props => {
         <div className={styles.search}>
           <label htmlFor="orderSearch">project filter</label>
             <input type="search" id="site-search" name="q" aria-label="Search through site content"/>
-          <button>></button>
+          <button>Search</button>
         </div>
 
         <div className={styles.quicklinks}>

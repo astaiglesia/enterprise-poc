@@ -7,6 +7,8 @@ import styles from './ProjectForm.module.css';
 
 const ProjectForm = () => {
   // Use Hooks to Handle Local State for Form Data
+  // ### useReducer to simplify form data
+  // ### useEffect to submit form data
   const [formData, setFormData] = useState({
     orderState: 'Draft',                       // -- orderState property may be edited in future feature
     nickname: '',
