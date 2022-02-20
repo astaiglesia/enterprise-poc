@@ -100,6 +100,12 @@ const ProjectForm = () => {
   };
   const [formState, dispatchFormData] = useReducer(CreateProjectReducer, initialFormState);
   
+  const [formIsValid, setFormIsValid] = useState(false);
+  
+  useEffect(() => {
+    (formState.nicknameIsValid && formState.locationIsValid && formState.clientIsValid) && setFormIsValid(true);
+  }, [formState.nicknameIsValid, formState.locationIsValid, formState.clientIsValid]);
+
   // ---- Handles Form Field Updates, Dispatch To Reducer
   const stateChangeHandler = (e) => {
     dispatchFormData({type:'SELECT_STATE', payload: e.target.value})
@@ -108,22 +114,22 @@ const ProjectForm = () => {
   const nicknameHandler = (e) => {
     dispatchFormData({type:'INPUT_NICKNAME', payload: e.target.value})
   };
-  const validNicknameHandler = (e) => {
+  const validNicknameHandler = () => {
     dispatchFormData({type:'BLUR_NICKNAME'})
   };
 
   const locationHandler = (e) => {
-    dispatchFormData({action: 'INPUT_LOCATION', payload: e.target.value})
+    dispatchFormData({type: 'INPUT_LOCATION', payload: e.target.value})
   };
-  const validLocationHandler = (e) => {
-    dispatchFormData({action: 'BLUR_LOCATION'})
+  const validLocationHandler = () => {
+    dispatchFormData({type: 'BLUR_LOCATION'})
   };
 
   const clientHandler = (e) => {
-    dispatchFormData({action: 'INPUT_CLIENT', payload: e.target.value})
+    dispatchFormData({type: 'INPUT_CLIENT', payload: e.target.value})
   };
   const validClientHandler = (e) => {
-    dispatchFormData({action: 'BLUR_CLIENT'})
+    dispatchFormData({type: 'BLUR_CLIENT'})
   };
 
   const companyHandler = (e) => {
@@ -131,23 +137,20 @@ const ProjectForm = () => {
   };
 
   const deliveryDateHandler = (e) => {
-    dispatchFormData({action: 'INPUT_DELIVERY', payload: e.target.value})
+    dispatchFormData({type: 'INPUT_DELIVERY', payload: e.target.value})
   };
 
   const termHandler = (e) => {
-    dispatchFormData({action: 'SELECT_TERM', payload: e.target.value})
+    dispatchFormData({type: 'SELECT_TERM', payload: e.target.value})
   };
 
   const tagHandler = (e) => {
-    dispatchFormData({action: 'INPUT_TAG', payload: e.target.value})
+    dispatchFormData({type: 'INPUT_TAG', payload: e.target.value})
   };
 
 
   // ---- Handles Form Submission 
-  const [formIsValid, setFormIsValid] = useState(false);
-  useEffect(() => {
-    (formState.nicknameIsValid && formState.locationIsValid && formState.clientIsValid) && setFormIsValid(true);
-  }, [formState.nicknameIsValid, formState.locationIsValid, formState.clientIsValid]);
+
 
   // ### thunk / apollo / logic to Post to DB
   // apollo approach -> useMutation to send async request
@@ -156,6 +159,8 @@ const ProjectForm = () => {
   const dispatch = useDispatch();
   const formSubmissionHandler = e => {
     e.preventDefault();
+    console.log(formState)
+
     const newProject = {
       ...formState,
       date: new Date(formState.date).toLocaleString()
@@ -198,7 +203,7 @@ const ProjectForm = () => {
               id="location" 
               value={formState.location}
               required={true} 
-              onChange={locationHandler} 
+              onChange={locationHandler}
               onBlur={validLocationHandler} >
       </input>
       

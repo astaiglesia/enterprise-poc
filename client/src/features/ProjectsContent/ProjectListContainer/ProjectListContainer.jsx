@@ -7,7 +7,7 @@ import { GET_SNIPPETS, GET_DRAFTS, GET_RESERVEDS, GET_DEPOSITS, GET_APPROVEDS, G
 import ProjectList from './ProjectList/ProjectList';
 
 
-// codesplit header and filter logic
+// ## codesplit header and filter logic
 const CardListContainer = props => {
   const [ filter, setFilter ] = useState(GET_SNIPPETS);
   const [ isFilterOn, setIsFilterOn ] = useState(false);
