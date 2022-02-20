@@ -1,7 +1,7 @@
 import React, { useEffect, useReducer, useState } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { createProject } from '../ProjectList/ProjectList/projectListSlice';
+import { createProject } from '../ProjectListContainer/ProjectList/projectListSlice';
 
 import styles from './ProjectForm.module.css';
 

@@ -7,7 +7,7 @@ import React, { useState } from "react";
 import styles from './ProjectContent.module.css';
 
 import ProjectForm from "./ProjectForm/ProjectForm";
-import ProjectListContainer from "./ProjectList/CardListContainer/CardListContainer";
+import ProjectListContainer from "./ProjectListContainer/ProjectListContainer";
 
 
 const ProjectContent = () => {

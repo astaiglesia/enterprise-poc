@@ -34,13 +34,6 @@
       "tag": "Common Areas"
     },
     {
-      "orderState": "Draft",
-      "nickname": "Google",
-      "location": "Meatpacking",
-      "client": "Alfie",
-      "id": "IXSWTAG"
-    },
-    {
       "id": "asdfaskd",
       "orderState": "Draft",
       "nickname": "Hilton",
@@ -69,6 +62,14 @@
       "rentalTerm": "12 months",
       "tag": "lounge",
       "id": "iLCUxtf"
+    },
+    {
+      "orderState": "Reserved",
+      "nickname": "WeWork",
+      "location": "Jersey City",
+      "client": "Alfie",
+      "tag": "breakout space",
+      "id": "gj_xYd2"
     }
   ]
 }

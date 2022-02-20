@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useQuery } from '@apollo/client';
 
-import styles from './CardListContainer.module.css';
-import { GET_SNIPPETS, GET_DRAFTS, GET_RESERVEDS, GET_DEPOSITS, GET_APPROVEDS, GET_SUBSCRIBEDS } from '../../../../helpers/Queries';
+import styles from './ProjectListContainer.module.css';
+import { GET_SNIPPETS, GET_DRAFTS, GET_RESERVEDS, GET_DEPOSITS, GET_APPROVEDS, GET_SUBSCRIBEDS } from '../../../helpers/Queries';
 
-import ProjectList from '../ProjectList/ProjectList';
+import ProjectList from './ProjectList/ProjectList';
 
+
+// codesplit header and filter logic
 const CardListContainer = props => {
   const [ filter, setFilter ] = useState(GET_SNIPPETS);
   const [ isFilterOn, setIsFilterOn ] = useState(false);

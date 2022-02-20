@@ -1,7 +1,11 @@
 .list-container {
-  /* border: 3px dashed red; */
+  border: 3px dashed red;
 
-  flex: 2.5;
+  /* flex: 2.5; */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
 }
 
 .list-header {
@@ -10,7 +14,6 @@
   border: 2px solid black;
   font-weight: 600;
   padding: 0 .5rem;
-  
 }
 
 .create-button {
