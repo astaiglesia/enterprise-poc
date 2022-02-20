@@ -38,7 +38,7 @@ const typeDefs = gql`
   }
 
   input NewProjectInput {
-    id: ID!
+
     orderState: String!
     nickname: String!
     location: String!
@@ -71,8 +71,8 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    addProject(input: NewProjectInput!): [Project]!
-    editProject(input: EditProjectInput!): [Project]!
+    addProject(input: NewProjectInput!): Project!
+    editProject(input: EditProjectInput!): Project!
     deleteProject(input: SelectProjectInput!): Project!
     editOrder(input: ProductInput): [Product]!
   }
