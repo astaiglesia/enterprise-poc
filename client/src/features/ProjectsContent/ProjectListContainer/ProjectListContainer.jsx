@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { useQuery } from '@apollo/client';
+import { gql, useQuery, useMutation } from '@apollo/client';
+import { useSelector } from 'react-redux';
 
 import styles from './ProjectListContainer.module.css';
 import { GET_SNIPPETS, GET_DRAFTS, GET_RESERVEDS, GET_DEPOSITS, GET_APPROVEDS, GET_SUBSCRIBEDS } from '../../../helpers/Queries';
@@ -7,18 +8,53 @@ import { GET_SNIPPETS, GET_DRAFTS, GET_RESERVEDS, GET_DEPOSITS, GET_APPROVEDS, G
 import ProjectList from './ProjectList/ProjectList';
 
 
-// ## codesplit header and filter logic
 const CardListContainer = props => {
+  // --- Handles Initial Rendering of Project List
   const [ filter, setFilter ] = useState(GET_SNIPPETS);
-  const [ isFilterOn, setIsFilterOn ] = useState(false);
-
-  useEffect(() => {
-    if (filter === GET_SNIPPETS) setIsFilterOn(false)
-    else setIsFilterOn(true);
-  }, [filter])
-
   const { loading, error, data } = useQuery(filter);
   
+  // --- Handles Mutation Logic to Add New Projects
+  
+  // defines mutation query 
+  const NEW_PROJECT = gql`
+  mutation CreateProject ($newProject:NewProjectInput!){
+    addProject (input: $newProject) {
+      id
+      orderState
+      nickname
+      location
+      client
+      company
+      deliveryDate
+      rentalTerm
+      tag
+    }
+  }
+  `;
+  
+  const [ createProject, newProject ] = useMutation(NEW_PROJECT); 
+  
+  // retrieves new project form data from Redux store
+  const newProjectData = useSelector(state => {
+    console.log(state.projectForm.newProjectData)
+    return state.projectForm.newProjectData;
+  });
+
+  useEffect(() => {
+    createProject({
+      variables: {newProject: {...newProjectData}}
+    })
+  }, [newProjectData])
+  
+  // // triggers a re-render of Project List onFulfillment of useMutation
+  // useEffect(() => {
+  //   console.log('setFilter Triggered')
+  //   setFilter(GET_SNIPPETS)
+  //   console.log(newProject.error)
+  // }, [newProject.error])
+    
+    
+  // ## codesplit header and filter logic
   return (
     <section className={styles['list-container']}>
       <div className={styles['list-header']}> 
@@ -41,9 +77,9 @@ const CardListContainer = props => {
       </div>
 
       <React.Fragment>
-        { (loading) ? <h3> Loading... </h3>
-          : (error) ? <h3> `Error! ${error.message}` </h3>   
-          : <ProjectList isFilterOn={isFilterOn} data={data} />}
+        { (loading || newProject.loading) ? <h3> Loading... </h3>
+          : (error || newProject.error) ? <h3> `Error! ${error}` </h3>   
+          : <ProjectList data={data} />}
       </React.Fragment>
     </section>
   )

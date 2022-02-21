@@ -1,7 +1,7 @@
 import React, { useEffect, useReducer, useState } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { createProject } from '../ProjectListContainer/ProjectList/projectListSlice';
+import { createProject } from './projectFormSlice';
 
 import styles from './ProjectForm.module.css';
 
@@ -133,7 +133,7 @@ const ProjectForm = () => {
   };
 
   const companyHandler = (e) => {
-    dispatchFormData({action: 'INPUT_COMPANY', payload: e.target.value})
+    dispatchFormData({type: 'INPUT_COMPANY', payload: e.target.value})
   };
 
   const deliveryDateHandler = (e) => {
@@ -153,17 +153,28 @@ const ProjectForm = () => {
 
 
   // ### thunk / apollo / logic to Post to DB
-  // apollo approach -> useMutation to send async request
+  // apollo approach ---
+  // dispatch formState to store
+  // projectListContainer > useSelector to grab form state
+  // pass into useMutation to send POST mutation
+  // useEffect to setFilter to GET_SNIPPETS with a dep of mutation data response
+  // --- this will trigger a re-render
   
   // Dispatches Form State to Redux Store
   const dispatch = useDispatch();
   const formSubmissionHandler = e => {
     e.preventDefault();
-    console.log(formState)
-
+    // console.log(formState)
+    // transform data to remove validations
     const newProject = {
-      ...formState,
-      date: new Date(formState.date).toLocaleString()
+      orderState: formState.orderState,                     
+      nickname: formState.nickname,
+      location: formState.location,
+      client: formState.client,
+      company: formState.company,
+      deliveryDate: new Date(formState.deliveryDate).toLocaleString(),
+      rentalTerm: formState.rentalTerm,
+      tag: formState.tag
     }
 
     dispatch(createProject(newProject));
