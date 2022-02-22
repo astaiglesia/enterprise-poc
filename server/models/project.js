@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 
-// creates mongoose schemas matching gql type definitions
+// creates mongoose schema matching gql type definitions
 const projectSchema = new Schema({
   orderState: {
     type: String,
@@ -25,3 +25,5 @@ const projectSchema = new Schema({
   rentalTerm: String,
   tag: String, 
 }, {timestamps: true});
+
+module.exports = projectSchema;
