@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { gql, useQuery, useMutation } from '@apollo/client';
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 
 import styles from './ProjectListContainer.module.css';
 import { GET_SNIPPETS, GET_DRAFTS, GET_RESERVEDS, GET_DEPOSITS, GET_APPROVEDS, GET_SUBSCRIBEDS } from '../../../helpers/Queries';
@@ -16,21 +16,21 @@ const CardListContainer = props => {
   // --- Handles Mutation Logic to Add New Projects
   
   // defines mutation query 
-  const NEW_PROJECT = gql`
-  mutation CreateProject ($newProject:NewProjectInput!){
-    addProject (input: $newProject) {
-      id
-      orderState
-      nickname
-      location
-      client
-      company
-      deliveryDate
-      rentalTerm
-      tag
-    }
-  }
-  `;
+  // const NEW_PROJECT = gql`
+  // mutation CreateProject ($newProject:NewProjectInput!){
+  //   addProject (input: $newProject) {
+  //     id
+  //     orderState
+  //     nickname
+  //     location
+  //     client
+  //     company
+  //     deliveryDate
+  //     rentalTerm
+  //     tag
+  //   }
+  // }
+  // `;
   
   // const [ createProject, newProject ] = useMutation(NEW_PROJECT); 
   
