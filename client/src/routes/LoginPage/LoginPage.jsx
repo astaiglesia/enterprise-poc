@@ -8,8 +8,6 @@ import zzLogo from '../../assets/images/android-chrome-192x192.png'
 import LoginModal from './LoginModal/LoginModal';
 import { toggleLoginModal } from './loginPageSlice';
 
-
-
 const LoginPage = () => {
   const isModalOpen = useSelector(state => {
     return state.login.isModalOpen;

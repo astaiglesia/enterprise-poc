@@ -1,35 +1,32 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+// define the initial state of the order list
+// -- ##mock data to be replaced by api call to database
+const initialState = {
+  newProjectData: {},
+};
 
-// create slice to handle the project form state
-// start simply with required fields only
 export const projectFormSlice = createSlice({
   name: 'projectForm',
-  initialState: {
-    // -- orderState property may be edited in future feature
-    orderState: 'Draft',
-    nickname: 'initial name',
-    location: '',
-    client: '',
-    company: '',
-    deliveryDate: '',
-    rentalTerm: '',
-    tag: '',
-  },
-  // -- under the hood: createSlice =>  
-  // creates actionTypes by mapping the slice name with reducer keys
-  // ---- e.g. {type: "projectForm/changeNickname"}
-  // creates reducer functions that responds to actions and updates state immutably 
+  initialState,
   reducers: {
-    changeNickname: (state, action) => state.nickname = action.payload,
-    changeLocation: (state, action) => state.location = action.payload,
-    changeClient: (state, action) => state.client = action.payload,
-  }
-})
+    createProject: (state, action) => {
+      // console.log('createProject reducer triggered')
+      // console.log(action.payload)
+      
+      // ##convert id to uuid
+      // const newProject = {
+      //   id: new Date(),
+      //   ...action.payload
+      // }
+      // console.log(newProject);
 
-export const { changeNickname, changeLocation, changeClient } = projectFormSlice.actions;
+      state.newProjectData = action.payload
+    },
+  },
+});
 
-export const selectNickname = state => state.projectForm.nickname;
-
+// export const { createProject, editProject, deleteProject } = projectListSlice.actions;
+export const { createProject } = projectFormSlice.actions;
 
 export default projectFormSlice.reducer;
