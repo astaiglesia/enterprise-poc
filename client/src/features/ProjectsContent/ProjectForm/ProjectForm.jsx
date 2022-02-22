@@ -133,7 +133,7 @@ const ProjectForm = () => {
   };
 
   const companyHandler = (e) => {
-    dispatchFormData({action: 'INPUT_COMPANY', payload: e.target.value})
+    dispatchFormData({type: 'INPUT_COMPANY', payload: e.target.value})
   };
 
   const deliveryDateHandler = (e) => {
