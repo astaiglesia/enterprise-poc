@@ -581,6 +581,26 @@
       "client": "Alfie",
       "tag": "breakout space",
       "id": "SJ4CKuK"
+    },
+    {
+      "orderState": "Reserved",
+      "nickname": "WeWork",
+      "location": "Jersey City",
+      "client": "Alfie",
+      "company": "",
+      "rentalTerm": "9 Months",
+      "tag": "breakout space",
+      "id": "f3lnclB"
+    },
+    {
+      "orderState": "Subscribed",
+      "nickname": "WeWork",
+      "location": "Jersey City",
+      "client": "Alfie",
+      "company": "BaseGym",
+      "rentalTerm": "9 Months",
+      "tag": "breakout space",
+      "id": "wnGCcCy"
     }
   ]
 }

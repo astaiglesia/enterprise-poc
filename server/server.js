@@ -4,8 +4,8 @@ const express = require('express');
 const cors = require('cors');
 
 const { ApolloServer } = require('apollo-server-express');
-const typeDefs = require('./newSchema');
-const resolvers = require('./resolvers');
+const typeDefs = require('./apolloAPI/typeDefs');
+const resolvers = require('./apolloAPI/resolvers');
 
 
 async function initServer() {
@@ -14,7 +14,7 @@ async function initServer() {
   app.use(cors());
   
   // serves static assets
-  app.use(express.static(`./build`));
+  app.use(express.static(`../client/build`));
   
   // to parse form data use urlencoded middleware ->  parses incoming data with urlencoded payloads, applied to all requests
   app.use(express.urlencoded({ extended: true }));
@@ -43,5 +43,3 @@ async function initServer() {
 };
 
 initServer();
-
-
