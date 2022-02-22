@@ -32,19 +32,19 @@ const CardListContainer = props => {
   }
   `;
   
-  const [ createProject, newProject ] = useMutation(NEW_PROJECT); 
+  // const [ createProject, newProject ] = useMutation(NEW_PROJECT); 
   
   // retrieves new project form data from Redux store
-  const newProjectData = useSelector(state => {
-    console.log(state.projectForm.newProjectData)
-    return state.projectForm.newProjectData;
-  });
+  // const newProjectData = useSelector(state => {
+  //   console.log(state.projectForm.newProjectData)
+  //   return state.projectForm.newProjectData;
+  // });
 
-  useEffect(() => {
-    createProject({
-      variables: {newProject: {...newProjectData}}
-    })
-  }, [newProjectData])
+  // useEffect(() => {
+  //   createProject({
+  //     variables: {newProject: {...newProjectData}}
+  //   })
+  // }, [createProject, newProjectData])
   
   // // triggers a re-render of Project List onFulfillment of useMutation
   // useEffect(() => {
@@ -77,8 +77,8 @@ const CardListContainer = props => {
       </div>
 
       <React.Fragment>
-        { (loading || newProject.loading) ? <h3> Loading... </h3>
-          : (error || newProject.error) ? <h3> `Error! ${error}` </h3>   
+        { (loading) ? <h3> Loading... </h3>
+          : (error) ? <h3> `Error! ${error}` </h3>   
           : <ProjectList data={data} />}
       </React.Fragment>
     </section>
