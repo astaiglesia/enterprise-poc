@@ -46,8 +46,8 @@ const LoginOverlay = () => {
   // -- if validated, redirect to dashboard page
   // -- on fail, render fail
   const [isValidUser, setIsValidUser] = useState(false);
-  const [didAuthFail, setDidAuthFail] = useState(false);
-  console.log(isValidUser, didAuthFail);
+  const [didAuthFail, setDidAuthFail] = useState(false); // initialized to false for dev purposes, set to true with auth implementation
+  // console.log(isValidUser, didAuthFail);
 
   // ---- handle site entry for auth'd users and guests with no login
   const validEntryHandler = useCallback(() => navigate('/dashboard'), [navigate]);
@@ -65,7 +65,7 @@ const LoginOverlay = () => {
   
   useEffect( () => {
     if (isValidUser) {
-      console.log('are we reaching this?', isValidUser)
+      // console.log('are we reaching this?', isValidUser)
       return validEntryHandler();
     } 
     // else {

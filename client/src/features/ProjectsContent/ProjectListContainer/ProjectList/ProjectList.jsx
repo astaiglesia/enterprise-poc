@@ -6,11 +6,11 @@ import SnippetCard from '../SnippetCard/SnippetCard';
 
 const ProjectList = props => {
   // console.log(props.data.projects)
-  const projectList = props.data.projects;
+  
 
   return (
     <div className={styles.cardlist}>
-      {projectList.map( snippet => (
+      {props.data.projects.map( snippet => (
           <SnippetCard key={snippet._id} snippetData={snippet}/>
         ))}
     </div>

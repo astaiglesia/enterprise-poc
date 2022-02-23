@@ -1,9 +1,6 @@
-const axios = require('axios');
 const Project = require('../models/projectModels');
 
-
 module.exports = {
-
   // mongo method - zzPOC.projects.find()
   Query: {
     projects(parent, { input }, context, info){
@@ -20,20 +17,18 @@ module.exports = {
         .catch(err => console.error(err));
       };
     },
-    // mongo method - zzPOC.projects.findOne()
-    singleProject(parent, { input }, context, info){
-      console.log(input._id)
-    },
+    // mongo method - zzPOC.projects.findOne() ### do we need this? may not be necessary
+    // singleProject(parent, { input }, context, info){
+    //   console.log(input._id)
+    // },
     productSelection(){},
   },
 
   Mutation: {
-    // assume id is assigned by database - use unique id generator if needed
-    // mongo method - zzPOC.projects.insert()
     addProject(_, { input }){
       // insantiate a new Project model passing input as the args
       const newProject = new Project({...input});
-
+      // console.log(newProject)
       // saves the instance to the database
       return newProject.save()
         .then (result => {
@@ -43,8 +38,6 @@ module.exports = {
         .catch (err => {
             console.error(err)
           })
-        //   axios.post(`http://localhost:3000/projects/`, {...input})
-        // .then(res => res.data);
     },
     editProject(){},
     deleteProject(){},

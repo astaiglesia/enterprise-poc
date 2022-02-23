@@ -1,9 +1,9 @@
 import React, { useEffect, useReducer, useState } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { createProject } from './projectFormSlice';
-
 import styles from './ProjectForm.module.css';
+
+import { createProject } from './projectFormSlice';
 
 // Define Reducer Actions
 const CreateProjectReducer = (currentState, action) => {
@@ -24,7 +24,7 @@ const CreateProjectReducer = (currentState, action) => {
       // create an alert if less than 4 chars
       return {
         ...currentState,
-        nicknameIsValid: currentState.nickname.trim().length > 4,
+        nicknameIsValid: currentState.nickname.trim().length > 3,
       }
     }
     case 'INPUT_LOCATION' : {
@@ -37,7 +37,7 @@ const CreateProjectReducer = (currentState, action) => {
       // create an alert if less than 4 chars 
       return {
         ...currentState,
-        locationIsValid: currentState.location.trim().length > 4,
+        locationIsValid: currentState.location.trim().length > 3,
       }
     }
     case 'INPUT_CLIENT' : {
@@ -50,7 +50,7 @@ const CreateProjectReducer = (currentState, action) => {
       // create an alert if less than 4 chars 
       return {
         ...currentState,
-        clientIsValid: currentState.client.trim().length > 4,
+        clientIsValid: currentState.client.trim().length > 3,
       }
     }
     case 'INPUT_COMPANY' : {
