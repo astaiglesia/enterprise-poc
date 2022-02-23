@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const { Schema, model } = mongoose;
 
-// ----- Schemas
+// ----- Mongoose Schemas
 // handles project connections
 const projectSchema = new Schema({
   orderState: {

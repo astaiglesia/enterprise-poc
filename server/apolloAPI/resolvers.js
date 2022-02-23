@@ -1,10 +1,12 @@
 const axios = require('axios');
+const Project = require('../models/projectModels');
+
 
 module.exports = {
 
   // mongo method - zzPOC.projects.find()
   Query: {
-    projects(_, { input }){
+    projects(parent, { input }, context, info){
       // console.log(input)
       if (input === undefined) {
         return axios.get(`http://localhost:3000/projects/`)
@@ -24,10 +26,19 @@ module.exports = {
     // assume id is assigned by database - use unique id generator if needed
     // mongo method - zzPOC.projects.insert()
     addProject(_, { input }){
-      console.log(input)
+      // create a new Project model passing input as the args
+      const newProject = new Project({...input});
 
-      return axios.post(`http://localhost:3000/projects/`, {...input})
-        .then(res => res.data);
+      return newProject.save()
+        .then (result => {
+            console.log(result)
+            return { ...result._doc }
+          })
+        .catch (err => {
+            console.error(err)
+          })
+        //   axios.post(`http://localhost:3000/projects/`, {...input})
+        // .then(res => res.data);
     },
     editProject(){},
     deleteProject(){},

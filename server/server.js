@@ -3,13 +3,13 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
+
 const { ApolloServer } = require('apollo-server-express');
 const typeDefs = require('./apolloAPI/typeDefs');
 const resolvers = require('./apolloAPI/resolvers');
 
 const mongoose = require('mongoose');
-const MONGO_URI = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PW}@cluster0.1p6ob.mongodb.net/${process.env.MONGO_DB}?retryWrites=true&w=majority`;
-
+const MONGO_URI = `mongodb+srv://sunsetsessions:${process.env.MONGO_PW}@zzpoc.8xin3.mongodb.net/${process.env.MONGO_DB}?retryWrites=true&w=majority`
 
 async function initServer() {
   const app = express();
@@ -41,17 +41,16 @@ async function initServer() {
   // connect to database
   mongoose.connect(MONGO_URI, {
     useNewUrlParser: true,
-    useUnifiedTopology: true,
-    dbName: 'costs'
+    useUnifiedTopology: true
   })
-    .then(() => console.log(`Successfully Connected to Mongo DB on port ${PORT}`))
+    .then(() => {
+        // spins up the server on successful connection to mongoDB ### verify this is a good approach ###
+        app.listen({ port: PORT }, () =>
+        console.log(`Connection Successful to Mongo DB \n 🚀 Express + GraphQL servers are live and listening on port ${PORT}. \n GraphiQL playground is available at http://localhost:5000${apolloServer.graphqlPath}`)
+      );
+    })
     .catch(err => console.error(err));
 
-
-  // spin up the server
-  app.listen({ port: PORT }, () =>
-    console.log(`🚀 Express + GraphQL servers are live and listening on port 5000. \n GraphiQL playground is available at http://localhost:5000${apolloServer.graphqlPath}`)
-  );
 };
 
 initServer();

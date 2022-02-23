@@ -2,7 +2,7 @@ const { gql } = require('apollo-server-express');
 // define Schema types, inputs, Query and Mutations
 const typeDefs = gql`
   type Project {
-    id: ID!
+    _id: ID!
     orderState: String!
     nickname: String!
     location: String!
