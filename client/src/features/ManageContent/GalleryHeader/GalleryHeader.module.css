@@ -1,0 +1,11 @@
+.gallery-header {
+  border: 1px solid black;
+  
+  display : flex;
+  justify-content: center;
+}
+
+.gallery-heading {
+  border: thin solid red;
+  margin: .5rem;
+}

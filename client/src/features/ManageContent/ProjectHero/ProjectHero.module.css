@@ -1,0 +1,59 @@
+.project-title {
+  border: thin solid orange;
+  grid-area: title-block;
+  display: flex;
+  align-items: center;
+  /* margin: 0; */
+  /* padding: 0%; */
+}
+
+.client-info {
+  border: thin solid blue;
+  grid-area: client-block;
+  display: flex;
+  align-items: center;
+}
+.state {
+  border: thin solid green;
+  width: 100%;
+  display: flex;
+  grid-area: state;
+  align-items: center;
+  justify-content: center;
+}
+.manage { 
+  border: thin solid red;
+  grid-area: manage;
+  display: flex;
+  justify-content: flex-end;
+  
+}
+.details-button {
+  margin: 0;
+  align-self: end;
+  margin-right: 1rem;
+}
+
+.hero {
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  color: grey;
+  flex: 1;
+  max-height: fit-content;
+
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "title-block . state"
+    "client-block . manage";
+  text-align: center;
+  /* padding: 25px 0; */
+
+}
+
+h1 {
+  /* border-bottom: 1px solid black; */
+  margin: 0;
+  text-align: center;
+}

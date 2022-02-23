@@ -3,7 +3,7 @@ import { gql } from '@apollo/client';
 export const GET_SNIPPETS = gql`
   query GetSnippets {
     projects {
-      id
+      _id
       orderState
       nickname
       location
@@ -18,7 +18,7 @@ export const GET_SNIPPETS = gql`
 export const GET_DRAFTS = gql`
   query GetDrafts {
     projects (input: {orderState: "Draft"}) {
-      id
+      _id
       orderState
       nickname
       location
@@ -34,7 +34,7 @@ export const GET_DRAFTS = gql`
 export const GET_RESERVEDS = gql`
   query GetReserved {
     projects (input: {orderState: "Reserved"}) {
-      id
+      _id
       orderState
       nickname
       location
@@ -49,7 +49,7 @@ export const GET_RESERVEDS = gql`
 export const GET_DEPOSITS = gql`
   query GetDeposits {
       projects (input: {orderState: "onDeposit"}) {
-      id
+      _id
       orderState
       nickname
       location
@@ -64,7 +64,7 @@ export const GET_DEPOSITS = gql`
 export const GET_APPROVEDS = gql`
   query GetApproveds {
     projects (input: {orderState: "Approved"}) {
-      id
+      _id
       orderState
       nickname
       location
@@ -80,7 +80,7 @@ export const GET_APPROVEDS = gql`
 export const GET_SUBSCRIBEDS = gql`
   query GetSubscribeds {
     projects (input: {orderState: "Subscribed"}) {
-      id
+      _id
       orderState
       nickname
       location

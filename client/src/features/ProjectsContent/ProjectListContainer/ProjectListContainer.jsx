@@ -9,51 +9,64 @@ import ProjectList from './ProjectList/ProjectList';
 
 
 const CardListContainer = props => {
-  // --- Handles Initial Rendering of Project List
+  // ===== Handles Initial Rendering of Project List
   const [ filter, setFilter ] = useState(GET_SNIPPETS);
   const { loading, error, data } = useQuery(filter);
+  // const [ projectList, setProjectList ] = useState([]);
+  // useEffect(() => {
+  //   setProjectList(data.projects)
+  // }, [setProjectList, data])
   
-  // --- Handles Mutation Logic to Add New Projects
   
+  
+
+
+  // ===== Handles Mutation Logic to Add New Projects  
   // defines mutation query 
-  // const NEW_PROJECT = gql`
-  // mutation CreateProject ($newProject:NewProjectInput!){
-  //   addProject (input: $newProject) {
-  //     id
-  //     orderState
-  //     nickname
-  //     location
-  //     client
-  //     company
-  //     deliveryDate
-  //     rentalTerm
-  //     tag
-  //   }
-  // }
-  // `;
+  const ADD_PROJECT = gql`
+  mutation AddProject ($newProject:NewProjectInput!){
+    addProject (input: $newProject) {
+      _id
+      orderState
+      nickname
+      location
+      client
+      company
+      deliveryDate
+      rentalTerm
+      tag
+    }
+  }
+  `;
   
-  // const [ createProject, newProject ] = useMutation(NEW_PROJECT); 
+  const [ addProject, {loading: newLoad, error: newError, data: newData} ] = useMutation(ADD_PROJECT); 
   
   // retrieves new project form data from Redux store
-  // const newProjectData = useSelector(state => {
-  //   console.log(state.projectForm.newProjectData)
-  //   return state.projectForm.newProjectData;
-  // });
+  const newProjectData = useSelector(state => state.projectForm.newProjectData);
 
-  // useEffect(() => {
-  //   createProject({
-  //     variables: {newProject: {...newProjectData}}
-  //   })
-  // }, [createProject, newProjectData])
+  useEffect(() => {
+    addProject({
+      variables: {newProject: {...newProjectData}}
+    });
+    
+  }, [addProject, newProjectData]);
+  
+  
+  // ## ==== BUGS =+=+
+  // page needs to be refreshed
+  // form needs to be reset
+  useEffect(() => {
+    
+    console.log(newData)
+  }, [newData])
   
   // // triggers a re-render of Project List onFulfillment of useMutation
   // useEffect(() => {
   //   console.log('setFilter Triggered')
-  //   setFilter(GET_SNIPPETS)
   //   console.log(newProject.error)
   // }, [newProject.error])
     
-    
+
   // ## codesplit header and filter logic
   return (
     <section className={styles['list-container']}>
@@ -76,10 +89,12 @@ const CardListContainer = props => {
         </div>
       </div>
 
+      {/* pull logic out of the return statement andrefactor to switch statement? */}
       <React.Fragment>
         { (loading) ? <h3> Loading... </h3>
-          : (error) ? <h3> `Error! ${error}` </h3>   
-          : <ProjectList data={data} />}
+          : (error) ? <h3> `Error! ${error.message}` </h3>   
+          : (data.projects.length > 0) ? <ProjectList data={data} /> 
+          : <h3>No Project Data Stored</h3> }
       </React.Fragment>
     </section>
   )
