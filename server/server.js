@@ -32,9 +32,9 @@ async function initServer() {
   // client entry point for our graphQL server
   apolloServer.applyMiddleware({ app });
   
-  app.use((req, res) => {
-    res.send("Express Server Started")
-  })
+  // app.use((req, res) => {
+  //   res.send("Express Server Started")
+  // })
   
   const PORT = process.env.PORT || 5000;
   
@@ -44,7 +44,7 @@ async function initServer() {
     useUnifiedTopology: true
   })
     .then(() => {
-        // spins up the server on successful connection to mongoDB ### verify this is a good approach ###
+        // spins up the server on successful connection to mongoDB 
         app.listen({ port: PORT }, () =>
         console.log(`Connection Successful to Mongo DB \n 🚀 Express + GraphQL servers are live and listening on port ${PORT}. \n GraphiQL playground is available at http://localhost:5000${apolloServer.graphqlPath}`)
       );
