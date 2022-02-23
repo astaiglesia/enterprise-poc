@@ -1,15 +1,14 @@
 // https://www.apollographql.com/blog/backend/using-express-with-graphql-server-node-js/
 
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-const dotenv = require('dotenv');
-
 const { ApolloServer } = require('apollo-server-express');
 const typeDefs = require('./apolloAPI/typeDefs');
 const resolvers = require('./apolloAPI/resolvers');
 
 const mongoose = require('mongoose');
-const MONGO_URI = 'mongodb+srv://sunsetsessions:Flojan139@cluster0.1p6ob.mongodb.net/zzPOC?retryWrites=true&w=majority';
+const MONGO_URI = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PW}@cluster0.1p6ob.mongodb.net/${process.env.MONGO_DB}?retryWrites=true&w=majority`;
 
 
 async function initServer() {
@@ -45,8 +44,8 @@ async function initServer() {
     useUnifiedTopology: true,
     dbName: 'costs'
   })
-    .then(() => console.log(`Connected to Mongo DB on port ${PORT}`))
-    .catch(err => console.log(err));
+    .then(() => console.log(`Successfully Connected to Mongo DB on port ${PORT}`))
+    .catch(err => console.error(err));
 
 
   // spin up the server

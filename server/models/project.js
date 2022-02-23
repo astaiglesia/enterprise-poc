@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
 
-const { Schema } = mongoose;
+const { Schema, model } = mongoose;
 
-// creates mongoose schema matching gql type definitions
+// ----- Schemas
+// handles project connections
 const projectSchema = new Schema({
   orderState: {
     type: String,
@@ -26,4 +27,7 @@ const projectSchema = new Schema({
   tag: String, 
 }, {timestamps: true});
 
-module.exports = projectSchema;
+// ----- Models
+const Project = model('project', projectSchema);
+
+module.exports = Project;

@@ -1,6 +1,8 @@
 const axios = require('axios');
 
 module.exports = {
+
+  // mongo method - zzPOC.projects.find()
   Query: {
     projects(_, { input }){
       // console.log(input)
@@ -13,12 +15,14 @@ module.exports = {
           .then(res => res.data);
       };
     },
+    // mongo method - zzPOC.projects.findOne()
     singleProject(){},
     productSelection(){},
   },
 
   Mutation: {
     // assume id is assigned by database - use unique id generator if needed
+    // mongo method - zzPOC.projects.insert()
     addProject(_, { input }){
       console.log(input)
 
