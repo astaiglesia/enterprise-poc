@@ -2,15 +2,16 @@ import React from 'react';
 
 import styles from './Gallery.module.css';
 
+import GalleryHeader from '../GalleryHeader/GalleryHeader';
+import Summary from '../Summary/Summary';
+
 const Gallery = () => {
 
   return (
-    <React.Fragment>
-      <div>project data in header component</div>
-      <div>project details dropdown</div>
-      <div>product card gallery</div>
-      <div>summary footer</div>
-    </React.Fragment>
+    <section className={styles.gallery}>
+      <GalleryHeader />
+      <Summary />
+    </section>
   )
 }
 

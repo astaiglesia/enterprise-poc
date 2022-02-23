@@ -6,10 +6,10 @@ import styles from './ProjectHero.module.css';
 
 const ProjectHero = () => {
   const selectedProject = useSelector(state => state.manageContent.project1);
-  const [ project1Data, setProject1] = useState(selectedProject);
-  console.log(project1Data);
+  const [ projectData, setProject] = useState(selectedProject);
+  console.log(projectData);
   
-  const { _id, nickname, orderState, location, client, company, deliveryDate, rentalTerm, tag } = project1Data;
+  const { _id, nickname, orderState, location, client, company, deliveryDate, rentalTerm, tag } = projectData;
   
   return (
     <section className={styles.hero}>

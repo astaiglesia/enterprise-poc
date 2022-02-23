@@ -3,16 +3,17 @@ import React from 'react';
 import styles from './ManageContent.module.css';
 
 import Sidebar from './ManageSidebar/ManageSidebar';
+import Gallery from './Gallery/Gallery';
 
 const ManageContent = () => {
   // const location = useLocation();
   // console.log(location.state.data);
 
   return (
-    <div className={styles['content-container']}>
+    <main className={styles['content-container']}>
       <Sidebar className={styles.sidebar} />
-      <div className={styles.gallery}>Gallery Grid for order </div>
-    </div>
+      <Gallery />
+    </main>
   )
 }
 

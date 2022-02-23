@@ -28,10 +28,6 @@ const ManageProjectPage = () => {
   return (
     <div className={styles.pages}>
       <MainHeader />
-      {/* <MainHero 
-        heading="Manage Your Project" 
-        message="View, develop and refine your project's product mix, state and order details"
-      /> */}
       <ProjectHero />
       <ManageContent />
       <MainFooter />
