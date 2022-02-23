@@ -9,22 +9,16 @@ module.exports = {
     projects(parent, { input }, context, info){
       // console.log(input)
       if (input === undefined) {
-
-        // invoke find method on the model to be fetched
         return Project.find()
-          // .then( project => {
-          //   console.log('================>')
-          //   console.log(project);
-          //   return project
-          // })
           .catch(err => console.error(err))
-        // axios.get(`http://localhost:3000/projects/`)
-        //   .then(res => res.data);
       };
-      // if (input.orderState) {
-      //   return axios.get(`http://localhost:3000/projects?orderState=${input.orderState}`)
-      //     .then(res => res.data);
-      // };
+      if (input.orderState) {
+        console.log(input.orderState)
+        return Project.find({
+          orderState: input.orderState
+        })
+        .catch(err => console.error(err));
+      };
     },
     // mongo method - zzPOC.projects.findOne()
     singleProject(){},
