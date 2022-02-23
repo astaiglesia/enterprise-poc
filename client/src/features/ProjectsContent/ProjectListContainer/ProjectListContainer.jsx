@@ -12,25 +12,25 @@ const CardListContainer = props => {
   // --- Handles Initial Rendering of Project List
   const [ filter, setFilter ] = useState(GET_SNIPPETS);
   const { loading, error, data } = useQuery(filter);
-  
+  // console.log(data)
   // --- Handles Mutation Logic to Add New Projects
   
   // defines mutation query 
-  const NEW_PROJECT = gql`
-  mutation CreateProject ($newProject:NewProjectInput!){
-    addProject (input: $newProject) {
-      id
-      orderState
-      nickname
-      location
-      client
-      company
-      deliveryDate
-      rentalTerm
-      tag
-    }
-  }
-  `;
+  // const NEW_PROJECT = gql`
+  // mutation CreateProject ($newProject:NewProjectInput!){
+  //   addProject (input: $newProject) {
+  //     id
+  //     orderState
+  //     nickname
+  //     location
+  //     client
+  //     company
+  //     deliveryDate
+  //     rentalTerm
+  //     tag
+  //   }
+  // }
+  // `;
   
   // const [ createProject, newProject ] = useMutation(NEW_PROJECT); 
   
@@ -53,7 +53,7 @@ const CardListContainer = props => {
   //   console.log(newProject.error)
   // }, [newProject.error])
     
-    
+
   // ## codesplit header and filter logic
   return (
     <section className={styles['list-container']}>
@@ -78,8 +78,9 @@ const CardListContainer = props => {
 
       <React.Fragment>
         { (loading) ? <h3> Loading... </h3>
-          : (error) ? <h3> `Error! ${error}` </h3>   
-          : <ProjectList data={data} />}
+          : (error) ? <h3> `Error! ${error.message}` </h3>   
+          : (data.projects.length > 0) ? <ProjectList data={data} /> 
+          : <h3>No Project Data Stored</h3> }
       </React.Fragment>
     </section>
   )

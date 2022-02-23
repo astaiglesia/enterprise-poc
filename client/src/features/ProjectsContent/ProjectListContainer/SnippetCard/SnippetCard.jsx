@@ -7,12 +7,12 @@ const SnippetCard = props => {
   const snippet = props.snippetData;
 
   const manageOrderHandler = () => {
-    console.log(`manage order for ${snippet.id}`);
+    console.log(`manage order for ${snippet._id}`);
 
     // ### add functionality to open edit order view
   };
   const editProfileHandler = () => {
-    console.log(`edit details for ${snippet.id}`)
+    console.log(`edit details for ${snippet._id}`)
 
     // ### add functionality to open edit order view
   };
