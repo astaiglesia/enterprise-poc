@@ -1,20 +1,13 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import styles from './SnippetCard.module.css';
 
 const SnippetCard = props => {
-
   const snippet = props.snippetData;
-
+  const navigate = useNavigate();
   const manageOrderHandler = () => {
-    console.log(`manage order for ${snippet._id}`);
-
-    // ### add functionality to open edit order view
-  };
-  const editProfileHandler = () => {
-    console.log(`edit details for ${snippet._id}`)
-
-    // ### add functionality to open edit order view
+    navigate('/manage', {state: { data: snippet }})
   };
   
   return (
@@ -30,7 +23,6 @@ const SnippetCard = props => {
       <div className={styles.termlabel}>Rental Term :</div>
       <div className={styles.term}> {snippet.rentalTerm} </div>
       <div className={styles.tag}> {snippet.tag} </div>
-      <button className={styles.profile} onClick={editProfileHandler} >Edit Profile</button>
       <button className={styles.manage} onClick={manageOrderHandler} >Manage Order</button>
     </div>
   )

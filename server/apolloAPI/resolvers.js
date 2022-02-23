@@ -21,7 +21,9 @@ module.exports = {
       };
     },
     // mongo method - zzPOC.projects.findOne()
-    singleProject(){},
+    singleProject(parent, { input }, context, info){
+      console.log(input._id)
+    },
     productSelection(){},
   },
 
