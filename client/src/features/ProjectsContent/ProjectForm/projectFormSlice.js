@@ -13,20 +13,11 @@ export const projectFormSlice = createSlice({
     createProject: (state, action) => {
       // console.log('createProject reducer triggered')
       // console.log(action.payload)
-      
-      // ##convert id to uuid
-      // const newProject = {
-      //   id: new Date(),
-      //   ...action.payload
-      // }
-      // console.log(newProject);
-
       state.newProjectData = action.payload
     },
   },
 });
 
-// export const { createProject, editProject, deleteProject } = projectListSlice.actions;
 export const { createProject } = projectFormSlice.actions;
 
 export default projectFormSlice.reducer;

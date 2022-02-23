@@ -3,6 +3,7 @@
   border-right: 2px solid black;
   color: grey;
   flex: 1;
+  max-height: fit-content;
   display: flex;
   flex-direction: column;
   

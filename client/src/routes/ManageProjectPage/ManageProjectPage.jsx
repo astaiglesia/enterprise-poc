@@ -4,30 +4,35 @@
 * @module  App
 * @author  astaiglesia
 * @date    2022
-* @description Order Editing Page -> rendered content based on project selection
+* @description Manage Project(s) Page -> rendered content based on project selection
 *
 * ********************************************************
 */
 
 import React from "react";
 
+
 import styles from "./ManageProjectPage.module.css";
 
 import MainHeader from "../../components/MainHeader/MainHeader";
-import MainHero from "../../components/MainHero/MainHero";
+import ProjectHero from "../../features/ManageContent/ProjectHero/ProjectHero";
 import ManageContent from '../../features/ManageContent/ManageContent'
 import MainFooter from "../../components/MainFooter/MainFooter";
 
- 
-const ManageProjectPage = () => {
 
+
+  
+  
+const ManageProjectPage = () => {
+  
   return (
     <div className={styles.pages}>
       <MainHeader />
-      <MainHero 
+      {/* <MainHero 
         heading="Manage Your Project" 
         message="View, develop and refine your project's product mix, state and order details"
-      />
+      /> */}
+      <ProjectHero />
       <ManageContent />
       <MainFooter />
     </div>

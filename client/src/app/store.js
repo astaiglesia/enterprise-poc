@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import projectFormReducer from '../features/ProjectsContent/ProjectForm/projectFormSlice';
-// import projectListReducer from '../features/ProjectsContent/ProjectListContainer/ProjectList/projectListSlice';
+import manageContentReducer from '../features/ManageContent/manageContentSlice';
 import loginFormReducer from '../routes/LoginPage/LoginModal/loginModalSlice';
 import loginPageReducer from '../routes/LoginPage/loginPageSlice';
 
@@ -9,7 +9,7 @@ import loginPageReducer from '../routes/LoginPage/loginPageSlice';
 export default configureStore({
   reducer: {
     projectForm: projectFormReducer,
-    // projectList: projectListReducer,
+    manageContent: manageContentReducer,
     login: loginPageReducer,
     loginForm: loginFormReducer,
   },
