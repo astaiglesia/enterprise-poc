@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { gql, useQuery, useMutation } from '@apollo/client';
-// import { useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import styles from './ProjectListContainer.module.css';
 import { GET_SNIPPETS, GET_DRAFTS, GET_RESERVEDS, GET_DEPOSITS, GET_APPROVEDS, GET_SUBSCRIBEDS } from '../../../helpers/Queries';
@@ -12,14 +12,6 @@ const CardListContainer = props => {
   // ===== Handles Initial Rendering of Project List
   const [ filter, setFilter ] = useState(GET_SNIPPETS);
   const { loading, error, data } = useQuery(filter);
-  // const [ projectList, setProjectList ] = useState([]);
-  // useEffect(() => {
-  //   setProjectList(data.projects)
-  // }, [setProjectList, data])
-  
-  
-  
-
 
   // ===== Handles Mutation Logic to Add New Projects  
   // defines mutation query 
@@ -52,13 +44,14 @@ const CardListContainer = props => {
   }, [addProject, newProjectData]);
   
   
-  // ## ==== BUGS =+=+
-  // page needs to be refreshed
+  // ## =+=+=+= BUGS =+=+
+  // list needs to be updated
   // form needs to be reset
-  useEffect(() => {
+  // date is not passing through (formatting?)
+  // useEffect(() => {
     
-    console.log(newData)
-  }, [newData])
+  //   console.log(newData)
+  // }, [newData])
   
   // // triggers a re-render of Project List onFulfillment of useMutation
   // useEffect(() => {
