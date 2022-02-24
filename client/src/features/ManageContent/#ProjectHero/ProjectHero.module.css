@@ -1,10 +1,10 @@
-.project-title {
+/* .project-title {
   border: thin solid orange;
   grid-area: title-block;
   display: flex;
   align-items: center;
-  /* margin: 0; */
-  /* padding: 0%; */
+  margin: 0;
+  padding: 0%;
 }
 
 .client-info {
@@ -48,12 +48,12 @@
     "title-block . state"
     "client-block . manage";
   text-align: center;
-  /* padding: 25px 0; */
+  padding: 25px 0;
 
 }
 
 h1 {
-  /* border-bottom: 1px solid black; */
+  border-bottom: 1px solid black;
   margin: 0;
   text-align: center;
-}
+} */

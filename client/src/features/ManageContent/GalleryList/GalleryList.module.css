@@ -1,0 +1,13 @@
+.list-container {
+  border: 2px solid black;
+
+  flex: 6;
+  /* max-height: 85%; */
+  display: grid;
+}
+
+.tempCard {
+  border: thin solid red;
+  height: 200px;
+  width: 200px;
+}

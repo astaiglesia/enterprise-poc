@@ -1,5 +1,5 @@
 .sidebar {
-  border: thin solid red;
+  border: 2px solid red;
   flex: 1;
 
   display: flex;
@@ -26,14 +26,14 @@
 }
 
 .categories {
-  border: thin solid black;
+  /* border: thin solid black; */
   background-color: aliceblue;
   width: 100%;
   text-align: center;
 }
 
 .selection-carousel{
-  border: thin solid blue;
+  /* border: thin solid blue; */
   flex: 2;
 
   display: flex;

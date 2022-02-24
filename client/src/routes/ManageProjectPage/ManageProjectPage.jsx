@@ -8,27 +8,21 @@
 *
 * ********************************************************
 */
-
 import React from "react";
-
 
 import styles from "./ManageProjectPage.module.css";
 
 import MainHeader from "../../components/MainHeader/MainHeader";
-import ProjectHero from "../../features/ManageContent/ProjectHero/ProjectHero";
+// import ProjectHero from "../../features/ManageContent/ProjectHero/ProjectHero";
 import ManageContent from '../../features/ManageContent/ManageContent'
 import MainFooter from "../../components/MainFooter/MainFooter";
 
-
-
-  
-  
 const ManageProjectPage = () => {
   
   return (
     <div className={styles.pages}>
       <MainHeader />
-      <ProjectHero />
+      {/* <ProjectHero /> */}
       <ManageContent />
       <MainFooter />
     </div>
