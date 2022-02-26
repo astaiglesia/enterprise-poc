@@ -1,10 +1,10 @@
 import React from 'react';
-import useToggle from '../../../helpers/customHooks/useToggle';
+import useToggle from '../../../../helpers/customHooks/useToggle';
 
 import styles from './ProductCard.module.css';
-import testImage from "../../../assets/images/green-paint-texture.jpg";
+import testImage from '../../../../assets/images/green-paint-texture.jpg';
 
-import Overlay from '../../../routes/LoginPage/LoginModal/Overlay/Overlay'
+import Overlay from '../../../../routes/LoginPage/LoginModal/Overlay/Overlay'
 
 const ProductCard = props =>  {
   // useState for expanded state

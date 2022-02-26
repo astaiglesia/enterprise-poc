@@ -1,13 +1,14 @@
 .content-container {
-  border: 2px solid black;
-  flex: 9;
+  /* border: 3px dashed green; */
+  /* flex: 9; */
+  height: 92%;
 
   display: flex;
   flex-wrap: wrap;
 }
 
 .sidebar {
-  flex: 1;
+  /* flex: 1; */
   min-width: 30%;
 }
 

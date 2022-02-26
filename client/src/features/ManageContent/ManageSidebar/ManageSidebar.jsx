@@ -1,7 +1,7 @@
 import React from 'react';
 
 import styles from './ManageSidebar.module.css';
-import ProductCard from '../ProductCard/ProductCard';
+import ProductCard from './ProductCard/ProductCard';
 
 // mocks external product details fetched from Shopify GraphQL API
 const productDetail = {

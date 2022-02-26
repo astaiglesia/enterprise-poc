@@ -2,9 +2,9 @@ import React from 'react';
 
 import styles from './Gallery.module.css';
 
-import GalleryHeader from '../GalleryHeader/GalleryHeader';
-import GalleryList from '../GalleryList/GalleryList';
-import Summary from '../Summary/Summary';
+import GalleryHeader from './GalleryHeader/GalleryHeader';
+import GalleryList from './GalleryList/GalleryList';
+import Summary from './Summary/Summary';
 
 const Gallery = () => {
 

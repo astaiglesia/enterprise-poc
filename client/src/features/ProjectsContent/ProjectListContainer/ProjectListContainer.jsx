@@ -6,6 +6,7 @@ import styles from './ProjectListContainer.module.css';
 import { GET_SNIPPETS, GET_DRAFTS, GET_RESERVEDS, GET_DEPOSITS, GET_APPROVEDS, GET_SUBSCRIBEDS } from '../../../helpers/Queries';
 
 import ProjectList from './ProjectList/ProjectList';
+import ProjectForm from "../ProjectForm/ProjectForm";
 
 
 const CardListContainer = props => {
@@ -59,17 +60,23 @@ const CardListContainer = props => {
   //   console.log(newProject.error)
   // }, [newProject.error])
     
+  const [isSidebarOpen, setIsSidebarOpen ] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen)
+  }
 
   // ## codesplit header and filter logic
+
   return (
     <section className={styles['list-container']}>
       <div className={styles['list-header']}> 
-        <button type="button" onClick={props.toggleSidebar} className={styles['create-button']}> + </button>
+        <button type="button" onClick={toggleSidebar} className={styles['quick-sort']}> + </button>
 
         <div className={styles.search}>
-          <label htmlFor="orderSearch">project filter</label>
-            <input type="search" id="site-search" name="q" aria-label="Search through site content"/>
-          <button>Search</button>
+          <label htmlFor="site-search">filter</label>
+            <input type="search" id="site-search" className={styles['site-search']} name="site-search" aria-label="Search through site content"/>
+          <button type="submit" className={styles['quick-sort']}>Search</button>
         </div>
 
         <div className={styles.quicklinks}>
@@ -81,6 +88,8 @@ const CardListContainer = props => {
           <button type="button" onClick={() => setFilter(GET_SNIPPETS)} className={styles['quick-sort']}> all orders </button>
         </div>
       </div>
+
+      {(isSidebarOpen) && <ProjectForm />}
 
       {/* pull logic out of the return statement andrefactor to switch statement? */}
       <React.Fragment>

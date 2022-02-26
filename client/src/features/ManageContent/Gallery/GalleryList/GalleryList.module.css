@@ -1,0 +1,17 @@
+.list-container {
+  border: 2px solid blue;
+  height: 90%;
+
+
+  display: flex;
+  flex-wrap: wrap;
+
+  overflow-y: auto;
+}
+
+.tempCard {
+  border: thin solid red;
+  height: 300px;
+  width: 250px;
+  margin: 1rem;
+}
