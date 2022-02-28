@@ -65,16 +65,8 @@ const LoginOverlay = () => {
   
   useEffect( () => {
     if (isValidUser) {
-      // console.log('are we reaching this?', isValidUser)
       return validEntryHandler();
     } 
-    // else {
-    //   // handle authentication failure  // mocks an auth fail
-    //   setDidAuthFail(currentState => {
-    //     setFormData(initialState);
-    //     return !currentState;
-    //   }); 
-    // }
   }, [isValidUser, validEntryHandler]);
 
   return (
@@ -84,7 +76,8 @@ const LoginOverlay = () => {
         <label htmlFor="user" >user</label>
         <input type="text" 
                 name="user" 
-                id="user" 
+                id="user"
+                className={styles['login-input']} 
                 value={formData.user}
                 required={true} 
                 onChange={userHandler} >
@@ -93,7 +86,8 @@ const LoginOverlay = () => {
         <label htmlFor="password" >password</label>
         <input type="text" 
                 name="password" 
-                id="password" 
+                id="password"
+                className={styles['login-input']}
                 value={formData.password}
                 required={true} 
                 onChange={passwordHandler} >

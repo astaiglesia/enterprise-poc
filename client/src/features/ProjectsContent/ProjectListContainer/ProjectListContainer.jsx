@@ -5,8 +5,10 @@ import { useSelector } from 'react-redux';
 import styles from './ProjectListContainer.module.css';
 import { GET_SNIPPETS, GET_DRAFTS, GET_RESERVEDS, GET_DEPOSITS, GET_APPROVEDS, GET_SUBSCRIBEDS } from '../../../helpers/Queries';
 
+import MainNav from '../../../components/MainHeader/MainHeader';
 import ProjectList from './ProjectList/ProjectList';
 import ProjectForm from "../ProjectForm/ProjectForm";
+
 
 
 const CardListContainer = props => {
@@ -59,27 +61,20 @@ const CardListContainer = props => {
   //   console.log('setFilter Triggered')
   //   console.log(newProject.error)
   // }, [newProject.error])
-    
-  const [isSidebarOpen, setIsSidebarOpen ] = useState(false);
+   
+  // toggle details bar
+  const [isDetailsbarOpen, setIsDetailsbarOpen ] = useState(false);
 
   const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen)
+    setIsDetailsbarOpen(!isDetailsbarOpen)
   }
 
   // ## codesplit header and filter logic
-
   return (
     <section className={styles['list-container']}>
       <div className={styles['list-header']}> 
-        <button type="button" onClick={toggleSidebar} className={styles['quick-sort']}> + </button>
-
-        <div className={styles.search}>
-          <label htmlFor="site-search">filter</label>
-            <input type="search" id="site-search" className={styles['site-search']} name="site-search" aria-label="Search through site content"/>
-          <button type="submit" className={styles['quick-sort']}>Search</button>
-        </div>
-
         <div className={styles.quicklinks}>
+          <button type="button" onClick={toggleSidebar} className={styles['quick-sort']}> + </button>
           <button type="button" onClick={() => setFilter(GET_DRAFTS)} className={styles['quick-sort']}> drafts </button>
           <button type="button" onClick={() => setFilter(GET_RESERVEDS)} className={styles['quick-sort']}> reserved </button>
           <button type="button" onClick={() => setFilter(GET_DEPOSITS)} className={styles['quick-sort']}> onDeposit </button>
@@ -87,9 +82,15 @@ const CardListContainer = props => {
           <button type="button" onClick={() => setFilter(GET_SUBSCRIBEDS)} className={styles['quick-sort']}> subscribed </button>
           <button type="button" onClick={() => setFilter(GET_SNIPPETS)} className={styles['quick-sort']}> all orders </button>
         </div>
+      
+        <div className={styles.search}>
+          <label htmlFor="site-search">filter</label>
+            <input type="search" id="site-search" className={styles['site-search']} name="site-search" aria-label="Search through site content"/>
+          <button type="submit" className={styles['quick-sort']}>Search</button>
+        </div>
       </div>
 
-      {(isSidebarOpen) && <ProjectForm />}
+      {(isDetailsbarOpen) && <ProjectForm />}
 
       {/* pull logic out of the return statement andrefactor to switch statement? */}
       <React.Fragment>

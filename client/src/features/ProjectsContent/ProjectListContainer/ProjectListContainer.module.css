@@ -27,7 +27,6 @@
   color: black;
   font-size: 1.5rem;
 
-  
   align-self: center;
 }
 
@@ -35,10 +34,10 @@
   align-self: center;
 }
 .site-search {
-  color: black;
+  color: white;
+  background-color: transparent;
   margin: 0 .5rem;
 }
-
 
 .quicklinks {
   border: thin solid green;

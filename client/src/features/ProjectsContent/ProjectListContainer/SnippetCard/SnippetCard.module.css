@@ -38,6 +38,12 @@
 }
 .manage {
   grid-area: manage;
+  background-color: transparent;
+}
+.manage:hover, .manage:focus  {
+  grid-area: manage;
+  background-color: whitesmoke;
+  color: darkblue;
 }
 
 .snippet-card {

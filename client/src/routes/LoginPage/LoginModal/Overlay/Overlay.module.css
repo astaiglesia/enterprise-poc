@@ -21,8 +21,10 @@
 }
 
 .login-form input {
-  border: none;
-  border-bottom: thin solid lightslategray;
+  /* border: none;
+  border-bottom: thin solid lightslategray; */
+  border-color: white;
+  background-color: transparent;
   margin-bottom: 5px;
 }
 .login-form label {

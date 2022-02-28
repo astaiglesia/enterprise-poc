@@ -9,6 +9,7 @@ const Summary = () => {
 
   return (
     <section className={styles.summary}>
+      <div className={styles.subtotal}><span>Total Product Qty: </span>{Purchases}</div>
       <div className={styles.subtotal}><span>Purchase Subtotal : </span>{Purchases}</div>
       <div className={styles.subtotal}><span>Monthly Rental Subtotal : </span>{Rentals}</div>
     </section>
