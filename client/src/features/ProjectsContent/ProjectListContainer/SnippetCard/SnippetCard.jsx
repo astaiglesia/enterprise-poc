@@ -22,7 +22,6 @@ const SnippetCard = ({ snippetData }) => {
     if (projectSelected) navigate('/manage')
   });
   
-
   return (
     <div className={styles['snippet-card']}>
       <h3 className={styles.name}> {snippetData.nickname} </h3>

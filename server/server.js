@@ -8,8 +8,13 @@ const { ApolloServer } = require('apollo-server-express');
 const typeDefs = require('./apolloAPI/typeDefs');
 const resolvers = require('./apolloAPI/resolvers');
 
+const PORT = process.env.PORT || 5000;
 const mongoose = require('mongoose');
-const MONGO_URI = `mongodb+srv://sunsetsessions:${process.env.MONGO_PW}@zzpoc.8xin3.mongodb.net/${process.env.MONGO_DB}?retryWrites=true&w=majority`
+const MONGO_URI = `mongodb+srv://sunsetsessions:${process.env.MONGO_PW}@zzpoc.8xin3.mongodb.net/${process.env.MONGO_DB}?retryWrites=true&w=majority`;
+
+const pg = require('pg');
+const POSTGRES_URI = "postgres://nzfntweq:mta7uBHXIYGmMGRrdnXUbRGRu6_V56Z9@jelani.db.elephantsql.com/nzfntweq";
+const elephant = new pg.Client(POSTGRES_URI);
 
 async function initServer() {
   const app = express();
@@ -36,9 +41,8 @@ async function initServer() {
   //   res.send("Express Server Started")
   // })
   
-  const PORT = process.env.PORT || 5000;
   
-  // connect to database
+  // connect to project database
   mongoose.connect(MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
@@ -51,11 +55,26 @@ async function initServer() {
     })
     .catch(err => console.error(err));
 
+  // connect to storefront database
+  elephant.connect(function(err) {
+    if(err) {
+      return console.error('could not connect to postgres', err);
+    }
+    console.log('Connected Successfully to ElephantSQL for Storefront Database')
+
+    elephant.query('SELECT NOW() AS "theTime"', function(err, result) {
+      if(err) {
+        return console.error('error running query', err);
+      }
+      console.log(result.rows[0].theTime);
+      // >> output: 2018-08-23T14:02:57.117Z
+      elephant.end();
+    });
+
+  });
 };
 
 initServer();
-
-
 
 // --- Create User Login && Test Connection to Mongo
 // const User = require('./models/user');
