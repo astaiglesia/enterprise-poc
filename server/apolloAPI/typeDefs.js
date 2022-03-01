@@ -14,21 +14,32 @@ const typeDefs = gql`
   }
 
   type Product {
-    id: ID!
-    sku: String!
+    product_id: ID!
     title: String!
-    option: String!
-    color: String!
-    supplyChain: String!
+    saleType: String!
+    category: String!
+    color: String
+    sku: String!
+    variant_price: Int!
+    image_src: String!
+    image_alt: String!
+    created_on: String
+  }
+  input ProductInput {
+    product_id: ID
+    title: String
+    saleType: String
+    category: String
+    color: String
+    sku: String
   }
 
-  input ProductInput {
+  input ProductFilterInput {
     id: ID
     sku: String
     title: String
     option: String
     color: String
-    supplyChain: String
   }
 
   input ProjectFilterInput {
@@ -37,7 +48,6 @@ const typeDefs = gql`
   }
 
   input NewProjectInput {
-
     orderState: String!
     nickname: String!
     location: String!
@@ -66,7 +76,7 @@ const typeDefs = gql`
   type Query {
     projects(input: ProjectFilterInput): [Project]!
     singleProject(input: SelectProjectInput!): Project!
-    productSelection(input: ProductInput): [Product]!
+    products(input: ProductFilterInput): [Product]!
   }
 
   type Mutation {

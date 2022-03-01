@@ -93,13 +93,30 @@ export const GET_SUBSCRIBEDS = gql`
   }
 `;
 
+export const GET_PRODUCTSTORE = gql`
+  query GetProductStore {
+    products {
+      product_id
+      title
+      saleType
+      category
+      color
+      sku
+      variant_price
+      image_src
+      image_alt
+    }
+  }
+`;
+
 const GQL = {
   GET_SNIPPETS, 
   GET_DRAFTS, 
   GET_RESERVEDS, 
   GET_DEPOSITS, 
   GET_APPROVEDS, 
-  GET_SUBSCRIBEDS
+  GET_SUBSCRIBEDS,
+  GET_PRODUCTSTORE
 };
 
 export default GQL;

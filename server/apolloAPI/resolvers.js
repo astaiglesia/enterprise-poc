@@ -1,35 +1,38 @@
 const Project = require('../models/projectModels');
+const { elephant } = require('../server');
 
 module.exports = {
-  // mongo method - zzPOC.projects.find()
   Query: {
     projects(parent, { input }, context, info){
-      // console.log(input)
       if (input === undefined) {
         return Project.find()
           .catch(err => console.error(err))
       };
       if (input.orderState) {
-        console.log(input.orderState)
         return Project.find({
           orderState: input.orderState
         })
         .catch(err => console.error(err));
       };
     },
-    // mongo method - zzPOC.projects.findOne() ### do we need this? may not be necessary
-    // singleProject(parent, { input }, context, info){
-    //   console.log(input._id)
-    // },
-    productSelection(){},
+
+    products(parent, { input }, context, info){
+      console.log( 'products query triggered');  
+
+      elephant.query('SELECT * FROM products', function(err, result) {
+        if(err) {
+          return console.error('error running query', err);
+        }
+        console.log(result)
+        
+        elephant.end();
+      });
+    },
   },
 
   Mutation: {
     addProject(_, { input }){
-      // insantiate a new Project model passing input as the args
       const newProject = new Project({...input});
-      // console.log(newProject)
-      // saves the instance to the database
       return newProject.save()
         .then (result => {
             console.log(result)
@@ -43,8 +46,4 @@ module.exports = {
     deleteProject(){},
     editOrder(){}
   },
-
-  // Project: {
-  //   order(){}
-  // }
-}
+};

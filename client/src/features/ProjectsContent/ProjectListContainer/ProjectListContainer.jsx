@@ -5,10 +5,8 @@ import { useSelector } from 'react-redux';
 import styles from './ProjectListContainer.module.css';
 import { GET_SNIPPETS, GET_DRAFTS, GET_RESERVEDS, GET_DEPOSITS, GET_APPROVEDS, GET_SUBSCRIBEDS } from '../../../helpers/Queries';
 
-import MainNav from '../../../components/MainHeader/MainHeader';
 import ProjectList from './ProjectList/ProjectList';
 import ProjectForm from "../ProjectForm/ProjectForm";
-
 
 
 const CardListContainer = props => {

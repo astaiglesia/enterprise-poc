@@ -34,84 +34,38 @@ async function initServer() {
   
   await apolloServer.start();
   
-  // client entry point for our graphQL server
+  // client entry point for graphQL server
   apolloServer.applyMiddleware({ app });
   
-  // app.use((req, res) => {
-  //   res.send("Express Server Started")
-  // })
-  
-  
-  // connect to project database
+  // connection to project database
   mongoose.connect(MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })
     .then(() => {
-        // spins up the server on successful connection to mongoDB 
         app.listen({ port: PORT }, () =>
         console.log(`Connection Successful to Mongo DB \n 🚀 Express + GraphQL servers are live and listening on port ${PORT}. \n GraphiQL playground is available at http://localhost:5000${apolloServer.graphqlPath}`)
       );
     })
     .catch(err => console.error(err));
 
-  // connect to storefront database
+  // connection to storefront database
   elephant.connect(function(err) {
     if(err) {
       return console.error('could not connect to postgres', err);
     }
     console.log('Connected Successfully to ElephantSQL for Storefront Database')
-
-    elephant.query('SELECT NOW() AS "theTime"', function(err, result) {
-      if(err) {
-        return console.error('error running query', err);
-      }
-      console.log(result.rows[0].theTime);
-      // >> output: 2018-08-23T14:02:57.117Z
-      elephant.end();
-    });
-
+    // elephant.query('SELECT * FROM products', function(err, result) {
+    //   if(err) {
+    //     return console.error('error running query', err);
+    //   }
+    //   elephant.end();
+    // });
   });
 };
 
 initServer();
 
-// --- Create User Login && Test Connection to Mongo
-// const User = require('./models/user');
+// console.log(elephant.query)
 
-// async function createUser(username, password = admin) {
-//   return new User({
-//     username,
-//     password,
-//     created: Date.now()
-//   }).save()
-// }
-
-// async function findUser(username) {
-//   return await User.findOne({ username })
-// }
-
-// ;(async () => {
-//   const connector = mongoose.connect(MONGO_URI)
-//   const username = process.argv[2].split('=')[1]
-//   const password = process.argv[3].split('=')[1]
-
-//   let user = await connector.then(async () => {
-//     return findUser(username)
-//   })
-
-//   if (!user) {
-//     user = await createUser(username, password)
-//   }
-
-//   console.log(user)
-//   process.exit(0)
-// })()
-
-// process.argv returns
-// argv: [
-//   '/home/computron/.nvm/versions/node/v16.9.1/bin/node',
-//   '/home/computron/github/levelUp/zzPOC/server/server.js',
-//   '--user=baritone',
-//   '--password=billybob'
-// ],
+module.exports = elephant;
