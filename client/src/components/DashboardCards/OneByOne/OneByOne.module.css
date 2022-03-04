@@ -1,0 +1,13 @@
+.one-by-one {
+  grid-area: squareOne;
+  border: 1px solid green;
+}
+
+.card-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding-left: 1rem;
+}
+ .blurb {
+   color: aqua;
+ }
