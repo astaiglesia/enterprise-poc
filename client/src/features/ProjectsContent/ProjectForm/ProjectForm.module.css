@@ -10,6 +10,7 @@
 
 .form * {
   margin: 5px;
+  color: black;
 }
 
 .form button:hover {

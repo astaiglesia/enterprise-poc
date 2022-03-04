@@ -21,7 +21,7 @@ const Sidebar = props => {
   const { loading, error, data } = useQuery(filter);
 
   console.log( '===========' );
-  console.log( data.products );
+  // console.log( data.products );
 
   return (
     <div className={styles.sidebar}>
@@ -41,6 +41,7 @@ const Sidebar = props => {
       </div>
 
       <div className={styles['selection-carousel']}>
+
       { (loading) ? <h3> Loading... </h3>
           : (error) ? <h3> `Error! ${error.message}` </h3>   
           : (data.products.length > 0) ? <ProductCard className={styles['carousel-card']} details={productDetail}/> 

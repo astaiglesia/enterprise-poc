@@ -49,23 +49,27 @@ async function initServer() {
     })
     .catch(err => console.error(err));
 
+
+
   // connection to storefront database
+  // query works from here
+  // identify appraoch to perform query within the resolver
   elephant.connect(function(err) {
     if(err) {
       return console.error('could not connect to postgres', err);
     }
     console.log('Connected Successfully to ElephantSQL for Storefront Database')
-    // elephant.query('SELECT * FROM products', function(err, result) {
-    //   if(err) {
-    //     return console.error('error running query', err);
-    //   }
-    //   elephant.end();
-    // });
+    elephant.query('SELECT * FROM products', function(err, result) {
+      if(err) {
+        return console.error('error running query', err);
+      }
+      console.log(result)
+      elephant.end();
+    });
+    
   });
 };
 
 initServer();
 
 // console.log(elephant.query)
-
-module.exports = elephant;

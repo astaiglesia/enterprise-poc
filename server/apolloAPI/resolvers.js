@@ -1,9 +1,10 @@
 const Project = require('../models/projectModels');
-const { elephant } = require('../server');
+// const { elephant } = require('../server');
 
 module.exports = {
   Query: {
     projects(parent, { input }, context, info){
+      console.log( 'PROJECTS query triggered <=======');  
       if (input === undefined) {
         return Project.find()
           .catch(err => console.error(err))
@@ -17,18 +18,34 @@ module.exports = {
     },
 
     products(parent, { input }, context, info){
-      console.log( 'products query triggered');  
+      console.log( '=======> products query triggered <=======');  
 
       elephant.query('SELECT * FROM products', function(err, result) {
         if(err) {
           return console.error('error running query', err);
         }
-        console.log(result)
+        // console.log(result)
         
         elephant.end();
       });
     },
   },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   Mutation: {
     addProject(_, { input }){

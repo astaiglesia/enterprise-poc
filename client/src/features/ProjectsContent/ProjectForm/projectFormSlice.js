@@ -1,7 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-// define the initial state of the order list
-// -- ##mock data to be replaced by api call to database
 const initialState = {
   newProjectData: {},
 };
