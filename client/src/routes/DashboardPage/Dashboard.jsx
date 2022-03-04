@@ -24,8 +24,8 @@ const DashboardPage = () => {
     <div className={styles.pages}>
       <MainHeader />
       <DashboardContent />
-    <MainFooter />
-  </div>
+      <MainFooter />
+    </div>
   )
 };
 

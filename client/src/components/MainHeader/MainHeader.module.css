@@ -18,44 +18,10 @@
   border: thin solid green;
 }
 
-.menu {
-  border: thin solid red;
+.menu-button {
+  background-color: transparent;
+  width: fit-content;
+  height: fit-content;
+  outline: none;
 }
 
-
-nav {
-  /* border: thin solid blue; */
-  margin: 5px;
-
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.navlink {
-  /* border: thin solid orange; */
-  margin: 2px;
-  
-  text-decoration: none;
-  color: white;
-  font-size: 1rem;
-
-  display: flex;
-  align-items: center;
-}
-
-.navlink:hover, .navlink:focus {
-  color: orangered;
-}
-
-.navlink:active {
-  color: blue;
-}
-
-/* ---------- quicklink styling -------- */
-.quicklinks {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap-reverse;
-}

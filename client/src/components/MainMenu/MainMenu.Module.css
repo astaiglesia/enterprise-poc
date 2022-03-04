@@ -1,0 +1,43 @@
+.menu {
+  border: thin solid red;
+}
+
+
+.navlink {
+  /* border: thin solid orange; */
+  margin: 2px;
+  
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+
+  display: flex;
+  align-items: center;
+}
+
+.navlink:hover, .navlink:focus {
+  color: orangered;
+}
+
+.navlink:active {
+  color: blue;
+}
+
+/* ---------- quicklink styling -------- */
+.quicklinks {
+  border: thin solid blue;
+  display: flex;
+  flex-direction: column;
+  /* flex-wrap: wrap-reverse; */
+  justify-content: center;
+  overflow-y: visible;
+}
+
+/* nav {
+  margin: 5px;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+} */
