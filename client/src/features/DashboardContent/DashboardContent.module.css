@@ -1,10 +1,18 @@
-.content-container {
+.grid-container {
   /* background-color: azure; */
-  border: 2px solid black;
+  border: 2px solid red;
 
   height: 93%;
   display: grid;
+  /* add minmax() to columns and rows? */
+  /* grid-template-columns: [leftBoundary] 1fr [colLine2] 1fr [colLine3] auto [colLine4] 1fr [colLine5] 1fr [leftBoundary]; */
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-areas: 
+  "squareOne . . recents recents"
+  "squareOne summaries summaries calendar calendar"
+  ". summaries summaries eventboard eventboard"
+  ". . . eventboard eventboard";
 
-  flex-wrap: wrap;
   justify-content: center;
 }

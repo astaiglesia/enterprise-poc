@@ -1,0 +1,7 @@
+.calendar {
+  grid-area: calendar;
+  border: 1px solid orange;
+
+  justify-content: center;
+  align-items: center;
+}
