@@ -17,18 +17,18 @@ const productDetail = {
 
 const Sidebar = props => {
   // ==== Handles Initial Product Fetch and Rendering
-  const [ filter, setFilter ] = useState(GET_PRODUCTSTORE);
-  const { loading, error, data } = useQuery(filter);
+  // const [ filter, setFilter ] = useState(GET_PRODUCTSTORE);
+  // const { loading, error, data } = useQuery(filter);
 
-  console.log( '===========' );
-  // console.log( data.products );
+  // console.log( '===========' );
+  // console.log( data );
 
   return (
     <div className={styles.sidebar}>
       <div className={styles['sidebar-header']}>
         <h3 className={styles['sidebar-title']}>Product Selection</h3>
         <div className={styles.categories}>
-          <button className={styles.button} onClick={()=> setFilter('GET_COUCHES')}>Couches</button>
+          {/* <button className={styles.button} onClick={()=> setFilter('GET_COUCHES')}>Couches</button> */}
           <button className={styles.button}>Chairs</button>
           <button className={styles.button}>Tables</button>
           <button className={styles.button}>Desks</button>
@@ -41,11 +41,12 @@ const Sidebar = props => {
       </div>
 
       <div className={styles['selection-carousel']}>
+        <ProductCard className={styles['carousel-card']} details={productDetail}/> 
 
-      { (loading) ? <h3> Loading... </h3>
+      {/* { (loading) ? <h3> Loading... </h3>
           : (error) ? <h3> `Error! ${error.message}` </h3>   
           : (data.products.length > 0) ? <ProductCard className={styles['carousel-card']} details={productDetail}/> 
-          : <h3>No Project Data Stored</h3> }
+          : <h3>No Project Data Stored</h3> } */}
         
       </div>
     </div>

@@ -33,6 +33,54 @@ const GalleryList =() => {
     },
     {
       title: "Chair"
+    },
+    {
+      title: "Chair"
+    },
+    {
+      title: "Chair"
+    },
+    {
+      title: "Chair"
+    },
+    {
+      title: "Chair"
+    },
+    {
+      title: "Chair"
+    },
+    {
+      title: "Chair"
+    },
+    {
+      title: "Chair"
+    },
+    {
+      title: "Chair"
+    },
+    {
+      title: "Chair"
+    },
+    {
+      title: "Chair"
+    },
+    {
+      title: "Chair"
+    },
+    {
+      title: "Chair"
+    },
+    {
+      title: "Chair"
+    },
+    {
+      title: "Chair"
+    },
+    {
+      title: "Chair"
+    },
+    {
+      title: "Chair"
     }
   ];
 

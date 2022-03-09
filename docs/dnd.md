@@ -6,7 +6,7 @@
     - add product sidebar
 - create dummy data
   - gallerySet
-    - array of product ids?
+    - array of products?
     - on project load, fetch arrfrom productDatabase?
     - on render, fetch projectMix?
 - develop GalleryCard -> work off of ProductCard
