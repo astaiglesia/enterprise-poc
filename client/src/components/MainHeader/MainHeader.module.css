@@ -3,25 +3,8 @@
   height: 5%;
   
   padding: 0 1rem;
-  
 
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
-/* ------ main nav styling ----------- */
-.main-nav {
-  display: flex;
-  flex-direction: column;
-
-  border: thin solid green;
-}
-
-.menu-button {
-  background-color: transparent;
-  width: fit-content;
-  height: fit-content;
-  outline: none;
-}
-
