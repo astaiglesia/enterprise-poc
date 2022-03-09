@@ -10,8 +10,6 @@ const NavMenu = () => {
   const [isToggled, setIsToggled] = useState(false);
 
   // ## need to handle key up, mouseover
-
-
   const toggleMenu = () => {
     // use callback when relying on previous state
     setIsToggled(prevState => !prevState);

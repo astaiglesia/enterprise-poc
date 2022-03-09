@@ -1,15 +1,14 @@
 import React from 'react';
 import useToggle from '../../../../helpers/customHooks/useToggle';
 
-import styles from './ProductCard.module.css';
+import styles from './GalleryCard.module.css';
 import testImage from '../../../../assets/images/green-paint-texture.jpg';
 
-import Overlay from '../../../../routes/LoginPage/LoginModal/Overlay/Overlay'
 
-const ProductCard = props =>  {
+const GalleryCard = (props) =>  {
   const [isExpanded, toggleExpanded] = useToggle()
 
-  // provide onDoubleClick and DnD functionality
+  // ### provide onDoubleClick and DnD functionality
   const handleClick = (e) => {
     switch (e.detail) {
       case 2:
@@ -45,4 +44,6 @@ const ProductCard = props =>  {
   )
 };
 
-export default ProductCard;
+
+
+export default GalleryCard;
