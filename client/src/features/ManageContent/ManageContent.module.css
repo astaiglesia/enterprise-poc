@@ -1,20 +1,26 @@
 .content-container {
   /* border: 3px dashed green; */
-  /* flex: 9; */
-  height: 93%;
-
   display: flex;
   flex-wrap: wrap;
+  
+  height: 93%;
 }
 
 .sidebar {
-  /* flex: 1; */
   min-width: 30%;
 }
 
-/* .gallery {
-  border: thin solid blue;
-  flex: 3;
+.burger {
+  border-right: 1px solid white;
+  
+  background-color: #1C1C1C;
+  color: white;
+  
+  height: 100%;
+  align-self: center;
+}
 
-  min-width: 50%;
-} */
+.burger h1 {
+  font-size: 42px;
+  /* border: thin solid green; */
+}
