@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 
 import styles from  "./MainHeader.module.css";
-// import zzSmallLogo from "../../assets/images/mstile-150x150.png";
 
-import NavMenu from '../MainNav/MainNav';
+import NavMenu from '../NavMenu/NavMenu';
 
 const MainHeader = () => {
 
@@ -13,7 +12,7 @@ const MainHeader = () => {
         enterprise concept
       </div>
       
-     <NavMenu />
+    <NavMenu /> 
     </header>
   )
 }

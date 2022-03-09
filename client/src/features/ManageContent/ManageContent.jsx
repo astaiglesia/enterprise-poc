@@ -13,6 +13,7 @@ const ManageContent = () => {
     <main className={styles['content-container']}>
       {isToggled && <Sidebar className={styles.sidebar} />}
       <button 
+        type="button"
         className={styles.burger}
         onClick={(prevState) => setIsToggled(!prevState)}
       > 

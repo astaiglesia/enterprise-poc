@@ -1,13 +1,14 @@
 .nav-menu {
   
   display: flex;
+  flex-flow: row-reverse;
   justify-content: center;
 }
 
 .nav-button {
   background-color: transparent;
   border: none;   
- 
+  color: whitesmoke;
 }
 
 
@@ -15,7 +16,8 @@
 .navlist {
   /* border: thin solid blue; */
   /* flex-direction: column; */
-  /* flex-wrap: wrap-reverse; */
+  /* flex-wrap: wrap-reverse; */  
+  visibility: hidden;
   display: flex;
   justify-content: center;
   
@@ -23,13 +25,13 @@
 }
 
 .showNavList {
-  border: thin solid red;
   width: 100%;
+  visibility: visible;
 }
 
 .navlink {
   /* border: thin solid orange; */
-  margin: 2px;
+  margin: .5rem;
   
   text-decoration: none;
   color: white;

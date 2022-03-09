@@ -27,7 +27,7 @@
 .categories {
   border-top: 1px solid white;
   border-bottom: 1px solid white;
-  /* background-color: aliceblue; */
+  background-color: #1C1C1C;
   
   display: flex;
   text-align: center;
