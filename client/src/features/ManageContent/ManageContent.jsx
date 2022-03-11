@@ -11,7 +11,7 @@ const ManageContent = () => {
   
   return (
     <main className={styles['content-container']}>
-      {isToggled && <Sidebar className={styles.sidebar} />}
+      {isToggled && <Sidebar />}
       <button 
         type="button"
         className={styles.burger}

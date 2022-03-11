@@ -4,8 +4,6 @@ import useToggle from '../../../../helpers/customHooks/useToggle';
 import styles from './ProductCard.module.css';
 import testImage from '../../../../assets/images/green-paint-texture.jpg';
 
-import Overlay from '../../../../routes/LoginPage/LoginModal/Overlay/Overlay'
-
 const ProductCard = props =>  {
   const [isExpanded, toggleExpanded] = useToggle()
 
