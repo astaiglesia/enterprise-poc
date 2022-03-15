@@ -1,21 +1,13 @@
 .list-container {
   border: 1px solid silver;
-  background-color: #5D5D5D;
+  background-color: #1C1C1C;
 
   height: 90%;
-
+  justify-content: center;
+  padding: 2rem;
 
   display: flex;
   flex-wrap: wrap;
 
   overflow-y: auto;
-}
-
-.tempCard {
-  border: thin solid red;
-  background-color: aliceblue;
-  color: black;
-  height: 300px;
-  width: 250px;
-  margin: 1rem;
 }

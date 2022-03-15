@@ -14,7 +14,7 @@ const ManageContent = () => {
       {isToggled && <Sidebar />}
       <button 
         type="button"
-        className={styles.burger}
+        className={styles['open-selection']}
         onClick={(prevState) => setIsToggled(!prevState)}
       > 
         {isToggled ? <h1> - </h1> : <h1> + </h1>} 

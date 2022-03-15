@@ -11,7 +11,7 @@ const ProductCard = props =>  {
   const handleClick = (e) => {
     switch (e.detail) {
       case 2:
-        // double click should add expaond onto an overlay modal
+        // ## double click into an expanded product configuration overlay modal
         toggleExpanded()
         console.log("double click");
         break;

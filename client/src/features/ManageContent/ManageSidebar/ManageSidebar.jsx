@@ -6,7 +6,7 @@ import { useQuery } from '@apollo/client';
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // import required modules
-import { EffectCoverflow, Pagination } from "swiper";
+import { EffectCoverflow, Pagination, Navigation } from "swiper";
 
 // Import Swiper styles
 import "swiper/css";
@@ -65,7 +65,7 @@ const Sidebar = props => {
             slideShadows: true,
           }}
           pagination={true}
-          modules={[EffectCoverflow, Pagination]}
+          modules={[EffectCoverflow, Pagination, Navigation]}
           className={styles.mySwiper}
         >
           <SwiperSlide className={styles['swiper-slide']}>
