@@ -1,44 +1,67 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+*This project is CURRENTLY UNDER DESIGN AND DEVELOPMENT!!*
 
-## Available Scripts
+# enterprisePOC (working title)
+A product order creation solution for drafting and managing project proposals.
+enterprisePOC is React app executing GraphQL queries and mutations to a Mongo Document Store via Node+Express+Apollo server.
 
-In the project directory, you can run:
 
-### `npm start`
+## User Story
+an interior designer wants to provide an estimate of their design for client to review
+- the application provides a workspace for drafting project proposals for client review and approval
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+the designer logs in and is greeted by the user Dashboard
+- this will be built out to provide business flow tools like a summary of all projects, quicklinks to user saved projects, message board, calendar...
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Navigating to Projects queries our saved projects from the document database, rendering A list for our user to scroll through and pick a project to manage
+- the project list can be filtered by order state using the filter options in the upper left corner
+- click create to start a new draft opening a drop down form
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Quick Start
+hop in the dev seat and take an early test ride!
 
-### `npm run build`
+- navigate terminal to client dir
+```
+npm install
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+- navigate terminal to server dir
+```
+npm install
+npm run dev
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
 
-### `npm run eject`
+Running the dev script from the server directory will:
+- Spin up an application instance at [localhost 3030](http://localhost:3030)
+- Initialize the application server with a GraphiQL playground available at [locoalhost 5000](http://localhost:5000/graphql)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Use Considerations
+- As this is meant to be a business solution, the assumption is that the use case for this application would likely be on desktop 
+- As such, it is being developed with an assumption of fullscreen viewing (1920 x 1080).
+- Responsiveness of the application for different screen/window sizes has been includeed but a fully responsive mobile version is a planned iteration
+- Project development with accessibility considerations are a point of focus for fully accessibile UI
+  - WCAG + a11y best practices are efforted and ongoing, with the goal of creating a universal user experience 
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Please note: This app is under development!
+- please feel free to message me with  constructive comments - thanks!!
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Planned Features / ToDo List
+- mobile-responsive version
+- WCAG compliance
+- SQL product database
+  - route products to product gallery
+- build out add to order functionality
+- sort project list
+- build out dashboard         
+  - calendar
+  - notes board
+  - Sppotify SDK player for a customized user experience
+- login functionality 
+  - user document database
+  - hashing security by bcrypt
+- convert to scss modules to leverage Sass syntaxing

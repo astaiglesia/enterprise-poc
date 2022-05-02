@@ -1,0 +1,13 @@
+.summaries {
+  grid-area: summaries;
+  border: 1px solid red;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.summary {
+  text-decoration: none;
+}

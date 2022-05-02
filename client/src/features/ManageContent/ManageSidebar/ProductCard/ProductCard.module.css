@@ -1,0 +1,49 @@
+.expanded-pdp {
+  border: 1px solid black;
+  background-color: black;
+  border-radius: 3%;
+  box-shadow: 0px 0px 10px 5px lightgray;
+  align-self: center;
+    
+  height: 600px;
+  width: 400px;
+
+  display: flex;
+  flex-direction: column;  
+}
+
+.pdp-card {
+  border: 1px solid black;
+  background-color: black;
+  border-radius: 3%;
+  box-shadow: 0px 0px 10px 5px whitesmoke;
+  align-self: center;
+    
+  height: 350px;
+  width: 250px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.pdp-title {
+  align-self: center;
+  margin: 0;
+}
+
+.image {
+  width: 100%;
+}
+
+.grid-config {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  align-items: stretch;
+}
+
+.gridbox {
+  align-self: center;
+  justify-self: center;
+}

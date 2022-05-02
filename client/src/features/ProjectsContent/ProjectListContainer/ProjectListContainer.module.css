@@ -1,0 +1,58 @@
+.list-container {
+
+  /* flex: 2.5; */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.list-header {
+  border-top: 1px solid white;
+  /* border-bottom: 1px solid white; */
+  justify-content: space-between;
+  
+  color: black;
+  font-weight: 600;
+  
+  display:flex;
+  padding: .5rem;
+  margin-bottom: .5rem
+}
+
+.create-button {
+  width: 2rem;
+  height: 2rem;
+
+  color: black;
+  font-size: 1.5rem;
+
+  align-self: center;
+}
+
+.search {
+  align-self: center;
+}
+.site-search {
+  color: white;
+  background-color: transparent;
+  margin: 0 .5rem;
+}
+
+.quicklinks {
+  border: thin solid green;
+  color: black;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.quick-sort {
+  /* color: black;  */
+  background: transparent;
+}
+
+.quick-sort:hover, .quick-sort:focus {
+  background-color: whitesmoke;
+  color: black;
+}

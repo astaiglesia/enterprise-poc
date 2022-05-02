@@ -1,0 +1,73 @@
+.name {
+  grid-area: name;
+  margin: .5rem;
+}
+.location {
+  grid-area: location;
+}
+.tag {
+  grid-area: tag;
+}
+.state {
+  grid-area: state;
+  justify-self: center;
+  margin: .5rem;
+}
+.deliverylabel {
+  grid-area: deliverylabel;
+  justify-self: end;
+}
+.delivery {
+  grid-area: delivery;
+}
+.termlabel {
+  grid-area: termlabel;
+  justify-self: end;
+}
+.term {
+  grid-area: term;
+}
+.client {
+  grid-area: client;
+}
+.company {
+  grid-area: company;
+}
+.profile {
+  grid-area: profile;
+}
+.manage {
+  grid-area: manage;
+  background-color: transparent;
+}
+.manage:hover, .manage:focus  {
+  grid-area: manage;
+  background-color: whitesmoke;
+  color: darkblue;
+}
+
+.snippet-card {
+  border: thin solid orange;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "name . state state"
+    "location . deliverylabel delivery"
+    "tag . termlabel term"
+    "client company profile manage";
+  height: minmax(100px, auto);
+  min-width: 300px;
+}
+
+.snippet-card:hover {
+  background-color: blue;
+}
+.snippet-card:hover > div, .snippet-card:hover > h3{
+  color: white;
+}
+
+.box {
+  border: thin solid black;
+}

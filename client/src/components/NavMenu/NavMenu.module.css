@@ -1,0 +1,48 @@
+/* ---------- nav-menu styling -------- */
+.nav-menu {
+  display: flex;
+  justify-content: center;
+}
+
+.nav-button {
+  background-color: transparent;
+  border: none;   
+  color: whitesmoke;
+}
+
+.nav-close {
+  color: orange;
+}
+
+.navlist {
+  visibility: hidden;
+  display: flex;
+  justify-content: center;
+  
+  width: 0%;
+}
+
+.showNavList {
+  width: 100%;
+  visibility: visible;
+}
+
+.navlink {
+  margin: .5rem;
+  
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+
+  display: flex;
+  align-items: center;
+}
+
+.navlink:hover, .navlink:focus {
+  color: orange;
+}
+
+.navlink:active {
+  color: blue;
+}
+

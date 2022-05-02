@@ -1,0 +1,18 @@
+.recents {
+  grid-area: recents;
+  border: 1px solid blue;
+  
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+
+  padding-right: 1rem;
+}
+
+.quicklink {
+  text-decoration: none;
+  border: 1px solid white;
+
+  padding: 0 1rem;
+  margin: .5rem;
+}

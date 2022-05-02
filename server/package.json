@@ -1,0 +1,28 @@
+{
+  "name": "graphql-express-server",
+  "version": "1.0.0",
+  "description": "GraphQL server build on Node with the Express Library",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "json:server": "json-server --watch assets/data.json",
+    "client": "npm start --prefix ../client",
+    "dev": "concurrently \"npm run server\" \"npm run client\" \"npm run json:server\""
+  },
+  "author": "sunset-sessions > astaiglesia",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server-express": "^2.25.3",
+    "axios": "^0.26.0",
+    "concurrently": "^7.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.2",
+    "graphql": "^15.8.0",
+    "json-server": "^0.17.0",
+    "mongoose": "^6.2.3",
+    "nodemon": "^2.0.15",
+    "pg": "^8.7.3"
+  }
+}

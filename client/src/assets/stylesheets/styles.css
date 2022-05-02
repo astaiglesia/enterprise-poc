@@ -1,0 +1,15 @@
+* {
+  box-sizing: border-box;
+  font-family: 'basis-grotesque-italic-pro';
+  color: white;
+}
+
+html, body {
+  margin: 0px;
+  height: 100%;
+  background-color: black;
+}
+
+#root {
+  height: 100%;
+}

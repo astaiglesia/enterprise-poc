@@ -1,0 +1,12 @@
+.summary {
+  border: 1px solid black;
+  /* height: 5%; */
+
+  display: flex;
+  justify-content: flex-end;
+}
+
+.subtotal {
+  margin: 1rem;
+  align-self: center;
+}
