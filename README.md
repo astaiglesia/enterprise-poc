@@ -22,15 +22,14 @@ hop in the dev seat and take an early test ride!
 
 - navigate terminal to client dir
 ```
-npm install
+npm i
 
 ```
 
 - navigate terminal to server dir
 ```
-npm install
+npm i
 npm run dev
-
 ```
 
 Running the dev script from the server directory will:
