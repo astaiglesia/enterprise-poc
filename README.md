@@ -40,9 +40,9 @@ Running the dev script from the server directory will:
 ## Use Considerations
 - As this is meant to be a business solution, the assumption is that the use case for this application would likely be on desktop 
 - As such, it is being developed with an assumption of fullscreen viewing (1920 x 1080).
-- Responsiveness of the application for different screen/window sizes has been includeed but a fully responsive mobile version is a planned iteration
-- Project development with accessibility considerations are a point of focus for fully accessibile UI
-  - WCAG + a11y best practices are efforted and ongoing, with the goal of creating a universal user experience 
+- Responsiveness of the application for different screen/window sizes has been included but a fully responsive mobile version is a planned iteration
+- Project has been developed with accessibility features such as high contrast coloring, keyboard nav compatibility and semantic markup with focus states
+  - WCAG + a11y best practices are efforted and ongoing, with the goal of optimizing for inclusive user experiences
 
 
 ## Please note: This app is under development!

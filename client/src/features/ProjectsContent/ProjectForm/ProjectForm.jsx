@@ -148,10 +148,7 @@ const ProjectForm = () => {
     dispatchFormData({type: 'INPUT_TAG', payload: e.target.value})
   };
 
-
   // ---- Handles Form Submission 
-
-
   // ### thunk / apollo / logic to Post to DB
   // apollo approach ---
   // dispatch formState to store
@@ -164,8 +161,7 @@ const ProjectForm = () => {
   const dispatch = useDispatch();
   const formSubmissionHandler = e => {
     e.preventDefault();
-    // console.log(formState)
-    // transform data to remove validations
+
     const newProject = {
       orderState: formState.orderState,                     
       nickname: formState.nickname,

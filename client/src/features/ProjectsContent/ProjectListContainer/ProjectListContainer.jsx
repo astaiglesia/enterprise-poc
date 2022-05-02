@@ -32,6 +32,7 @@ const CardListContainer = props => {
   }
   `;
   
+  // ## =+=+=+ reasess state management of project forms and queries -> see BUGS
   const [ addProject, {loading: newLoad, error: newError, data: newData} ] = useMutation(ADD_PROJECT); 
   
   // retrieves new project form data from Redux store
@@ -60,19 +61,18 @@ const CardListContainer = props => {
   //   console.log(newProject.error)
   // }, [newProject.error])
    
-  // toggle details bar
   const [isDetailsbarOpen, setIsDetailsbarOpen ] = useState(false);
 
   const toggleSidebar = () => {
     setIsDetailsbarOpen(!isDetailsbarOpen)
   }
 
-  // ## codesplit header and filter logic
+  // ## modularize header, map buttons and filter logic
   return (
     <section className={styles['list-container']}>
       <div className={styles['list-header']}> 
         <div className={styles.quicklinks}>
-          <button type="button" onClick={toggleSidebar} className={styles['quick-sort']}> + </button>
+          <button type="button" onClick={toggleSidebar} className={styles['quick-sort']}> create new project </button>
           <button type="button" onClick={() => setFilter(GET_DRAFTS)} className={styles['quick-sort']}> drafts </button>
           <button type="button" onClick={() => setFilter(GET_RESERVEDS)} className={styles['quick-sort']}> reserved </button>
           <button type="button" onClick={() => setFilter(GET_DEPOSITS)} className={styles['quick-sort']}> onDeposit </button>

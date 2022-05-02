@@ -45,7 +45,7 @@ const LoginPage = () => {
       </header>
 
       <main className={styles.loginMain}>
-        <img src={logo} alt="zz brand logo"></img> 
+        <img src={logo} alt="splash logo"></img> 
       </main>
       
       <footer className={styles['login-footer']}>
