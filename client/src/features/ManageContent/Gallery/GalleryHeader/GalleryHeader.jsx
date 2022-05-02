@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useSelector } from "react-redux";
 
 import styles from './GalleryHeader.module.css';
@@ -6,7 +6,7 @@ import styles from './GalleryHeader.module.css';
 const GalleryHeader = () => {
   const selectedProject = useSelector(state => state.manageContent.project1);
  
-  const { _id, nickname, orderState, location, client, company, deliveryDate, rentalTerm, tag } = selectedProject;
+  const { nickname, orderState, location, client, company } = selectedProject;
   
   return (
     <section className={styles.header}>

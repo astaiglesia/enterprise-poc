@@ -37,16 +37,13 @@ const LoginOverlay = () => {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  
-
-
 
 // ###=========== WORK ON AUTHENTICATION LOGIC =========###
   // dispatch to redux-thunk for authentication
   // -- if validated, redirect to dashboard page
   // -- on fail, render fail
   const [isValidUser, setIsValidUser] = useState(false);
-  const [didAuthFail, setDidAuthFail] = useState(false); // initialized to false for dev purposes, set to true with auth implementation
+  // const [didAuthFail, setDidAuthFail] = useState(false); // initialized to false for dev purposes, set to true with auth implementation
   // console.log(isValidUser, didAuthFail);
 
   // ---- handle site entry for auth'd users and guests with no login
@@ -71,8 +68,7 @@ const LoginOverlay = () => {
 
   return (
     <div className={styles.modal} >
-      <form className={styles['login-form']} onSubmit={loginAttemptHandler} >
-                  
+      <form className={styles['login-form']} onSubmit={loginAttemptHandler} >         
         <label htmlFor="user" >user</label>
         <input type="text" 
                 name="user" 
@@ -82,7 +78,6 @@ const LoginOverlay = () => {
                 required={true} 
                 onChange={userHandler} >
         </input>
-        
         <label htmlFor="password" >password</label>
         <input type="text" 
                 name="password" 
@@ -92,9 +87,8 @@ const LoginOverlay = () => {
                 required={true} 
                 onChange={passwordHandler} >
         </input>
-
         <button type="submit" aria-label="Submit login credentials" >login</button>
-        {(didAuthFail) && <div className={styles.loginFail}>login failed</div>}
+        {/* {(didAuthFail) && <div className={styles.loginFail}>login failed</div>} */}
 
         {/* temporary login bypass */}
         <button type="button" aria-label="Guest Entry" onClick={validEntryHandler}>guest pass</button>
