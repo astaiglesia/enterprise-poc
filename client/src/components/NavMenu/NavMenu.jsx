@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import useToggle from '../../helpers/customHooks/useToggle';
 
 import { Link } from "react-router-dom";
@@ -7,11 +7,10 @@ import styles from './NavMenu.module.css';
 
 const NavMenu = () => {
 
-  const [isToggled, setIsToggled] = useState(false);
+  const [isToggled, setIsToggled] = useToggle(true);
 
   // ## need to handle key up, mouseover
   const toggleMenu = () => {
-    // use callback when relying on previous state
     setIsToggled(prevState => !prevState);
   }
 
@@ -20,22 +19,21 @@ const NavMenu = () => {
 
   return (
       <nav className={styles['nav-menu']}>
-        <button 
-          className={styles['nav-button']}
-          onClick={toggleMenu}
-          // onMouseLeave={toggleMenu}
-        >
-          {isToggled ? "Close" : "Menu"}
-        </button>
 
         <ul className={`${styles.navlist} ${isToggled ? styles.showNavList : ""}`} >
           <Link className={styles.navlink} to="/dashboard" >Dashboard</Link>
           <Link className={styles.navlink} to="/projects" >Projects</Link>
           <Link className={styles.navlink} to="/manage" >Manage</Link>
-          <Link className={styles.navlink} to="/projects">settings</Link>
-          <Link className={styles.navlink} to="/">logout</Link>
+          <Link className={styles.navlink} to="/projects">Settings</Link>
+          <Link className={styles.navlink} to="/">Logout</Link>
         </ul>
 
+        <button 
+          className={`${styles['nav-button']} ${styles['nav-close']}`}
+          onClick={toggleMenu}
+        >
+          {isToggled ? "Hide Menu" : "Menu"}
+        </button>
       </nav>
 
   )
