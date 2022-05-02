@@ -6,24 +6,23 @@ enterprisePOC is React+Redux/Hooks app executing GraphQL queries and mutations t
 
 
 ## User Story
-an interior designer wants to provide an estimate of their design for client to review
-- the application provides a workspace for drafting project proposals for client review and approval
+An interior designer wants to provide an estimate of their design for client to review
+- The application provides a workspace for drafting project proposals for client review and approval
 
-the designer logs in and is greeted by the user Dashboard
-- this will be built out to provide business flow tools like a summary of all projects, quicklinks to user saved projects, message board, calendar...
+The designer logs in and is greeted by the user Dashboard
+- This will be built out to provide business flow tools like a summary of all projects, quicklinks to user saved projects, message board, calendar...
 
 Navigating to Projects queries our saved projects from the document database, rendering A list for our user to scroll through and pick a project to manage
-- the project list can be filtered by order state using the filter options in the upper left corner
-- click create to start a new draft opening a drop down form
+- The project list can be filtered by order state using the filter options in the upper left corner
+- Click create to start a new draft opening a drop down form
 
 
 ## Quick Start
-hop in the dev seat and take an early test ride!
+Hop in the dev seat and take an early test ride!
 
 - navigate terminal to client dir
 ```
 npm i
-
 ```
 
 - navigate terminal to server dir
@@ -46,7 +45,7 @@ Running the dev script from the server directory will:
 
 
 ## Please note: This app is under development!
-- please feel free to message me with  constructive comments - thanks!!
+- Please feel free to message me with constructive comments - thanks!!
 
 
 ## Planned Features / ToDo List
