@@ -1,9 +1,0 @@
-.pages {
-  background-color: black;
-  /* color: black!; */
-  height: 100%;
-  
-  display: flex;
-  flex-direction: column;
-  align-content: space-between;
-}

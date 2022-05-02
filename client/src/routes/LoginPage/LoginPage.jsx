@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 
 import styles from './LoginPage.module.css';
-import zzLogo from '../../assets/images/android-chrome-192x192.png'
+import logo from '../../assets/images/logo.jpg'
 
 import LoginModal from './LoginModal/LoginModal';
 import { toggleLoginModal } from './loginPageSlice';
@@ -45,7 +45,7 @@ const LoginPage = () => {
       </header>
 
       <main className={styles.loginMain}>
-        <img src={zzLogo} alt="zz brand logo"></img> 
+        <img src={logo} alt="zz brand logo"></img> 
       </main>
       
       <footer className={styles['login-footer']}>
