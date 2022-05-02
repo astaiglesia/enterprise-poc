@@ -5,10 +5,10 @@ import React from 'react';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Pagination, Navigation } from "swiper";
 
-import styles from './ManageSidebar.module.css';
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
+import styles from './ManageSidebar.module.css';
 
 // import { GET_PRODUCTSTORE } from '../../../helpers/Queries';
 import ProductCard from './ProductCard/ProductCard';
@@ -68,7 +68,7 @@ const Sidebar = props => {
   const productBase = tempProducts.map(product => {
     return (
       <SwiperSlide className={styles['swiper-slide']}>
-        <ProductCard details={product}/> 
+        <ProductCard product={product}/> 
       </SwiperSlide>
     )
   })
@@ -81,7 +81,7 @@ const Sidebar = props => {
           {/* <button className={styles.button} onClick={()=> setFilter('GET_COUCHES')}>Couches</button> */}
           <button className={styles.button}>Seating</button>
           <button className={styles.button}>Surfaces</button>
-          <button className={styles.button}>Desks</button>
+          <button className={styles.button}>Storage</button>
           <button className={styles.button}>Lighting</button>
           <button className={styles.button}>Wovens</button>
         </div>
