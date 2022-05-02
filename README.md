@@ -2,7 +2,7 @@
 
 # enterprisePOC (working title)
 A product order creation solution for drafting and managing project proposals.
-enterprisePOC is React app executing GraphQL queries and mutations to a Mongo Document Store via Node+Express+Apollo server.
+enterprisePOC is React+Redux/Hooks app executing GraphQL queries and mutations to a Mongo Document Store via Node+Express+Apollo server.
 
 
 ## User Story
@@ -22,15 +22,14 @@ hop in the dev seat and take an early test ride!
 
 - navigate terminal to client dir
 ```
-npm install
+npm i
 
 ```
 
 - navigate terminal to server dir
 ```
-npm install
+npm i
 npm run dev
-
 ```
 
 Running the dev script from the server directory will:
@@ -53,6 +52,7 @@ Running the dev script from the server directory will:
 ## Planned Features / ToDo List
 - mobile-responsive version
 - WCAG compliance
+- re-analyze + refactor state management
 - SQL product database
   - route products to product gallery
 - build out add to order functionality
