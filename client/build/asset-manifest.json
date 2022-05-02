@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/static/css/main.61ac631c.css",
+    "main.js": "/static/js/main.045958e8.js",
+    "static/media/green-paint-texture.jpg": "/static/media/green-paint-texture.7a75b39c621b8c8533a4.jpg",
+    "index.html": "/index.html",
+    "main.61ac631c.css.map": "/static/css/main.61ac631c.css.map",
+    "main.045958e8.js.map": "/static/js/main.045958e8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.61ac631c.css",
+    "static/js/main.045958e8.js"
+  ]
+}
