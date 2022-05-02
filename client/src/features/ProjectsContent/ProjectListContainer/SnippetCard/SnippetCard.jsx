@@ -15,12 +15,11 @@ const SnippetCard = ({ snippetData }) => {
   const manageOrderHandler = () => {
     dispatch(manageProject(snippetData));
     setProjectSelected(true)
-
   };
   useEffect(() => {
     console.log('navigate triggered')
     if (projectSelected) navigate('/manage')
-  });
+  }, [projectSelected, navigate]);
   
   return (
     <div className={styles['snippet-card']}>

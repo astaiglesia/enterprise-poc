@@ -11,27 +11,31 @@ const GalleryCard = (props) =>  {
   // ### provide onDoubleClick and DnD functionality
   const handleClick = (e) => {
     switch (e.detail) {
+      
       case 2:
-        // double click should add expaond onto an overlay modal
+        // ## double click into an expanded product configuration overlay modal
         toggleExpanded()
         console.log("double click");
         break;
-      case 3:
-        // triple click should add product to product list
+      
+        case 3:
+        // triple click to delete validation
         console.log("triple click");
         break;
-      default:
+      
+        default:
         return;
     }
   };  
 
   return (
-    <div className={isExpanded ? styles['expanded-pdp'] : styles['pdp-card']} onClick={handleClick}>
+    <div className={isExpanded ? styles['expanded-gallery'] : styles['gallery-card']} onClick={handleClick}>
       <h3 className={styles['pdp-title']}>{props.details.title}</h3>
       <img className={styles.image} 
           src={testImage}
-          width={isExpanded ? "350" : "250"}
-          height={isExpanded ? "500" : "250"}
+          width={isExpanded ? "250" : "250"}
+          // height={isExpanded ? "300" : "250"}
+
           alt={props.details.alt}>
       </img>
       <section className={styles['grid-config']}>

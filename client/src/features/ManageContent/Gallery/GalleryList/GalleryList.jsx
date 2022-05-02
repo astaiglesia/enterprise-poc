@@ -84,10 +84,6 @@ const GalleryList =() => {
     }
   ];
 
-  // const ProductDeck = mockdata.map(project => {
-  //   return <GalleryCard className={styles.tempCard}> G </GalleryCard>
-  // })
-
   return (
     <section className={styles['list-container']}>
       { 

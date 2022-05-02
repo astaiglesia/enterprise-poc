@@ -4,8 +4,6 @@ import useToggle from '../../../../helpers/customHooks/useToggle';
 import styles from './ProductCard.module.css';
 import testImage from '../../../../assets/images/green-paint-texture.jpg';
 
-import Overlay from '../../../../routes/LoginPage/LoginModal/Overlay/Overlay'
-
 const ProductCard = props =>  {
   const [isExpanded, toggleExpanded] = useToggle()
 
@@ -13,7 +11,7 @@ const ProductCard = props =>  {
   const handleClick = (e) => {
     switch (e.detail) {
       case 2:
-        // double click should add expaond onto an overlay modal
+        // ## double click into an expanded product configuration overlay modal
         toggleExpanded()
         console.log("double click");
         break;
