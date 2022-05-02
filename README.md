@@ -4,6 +4,7 @@
 A product order creation solution for drafting and managing project proposals.
 enterprisePOC is React app executing GraphQL queries and mutations to a Mongo Document Store via Node+Express+Apollo server.
 
+
 ## User Story
 an interior designer wants to provide an estimate of their design for client to review
 - the application provides a workspace for drafting project proposals for client review and approval
@@ -14,32 +15,32 @@ the designer logs in and is greeted by the user Dashboard
 Navigating to Projects queries our saved projects from the document database, rendering A list for our user to scroll through and pick a project to manage
 - the project list can be filtered by order state using the filter options in the upper left corner
 - click create to start a new draft opening a drop down form
-- the designer enters the client's info and 
 
 
 ## Quick Start
 hop in the dev seat and take an early test ride!
 
-- navigate to client dir
+- navigate terminal to client dir
 ```
 npm install
 
 ```
 
-- navigate to server dir
+- navigate terminal to server dir
 ```
 npm install
 npm run dev
 
 ```
 
-Running the dev script from the server directory will spin up:
-The application instance at 
-GraphiQL playground is available at http://localhost:5000/graphql
+Running the dev script from the server directory will:
+- Spin up an application instance at [localhost 3030](http://localhost:3030)
+- Initialize the application server with a GraphiQL playground available at [locoalhost 5000](http://localhost:5000/graphql)
+
 
 ## Use Considerations
 - As this is meant to be a business solution, the assumption is that the use case for this application would likely be on desktop 
-- As such, it is being developed with an assumption of fullscreen viewing (1920 x 1080) 
+- As such, it is being developed with an assumption of fullscreen viewing (1920 x 1080).
 - Responsiveness of the application for different screen/window sizes has been includeed but a fully responsive mobile version is a planned iteration
 - Project development with accessibility considerations are a point of focus for fully accessibile UI
   - WCAG + a11y best practices are efforted and ongoing, with the goal of creating a universal user experience 

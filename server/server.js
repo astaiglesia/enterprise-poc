@@ -1,5 +1,3 @@
-// https://www.apollographql.com/blog/backend/using-express-with-graphql-server-node-js/
-
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
@@ -10,11 +8,7 @@ const resolvers = require('./apolloAPI/resolvers');
 
 const PORT = process.env.PORT || 5000;
 const mongoose = require('mongoose');
-const MONGO_URI = `mongodb+srv://sunsetsessions:${process.env.MONGO_PW}@zzpoc.8xin3.mongodb.net/${process.env.MONGO_DB}?retryWrites=true&w=majority`;
-
-const pg = require('pg');
-const POSTGRES_URI = "postgres://nzfntweq:mta7uBHXIYGmMGRrdnXUbRGRu6_V56Z9@jelani.db.elephantsql.com/nzfntweq";
-const elephant = new pg.Client(POSTGRES_URI);
+const MONGO_URI = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PW}@zzpoc.8xin3.mongodb.net/${process.env.MONGO_DB}?retryWrites=true&w=majority`;
 
 async function initServer() {
   const app = express();
@@ -48,28 +42,31 @@ async function initServer() {
       );
     })
     .catch(err => console.error(err));
-
-
-
-  // connection to storefront database
-  // query works from here
-  // identify appraoch to perform query within the resolver
-  elephant.connect(function(err) {
-    if(err) {
-      return console.error('could not connect to postgres', err);
-    }
-    console.log('Connected Successfully to ElephantSQL for Storefront Database')
-    elephant.query('SELECT * FROM products', function(err, result) {
-      if(err) {
-        return console.error('error running query', err);
-      }
-      console.log(result)
-      elephant.end();
-    });
-    
-  });
 };
 
 initServer();
 
+
+
+// ==== implement connection to productbase
+// query works from here
+// modularize to its own server
+// const pg = require('pg');
+// const POSTGRES_URI = `postgres://${process.env.POSTGRES_URI}`;
+// const elephant = new pg.Client(POSTGRES_URI);
+// elephant.connect(function(err) {
+//   if(err) {
+//     return console.error('could not connect to postgres', err);
+//   }
+//   console.log('Connected Successfully to ElephantSQL for Storefront Database')
+//   elephant.query('SELECT * FROM products', function(err, result) {
+//     if(err) {
+//       return console.error('error running query', err);
+//     }
+//     console.log(result)
+//     elephant.end();
+//   });
+// });
 // console.log(elephant.query)
+
+// ==== implement connection to userbase
