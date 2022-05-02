@@ -1,7 +1,103 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
+# zzPOC (working title)
+Prototype of an order drafting business solution for drafting product mix proposals to commercial clients
+
+
+## User Story
+an interior designer wants to provide an estimate of their design for client to review
+- the application provides a workspace for drafting proposals for client review and approval
+
+the designer logs in and is greeted by the user Dashboard
+- here we will have items like a summary of all projects, quicklinks to user saved projects, message board, calendar
+
+Navigating to Projects queries our saved projects from the document database, rendering the list for our user to scroll through
+- the project list can be filtered by order state using the filter options in the upper left corner
+- click create to start a new draft opening a drop down form
+- the designer enters the client's info and 
+  
+
+## Tech Snapshot
+- this application will have: 
+  - user authentication (currently bypassed as a guest) 
+    - auth will be connected to a mongo userbase and utilize Bcrypt for hashing of secure data
+  - 
+
+
+
+
+
+A react app built with a Node+Express+Apollo Backend
+GraphQL
+
+The root folder contains:
+
+```
+/client
+
+```
+
+
+
+
+## Use Considerations
+- As this is meant to be a business solution, the assumption is that the use case for this application would likely be on desktop 
+- As such, it is optimized for a 1920 x 1080 viewing. 
+- responsiveness of the application can be assumed for different screen/window sizes but a fully responsive mobile version is a planned stretch feature.
+- ADA considerations are a point of focus for fully accessibile UI
+  - accessibility best practices are efforted and ongoing, with the goal of creating a universal user experience 
+
+
+## Please note: This app is in development!
+- please feel free to leave constructive comments - thanks!!
+
+
+## Tech Stack
+
+
+## Current Features
+
+
+## Planned Features / ToDo List
+- mobile-responsive version
+- WCAG compliance
+- filter + sort project list
+- build out dashboard         
+
+
+
+
+
+## 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Available Scripts
 
+
+To run the dev script - from the server directory run : 
+### npm run dev
 In the project directory, you can run:
 
 ### `npm start`
