@@ -1,54 +1,91 @@
-import React, { useState } from 'react';
-import { useQuery } from '@apollo/client';
+import React from 'react';
+// import { useQuery } from '@apollo/client';
 // import { useSelector } from 'react-redux';
 
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// import required modules
 import { EffectCoverflow, Pagination, Navigation } from "swiper";
 
-// Import Swiper styles
+import styles from './ManageSidebar.module.css';
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 
-import styles from './ManageSidebar.module.css';
-import { GET_PRODUCTSTORE } from '../../../helpers/Queries';
-
+// import { GET_PRODUCTSTORE } from '../../../helpers/Queries';
 import ProductCard from './ProductCard/ProductCard';
 
-// mocks external product details fetched from Shopify GraphQL API
-const productDetail = {
-  title: "Dream Sofa",
-  alt: "Dream Sofa Image",
-  option: "74 inch",
-  color: "green"
-}
+// mocks product details for development
+const tempProducts = [
+  { title: "Dream Sofa",
+    img: "",
+    alt: "Dream Sofa Image",
+    option: "74 inch",
+    color: "green",
+    price: "1200",
+    category: "seating"
+  },
+  { title: "Modern Standing Desk",
+    img: "",
+    alt: "Motorized Modern Standing Desk",
+    option: "5 foot width",
+    color: "white",
+    price: "450",
+    category: "surfaces"
+  },
+  { title: "Farmhouse Dining Table",
+    img: "",
+    alt: "Farmhouse Dining Table",
+    option: "10 seat",
+    color: "oak",
+    price: "875",
+    category: "surfaces"
+  },
+  { title: "Minimalist Pendant Lighting",
+    img: "",
+    alt: "Minimalist Pendant Lighting",
+    option: "4 foot length",
+    color: "stainless steel",
+    price: "375",
+    category: "lighting"
+  },
+  { title: "Alpaca Rug",
+    img: "",
+    alt: "Alpaca Rug",
+    option: "5' x 7'",
+    color: "multi",
+    price: "675",
+    category: "wovens"
+  },
+];
 
 const Sidebar = props => {
   // ==== Handles Initial Product Fetch and Rendering
   // const [ filter, setFilter ] = useState(GET_PRODUCTSTORE);
   // const { loading, error, data } = useQuery(filter);
-
   // console.log( '===========' );
   // console.log( data );
+
+  // map product base to cards
+  const productBase = tempProducts.map(product => {
+    return (
+      <SwiperSlide className={styles['swiper-slide']}>
+        <ProductCard details={product}/> 
+      </SwiperSlide>
+    )
+  })
 
   return (
     <div className={styles.sidebar}>
       <div className={styles['sidebar-header']}>
-        <h3 className={styles['sidebar-title']}>Product Selection</h3>
+        <h3 className={styles['sidebar-title']}>Product Gallery</h3>
         <div className={styles.categories}>
           {/* <button className={styles.button} onClick={()=> setFilter('GET_COUCHES')}>Couches</button> */}
-          <button className={styles.button}>Chairs</button>
-          <button className={styles.button}>Tables</button>
+          <button className={styles.button}>Seating</button>
+          <button className={styles.button}>Surfaces</button>
           <button className={styles.button}>Desks</button>
           <button className={styles.button}>Lighting</button>
           <button className={styles.button}>Wovens</button>
-        
-          <button className={styles.button}>Term</button>
         </div>
-        <div className={styles['product-search']}>#add search bar#</div>
+        {/* <div className={styles['product-search']}>#add search bar#</div> */}
       </div>
 
       <div className={styles['carousel-container']}>
@@ -68,35 +105,17 @@ const Sidebar = props => {
           modules={[EffectCoverflow, Pagination, Navigation]}
           className={styles.mySwiper}
         >
-          <SwiperSlide className={styles['swiper-slide']}>
-            <ProductCard details={productDetail}/> 
-          </SwiperSlide>
-          <SwiperSlide className={styles['swiper-slide']}>
-            <ProductCard details={productDetail}/> 
-          </SwiperSlide>
-          <SwiperSlide className={styles['swiper-slide']}>
-            <ProductCard details={productDetail}/> 
-          </SwiperSlide>
-          <SwiperSlide className={styles['swiper-slide']}>
-            <ProductCard details={productDetail}/> 
-          </SwiperSlide>
-          <SwiperSlide className={styles['swiper-slide']}>
-            <ProductCard details={productDetail}/> 
-          </SwiperSlide>
-          <SwiperSlide className={styles['swiper-slide']}>
-            <ProductCard details={productDetail}/> 
-          </SwiperSlide>
+          {productBase}
         </Swiper>
 
-        {/* { (loading) ? <h3> Loading... </h3>
+        {/* ## handle fetching errors
+            { (loading) ? <h3> Loading... </h3>
             : (error) ? <h3> `Error! ${error.message}` </h3>   
             : (data.products.length > 0) ? <ProductCard className={styles['carousel-card']} details={productDetail}/> 
             : <h3>No Project Data Stored</h3> } */}
-        
       </div>
     </div>
   )
 }
-
 
 export default Sidebar;

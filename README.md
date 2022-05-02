@@ -54,6 +54,8 @@ Running the dev script from the server directory will:
 - mobile-responsive version
 - WCAG compliance
 - SQL product database
+  - route products to product gallery
+- build out add to order functionality
 - sort project list
 - build out dashboard         
   - calendar
