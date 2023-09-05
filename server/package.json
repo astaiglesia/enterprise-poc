@@ -8,7 +8,7 @@
     "server": "nodemon server.js",
     "json:server": "json-server --watch assets/data.json",
     "client": "npm start --prefix ../client",
-    "dev": "concurrently \"npm run server\" \"npm run client\" \"npm run json:server\""
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "sunset-sessions > astaiglesia",
   "license": "ISC",
